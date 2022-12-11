@@ -1,0 +1,38 @@
+---
+title: 'Final proj'
+author: "Yucheng Li"
+date: "2022-12-11"
+output: html_document
+---
+
+```{r}
+library(tidyverse)
+library(GGally)
+library(patchwork)
+library(gt)
+library(leaps)
+library(caret)
+library(readxl)
+```
+
+```{r}
+df = read_excel("data/body_density_data.xlsx") %>%
+  rename(output = bodyfat_brozek)
+```
+
+Descriptive statistics:
+
+```{r}
+df %>%
+  gtsummary::tbl_summary() %>%
+  gtsummary::bold_labels()
+```
+
+Exploratory plots
+
+```{r}
+df %>%
+  relocate(output) %>%
+  ggpairs()
+```
+
