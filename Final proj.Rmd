@@ -113,10 +113,16 @@ The diagnostics plots look good. No need for Box-Cox transformation
 
 ```{r}
 intercept_only <- lm(outcome ~ 1, data = body_density_df)
-step(intercept_only, direction = "forward", scope = formula(full_model))
+fit_forward = step(intercept_only, direction = "forward", scope = formula(full_model))
+summary(fit_forward)
 ```
 
+## Backward Elimination
 
+```{r}
+fit_backward = step(lm(full_model, data = body_density_df), direction = "backward")
+summary(fit_backward) 
+```
 
 
 
