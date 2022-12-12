@@ -1,7 +1,5 @@
 ---
 title: 'Final proj'
-author: "Yucheng Li"
-date: "2022-12-11"
 output: github_document
 ---
 
@@ -13,11 +11,13 @@ library(gt)
 library(leaps)
 library(caret)
 library(readxl)
+library(patchwork)
 ```
 
 ```{r}
 body_density_df = read_excel("data/body_density_data.xlsx") %>%
   rename(outcome = bodyfat_brozek)
+head(body_density_df)
 ```
 
 Descriptive statistics:
@@ -37,4 +37,63 @@ body_density_df %>%
   relocate(outcome) %>%
   ggpairs()
 ```
+
+Boxplot
+
+```{r}
+hist1 = body_density_df %>% 
+  ggplot(aes(x = age)) +
+  geom_histogram()
+hist2 = body_density_df %>% 
+  ggplot(aes(x = weight)) +
+  geom_histogram()
+hist3 = body_density_df %>% 
+  ggplot(aes(x = height)) +
+  geom_histogram()
+
+hist1 + hist2 + hist3
+
+hist4 = body_density_df %>% 
+  ggplot(aes(x = neck)) +
+  geom_histogram()
+hist5 = body_density_df %>% 
+  ggplot(aes(x = chest)) +
+  geom_histogram()
+hist6 = body_density_df %>% 
+  ggplot(aes(x = abdomen)) +
+  geom_histogram()
+
+hist4 + hist5 + hist6
+
+hist7 = body_density_df %>% 
+  ggplot(aes(x = hip)) +
+  geom_histogram()
+hist8 = body_density_df %>% 
+  ggplot(aes(x = thigh)) +
+  geom_histogram()
+hist9 = body_density_df %>% 
+  ggplot(aes(x = knee)) +
+  geom_histogram()
+
+hist7 + hist8 + hist9
+
+hist10 = body_density_df %>% 
+  ggplot(aes(x = ankle)) +
+  geom_histogram()
+hist11 = body_density_df %>% 
+  ggplot(aes(x = bicep)) +
+  geom_histogram()
+hist12 = body_density_df %>% 
+  ggplot(aes(x = forearm)) +
+  geom_histogram()
+
+hist10 + hist11 + hist12
+
+hist13 = body_density_df %>% 
+  ggplot(aes(x = wrist)) +
+  geom_histogram()
+
+hist13
+```
+
 

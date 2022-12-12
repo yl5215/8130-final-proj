@@ -1,7 +1,5 @@
 Final proj
 ================
-Yucheng Li
-2022-12-11
 
 ``` r
 library(tidyverse)
@@ -41,12 +39,27 @@ library(caret)
 
 ``` r
 library(readxl)
+library(patchwork)
 ```
 
 ``` r
 body_density_df = read_excel("data/body_density_data.xlsx") %>%
   rename(outcome = bodyfat_brozek)
+head(body_density_df)
 ```
+
+    ## # A tibble: 6 × 17
+    ##      id outcome bodyfat_…¹ body_…²   age weight height  neck chest abdomen   hip
+    ##   <dbl>   <dbl>      <dbl>   <dbl> <dbl>  <dbl>  <dbl> <dbl> <dbl>   <dbl> <dbl>
+    ## 1     1    12.6       12.3    1.07    23   154.   67.8  36.2  93.1    85.2  94.5
+    ## 2     2     6.9        6.1    1.09    22   173.   72.2  38.5  93.6    83    98.7
+    ## 3     3    24.6       25.3    1.04    22   154    66.2  34    95.8    87.9  99.2
+    ## 4     4    10.9       10.4    1.08    26   185.   72.2  37.4 102.     86.4 101. 
+    ## 5     5    27.8       28.7    1.03    24   184.   71.2  34.4  97.3   100   102. 
+    ## 6     6    20.6       20.9    1.05    24   210.   74.8  39   104.     94.4 108. 
+    ## # … with 6 more variables: thigh <dbl>, knee <dbl>, ankle <dbl>, bicep <dbl>,
+    ## #   forearm <dbl>, wrist <dbl>, and abbreviated variable names ¹​bodyfat_siri,
+    ## #   ²​body_density
 
 Descriptive statistics:
 
@@ -56,12 +69,12 @@ body_density_df %>%
   gtsummary::bold_labels()
 ```
 
-<div id="ezdkztfkox" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<div id="iprbwszsiy" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
 <style>html {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
 }
 
-#ezdkztfkox .gt_table {
+#iprbwszsiy .gt_table {
   display: table;
   border-collapse: collapse;
   margin-left: auto;
@@ -86,7 +99,7 @@ body_density_df %>%
   border-left-color: #D3D3D3;
 }
 
-#ezdkztfkox .gt_heading {
+#iprbwszsiy .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -98,7 +111,7 @@ body_density_df %>%
   border-right-color: #D3D3D3;
 }
 
-#ezdkztfkox .gt_title {
+#iprbwszsiy .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -110,7 +123,7 @@ body_density_df %>%
   border-bottom-width: 0;
 }
 
-#ezdkztfkox .gt_subtitle {
+#iprbwszsiy .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -122,13 +135,13 @@ body_density_df %>%
   border-top-width: 0;
 }
 
-#ezdkztfkox .gt_bottom_border {
+#iprbwszsiy .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#ezdkztfkox .gt_col_headings {
+#iprbwszsiy .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -143,7 +156,7 @@ body_density_df %>%
   border-right-color: #D3D3D3;
 }
 
-#ezdkztfkox .gt_col_heading {
+#iprbwszsiy .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -163,7 +176,7 @@ body_density_df %>%
   overflow-x: hidden;
 }
 
-#ezdkztfkox .gt_column_spanner_outer {
+#iprbwszsiy .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -175,15 +188,15 @@ body_density_df %>%
   padding-right: 4px;
 }
 
-#ezdkztfkox .gt_column_spanner_outer:first-child {
+#iprbwszsiy .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#ezdkztfkox .gt_column_spanner_outer:last-child {
+#iprbwszsiy .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#ezdkztfkox .gt_column_spanner {
+#iprbwszsiy .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -195,7 +208,7 @@ body_density_df %>%
   width: 100%;
 }
 
-#ezdkztfkox .gt_group_heading {
+#iprbwszsiy .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -220,7 +233,7 @@ body_density_df %>%
   vertical-align: middle;
 }
 
-#ezdkztfkox .gt_empty_group_heading {
+#iprbwszsiy .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -235,15 +248,15 @@ body_density_df %>%
   vertical-align: middle;
 }
 
-#ezdkztfkox .gt_from_md > :first-child {
+#iprbwszsiy .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#ezdkztfkox .gt_from_md > :last-child {
+#iprbwszsiy .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#ezdkztfkox .gt_row {
+#iprbwszsiy .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -262,7 +275,7 @@ body_density_df %>%
   overflow-x: hidden;
 }
 
-#ezdkztfkox .gt_stub {
+#iprbwszsiy .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -275,7 +288,7 @@ body_density_df %>%
   padding-right: 5px;
 }
 
-#ezdkztfkox .gt_stub_row_group {
+#iprbwszsiy .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -289,11 +302,11 @@ body_density_df %>%
   vertical-align: top;
 }
 
-#ezdkztfkox .gt_row_group_first td {
+#iprbwszsiy .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#ezdkztfkox .gt_summary_row {
+#iprbwszsiy .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -303,16 +316,16 @@ body_density_df %>%
   padding-right: 5px;
 }
 
-#ezdkztfkox .gt_first_summary_row {
+#iprbwszsiy .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#ezdkztfkox .gt_first_summary_row.thick {
+#iprbwszsiy .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#ezdkztfkox .gt_last_summary_row {
+#iprbwszsiy .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -322,7 +335,7 @@ body_density_df %>%
   border-bottom-color: #D3D3D3;
 }
 
-#ezdkztfkox .gt_grand_summary_row {
+#iprbwszsiy .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -332,7 +345,7 @@ body_density_df %>%
   padding-right: 5px;
 }
 
-#ezdkztfkox .gt_first_grand_summary_row {
+#iprbwszsiy .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -342,11 +355,11 @@ body_density_df %>%
   border-top-color: #D3D3D3;
 }
 
-#ezdkztfkox .gt_striped {
+#iprbwszsiy .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#ezdkztfkox .gt_table_body {
+#iprbwszsiy .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -355,7 +368,7 @@ body_density_df %>%
   border-bottom-color: #D3D3D3;
 }
 
-#ezdkztfkox .gt_footnotes {
+#iprbwszsiy .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -369,7 +382,7 @@ body_density_df %>%
   border-right-color: #D3D3D3;
 }
 
-#ezdkztfkox .gt_footnote {
+#iprbwszsiy .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-left: 4px;
@@ -378,7 +391,7 @@ body_density_df %>%
   padding-right: 5px;
 }
 
-#ezdkztfkox .gt_sourcenotes {
+#iprbwszsiy .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -392,7 +405,7 @@ body_density_df %>%
   border-right-color: #D3D3D3;
 }
 
-#ezdkztfkox .gt_sourcenote {
+#iprbwszsiy .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -400,64 +413,64 @@ body_density_df %>%
   padding-right: 5px;
 }
 
-#ezdkztfkox .gt_left {
+#iprbwszsiy .gt_left {
   text-align: left;
 }
 
-#ezdkztfkox .gt_center {
+#iprbwszsiy .gt_center {
   text-align: center;
 }
 
-#ezdkztfkox .gt_right {
+#iprbwszsiy .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#ezdkztfkox .gt_font_normal {
+#iprbwszsiy .gt_font_normal {
   font-weight: normal;
 }
 
-#ezdkztfkox .gt_font_bold {
+#iprbwszsiy .gt_font_bold {
   font-weight: bold;
 }
 
-#ezdkztfkox .gt_font_italic {
+#iprbwszsiy .gt_font_italic {
   font-style: italic;
 }
 
-#ezdkztfkox .gt_super {
+#iprbwszsiy .gt_super {
   font-size: 65%;
 }
 
-#ezdkztfkox .gt_footnote_marks {
+#iprbwszsiy .gt_footnote_marks {
   font-style: italic;
   font-weight: normal;
   font-size: 75%;
   vertical-align: 0.4em;
 }
 
-#ezdkztfkox .gt_asterisk {
+#iprbwszsiy .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#ezdkztfkox .gt_indent_1 {
+#iprbwszsiy .gt_indent_1 {
   text-indent: 5px;
 }
 
-#ezdkztfkox .gt_indent_2 {
+#iprbwszsiy .gt_indent_2 {
   text-indent: 10px;
 }
 
-#ezdkztfkox .gt_indent_3 {
+#iprbwszsiy .gt_indent_3 {
   text-indent: 15px;
 }
 
-#ezdkztfkox .gt_indent_4 {
+#iprbwszsiy .gt_indent_4 {
   text-indent: 20px;
 }
 
-#ezdkztfkox .gt_indent_5 {
+#iprbwszsiy .gt_indent_5 {
   text-indent: 25px;
 }
 </style>
@@ -556,3 +569,97 @@ body_density_df %>%
 ```
 
 ![](Final-proj_files/figure-gfm/unnamed-chunk-4-1.png)<!-- -->
+
+Boxplot
+
+``` r
+hist1 = body_density_df %>% 
+  ggplot(aes(x = age)) +
+  geom_histogram()
+hist2 = body_density_df %>% 
+  ggplot(aes(x = weight)) +
+  geom_histogram()
+hist3 = body_density_df %>% 
+  ggplot(aes(x = height)) +
+  geom_histogram()
+
+hist1 + hist2 + hist3
+```
+
+    ## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
+    ## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
+    ## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
+
+![](Final-proj_files/figure-gfm/unnamed-chunk-5-1.png)<!-- -->
+
+``` r
+hist4 = body_density_df %>% 
+  ggplot(aes(x = neck)) +
+  geom_histogram()
+hist5 = body_density_df %>% 
+  ggplot(aes(x = chest)) +
+  geom_histogram()
+hist6 = body_density_df %>% 
+  ggplot(aes(x = abdomen)) +
+  geom_histogram()
+
+hist4 + hist5 + hist6
+```
+
+    ## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
+    ## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
+    ## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
+
+![](Final-proj_files/figure-gfm/unnamed-chunk-5-2.png)<!-- -->
+
+``` r
+hist7 = body_density_df %>% 
+  ggplot(aes(x = hip)) +
+  geom_histogram()
+hist8 = body_density_df %>% 
+  ggplot(aes(x = thigh)) +
+  geom_histogram()
+hist9 = body_density_df %>% 
+  ggplot(aes(x = knee)) +
+  geom_histogram()
+
+hist7 + hist8 + hist9
+```
+
+    ## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
+    ## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
+    ## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
+
+![](Final-proj_files/figure-gfm/unnamed-chunk-5-3.png)<!-- -->
+
+``` r
+hist10 = body_density_df %>% 
+  ggplot(aes(x = ankle)) +
+  geom_histogram()
+hist11 = body_density_df %>% 
+  ggplot(aes(x = bicep)) +
+  geom_histogram()
+hist12 = body_density_df %>% 
+  ggplot(aes(x = forearm)) +
+  geom_histogram()
+
+hist10 + hist11 + hist12
+```
+
+    ## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
+    ## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
+    ## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
+
+![](Final-proj_files/figure-gfm/unnamed-chunk-5-4.png)<!-- -->
+
+``` r
+hist13 = body_density_df %>% 
+  ggplot(aes(x = wrist)) +
+  geom_histogram()
+
+hist13
+```
+
+    ## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
+
+![](Final-proj_files/figure-gfm/unnamed-chunk-5-5.png)<!-- -->
