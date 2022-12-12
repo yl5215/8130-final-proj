@@ -135,6 +135,29 @@ direction = "both"
 summary()
 ```
 
+## Criteria-based Selection
+
+```{r}
+b = regsubsets(outcome ~ 
+                 age + weight + height + neck + chest + abdomen + hip + thigh +
+                 knee + ankle + bicep + forearm + wrist, data = body_density_df)
+rs = summary(b)
+
+par(mfrow=c(1,2))
+plot(2:9, rs$cp, xlab = "No of parameters", ylab = "Cp Statistic")
+abline(0,1)
+   
+plot(2:9, rs$adjr2, xlab = "No of parameters", ylab = "Adj R2")
+par(mfrow = c(1,1))
+```
+
+```{r}
+cp_model <- leaps(x = as.matrix(body_density_df)[,c(3:15)], y = as.matrix(body_density_df)[,2], nbest = 1, method = "Cp")
+colnames(as.matrix(body_density_df)[,c(3:15)])[which(cp_model$which[9,])]
+```
+
+
+
 
 
 
