@@ -40,15 +40,7 @@ library(caret)
 ``` r
 library(readxl)
 library(patchwork)
-library(olsrr)
 ```
-
-    ## 
-    ## Attaching package: 'olsrr'
-    ## 
-    ## The following object is masked from 'package:datasets':
-    ## 
-    ##     rivers
 
 ``` r
 body_density_df = read_excel("data/body_density_data.xlsx") %>%
@@ -76,12 +68,12 @@ body_density_df %>%
   gtsummary::bold_labels()
 ```
 
-<div id="fgefxguvqv" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<div id="lbxbkmtqum" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
 <style>html {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
 }
 
-#fgefxguvqv .gt_table {
+#lbxbkmtqum .gt_table {
   display: table;
   border-collapse: collapse;
   margin-left: auto;
@@ -106,7 +98,7 @@ body_density_df %>%
   border-left-color: #D3D3D3;
 }
 
-#fgefxguvqv .gt_heading {
+#lbxbkmtqum .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -118,7 +110,7 @@ body_density_df %>%
   border-right-color: #D3D3D3;
 }
 
-#fgefxguvqv .gt_title {
+#lbxbkmtqum .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -130,7 +122,7 @@ body_density_df %>%
   border-bottom-width: 0;
 }
 
-#fgefxguvqv .gt_subtitle {
+#lbxbkmtqum .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -142,13 +134,13 @@ body_density_df %>%
   border-top-width: 0;
 }
 
-#fgefxguvqv .gt_bottom_border {
+#lbxbkmtqum .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#fgefxguvqv .gt_col_headings {
+#lbxbkmtqum .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -163,7 +155,7 @@ body_density_df %>%
   border-right-color: #D3D3D3;
 }
 
-#fgefxguvqv .gt_col_heading {
+#lbxbkmtqum .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -183,7 +175,7 @@ body_density_df %>%
   overflow-x: hidden;
 }
 
-#fgefxguvqv .gt_column_spanner_outer {
+#lbxbkmtqum .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -195,15 +187,15 @@ body_density_df %>%
   padding-right: 4px;
 }
 
-#fgefxguvqv .gt_column_spanner_outer:first-child {
+#lbxbkmtqum .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#fgefxguvqv .gt_column_spanner_outer:last-child {
+#lbxbkmtqum .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#fgefxguvqv .gt_column_spanner {
+#lbxbkmtqum .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -215,7 +207,7 @@ body_density_df %>%
   width: 100%;
 }
 
-#fgefxguvqv .gt_group_heading {
+#lbxbkmtqum .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -240,7 +232,7 @@ body_density_df %>%
   vertical-align: middle;
 }
 
-#fgefxguvqv .gt_empty_group_heading {
+#lbxbkmtqum .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -255,15 +247,15 @@ body_density_df %>%
   vertical-align: middle;
 }
 
-#fgefxguvqv .gt_from_md > :first-child {
+#lbxbkmtqum .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#fgefxguvqv .gt_from_md > :last-child {
+#lbxbkmtqum .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#fgefxguvqv .gt_row {
+#lbxbkmtqum .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -282,7 +274,7 @@ body_density_df %>%
   overflow-x: hidden;
 }
 
-#fgefxguvqv .gt_stub {
+#lbxbkmtqum .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -295,7 +287,7 @@ body_density_df %>%
   padding-right: 5px;
 }
 
-#fgefxguvqv .gt_stub_row_group {
+#lbxbkmtqum .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -309,11 +301,11 @@ body_density_df %>%
   vertical-align: top;
 }
 
-#fgefxguvqv .gt_row_group_first td {
+#lbxbkmtqum .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#fgefxguvqv .gt_summary_row {
+#lbxbkmtqum .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -323,16 +315,16 @@ body_density_df %>%
   padding-right: 5px;
 }
 
-#fgefxguvqv .gt_first_summary_row {
+#lbxbkmtqum .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#fgefxguvqv .gt_first_summary_row.thick {
+#lbxbkmtqum .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#fgefxguvqv .gt_last_summary_row {
+#lbxbkmtqum .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -342,7 +334,7 @@ body_density_df %>%
   border-bottom-color: #D3D3D3;
 }
 
-#fgefxguvqv .gt_grand_summary_row {
+#lbxbkmtqum .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -352,7 +344,7 @@ body_density_df %>%
   padding-right: 5px;
 }
 
-#fgefxguvqv .gt_first_grand_summary_row {
+#lbxbkmtqum .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -362,11 +354,11 @@ body_density_df %>%
   border-top-color: #D3D3D3;
 }
 
-#fgefxguvqv .gt_striped {
+#lbxbkmtqum .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#fgefxguvqv .gt_table_body {
+#lbxbkmtqum .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -375,7 +367,7 @@ body_density_df %>%
   border-bottom-color: #D3D3D3;
 }
 
-#fgefxguvqv .gt_footnotes {
+#lbxbkmtqum .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -389,7 +381,7 @@ body_density_df %>%
   border-right-color: #D3D3D3;
 }
 
-#fgefxguvqv .gt_footnote {
+#lbxbkmtqum .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-left: 4px;
@@ -398,7 +390,7 @@ body_density_df %>%
   padding-right: 5px;
 }
 
-#fgefxguvqv .gt_sourcenotes {
+#lbxbkmtqum .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -412,7 +404,7 @@ body_density_df %>%
   border-right-color: #D3D3D3;
 }
 
-#fgefxguvqv .gt_sourcenote {
+#lbxbkmtqum .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -420,64 +412,64 @@ body_density_df %>%
   padding-right: 5px;
 }
 
-#fgefxguvqv .gt_left {
+#lbxbkmtqum .gt_left {
   text-align: left;
 }
 
-#fgefxguvqv .gt_center {
+#lbxbkmtqum .gt_center {
   text-align: center;
 }
 
-#fgefxguvqv .gt_right {
+#lbxbkmtqum .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#fgefxguvqv .gt_font_normal {
+#lbxbkmtqum .gt_font_normal {
   font-weight: normal;
 }
 
-#fgefxguvqv .gt_font_bold {
+#lbxbkmtqum .gt_font_bold {
   font-weight: bold;
 }
 
-#fgefxguvqv .gt_font_italic {
+#lbxbkmtqum .gt_font_italic {
   font-style: italic;
 }
 
-#fgefxguvqv .gt_super {
+#lbxbkmtqum .gt_super {
   font-size: 65%;
 }
 
-#fgefxguvqv .gt_footnote_marks {
+#lbxbkmtqum .gt_footnote_marks {
   font-style: italic;
   font-weight: normal;
   font-size: 75%;
   vertical-align: 0.4em;
 }
 
-#fgefxguvqv .gt_asterisk {
+#lbxbkmtqum .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#fgefxguvqv .gt_indent_1 {
+#lbxbkmtqum .gt_indent_1 {
   text-indent: 5px;
 }
 
-#fgefxguvqv .gt_indent_2 {
+#lbxbkmtqum .gt_indent_2 {
   text-indent: 10px;
 }
 
-#fgefxguvqv .gt_indent_3 {
+#lbxbkmtqum .gt_indent_3 {
   text-indent: 15px;
 }
 
-#fgefxguvqv .gt_indent_4 {
+#lbxbkmtqum .gt_indent_4 {
   text-indent: 20px;
 }
 
-#fgefxguvqv .gt_indent_5 {
+#lbxbkmtqum .gt_indent_5 {
   text-indent: 25px;
 }
 </style>
@@ -713,21 +705,167 @@ plot(full_model)
 
 ![](Final-proj_files/figure-gfm/unnamed-chunk-6-1.png)<!-- -->
 
-### Checking VIF in full model
-
-``` r
-## ols_coll_diag(full_model)
-```
-
 The diagnostics plots look good. No need for Box-Cox transformation
 
-## Stepwise Selection
+## Forward selection
 
 ``` r
-##step(lm(outcome ~ .,data = body_density_df),direction = "both")
+intercept_only <- lm(outcome ~ 1, data = body_density_df)
+step(intercept_only, direction = "forward", scope = formula(full_model))
 ```
 
-``` r
-## fit_stepwise = lm(outcome ~ ., data = body_density_df)
-## ols_step_both_p(fit_stepwise)
-```
+    ## Start:  AIC=1033.09
+    ## outcome ~ 1
+    ## 
+    ##           Df Sum of Sq     RSS     AIC
+    ## + abdomen  1    9984.1  5094.9  761.66
+    ## + chest    1    7449.8  7629.3  863.40
+    ## + hip      1    5903.4  9175.6  909.91
+    ## + weight   1    5669.1  9409.9  916.26
+    ## + thigh    1    4750.5 10328.5  939.74
+    ## + knee     1    3888.1 11190.9  959.94
+    ## + bicep    1    3665.4 11413.6  964.91
+    ## + neck     1    3642.5 11436.5  965.41
+    ## + forearm  1    1990.0 13089.0  999.43
+    ## + wrist    1    1821.6 13257.4 1002.65
+    ## + age      1    1260.9 13818.1 1013.08
+    ## + ankle    1    1073.2 14005.8 1016.49
+    ## + id       1     185.6 14893.4 1031.97
+    ## <none>                 15079.0 1033.09
+    ## + height   1       9.1 15069.9 1034.94
+    ## 
+    ## Step:  AIC=761.66
+    ## outcome ~ abdomen
+    ## 
+    ##           Df Sum of Sq    RSS    AIC
+    ## + weight   1    853.60 4241.3 717.45
+    ## + wrist    1    601.95 4493.0 731.97
+    ## + neck     1    521.22 4573.7 736.46
+    ## + height   1    500.85 4594.1 737.58
+    ## + hip      1    467.43 4627.5 739.41
+    ## + knee     1    279.91 4815.0 749.42
+    ## + ankle    1    197.47 4897.5 753.70
+    ## + chest    1    167.55 4927.4 755.23
+    ## + age      1    164.67 4930.3 755.38
+    ## + thigh    1    142.97 4952.0 756.48
+    ## + bicep    1    117.61 4977.3 757.77
+    ## + forearm  1     43.24 5051.7 761.51
+    ## <none>                 5094.9 761.66
+    ## + id       1      2.17 5092.8 763.55
+    ## 
+    ## Step:  AIC=717.45
+    ## outcome ~ abdomen + weight
+    ## 
+    ##           Df Sum of Sq    RSS    AIC
+    ## + wrist    1   133.146 4108.2 711.41
+    ## + thigh    1    74.090 4167.2 715.01
+    ## + neck     1    73.386 4167.9 715.05
+    ## + forearm  1    60.592 4180.7 715.82
+    ## + bicep    1    52.085 4189.2 716.33
+    ## <none>                 4241.3 717.45
+    ## + id       1    11.097 4230.2 718.79
+    ## + knee     1     6.356 4235.0 719.07
+    ## + height   1     6.285 4235.0 719.07
+    ## + age      1     2.416 4238.9 719.30
+    ## + ankle    1     1.369 4240.0 719.37
+    ## + chest    1     0.024 4241.3 719.45
+    ## + hip      1     0.013 4241.3 719.45
+    ## 
+    ## Step:  AIC=711.41
+    ## outcome ~ abdomen + weight + wrist
+    ## 
+    ##           Df Sum of Sq    RSS    AIC
+    ## + forearm  1   113.872 3994.3 706.33
+    ## + bicep    1    72.826 4035.4 708.90
+    ## + thigh    1    38.053 4070.1 711.06
+    ## <none>                 4108.2 711.41
+    ## + neck     1    21.188 4087.0 712.11
+    ## + age      1    15.435 4092.7 712.46
+    ## + knee     1    14.604 4093.6 712.51
+    ## + ankle    1    12.957 4095.2 712.61
+    ## + hip      1     8.100 4100.1 712.91
+    ## + height   1     5.114 4103.1 713.10
+    ## + id       1     4.583 4103.6 713.13
+    ## + chest    1     0.942 4107.2 713.35
+    ## 
+    ## Step:  AIC=706.33
+    ## outcome ~ abdomen + weight + wrist + forearm
+    ## 
+    ##          Df Sum of Sq    RSS    AIC
+    ## + neck    1    43.683 3950.6 705.55
+    ## <none>                3994.3 706.33
+    ## + age     1    29.483 3964.8 706.46
+    ## + bicep   1    26.140 3968.2 706.67
+    ## + thigh   1    25.904 3968.4 706.69
+    ## + ankle   1    15.757 3978.6 707.33
+    ## + knee    1    14.034 3980.3 707.44
+    ## + id      1     3.831 3990.5 708.08
+    ## + hip     1     3.071 3991.2 708.13
+    ## + height  1     1.434 3992.9 708.24
+    ## + chest   1     0.560 3993.8 708.29
+    ## 
+    ## Step:  AIC=705.55
+    ## outcome ~ abdomen + weight + wrist + forearm + neck
+    ## 
+    ##          Df Sum of Sq    RSS    AIC
+    ## + age     1    37.251 3913.4 705.17
+    ## + bicep   1    35.937 3914.7 705.25
+    ## <none>                3950.6 705.55
+    ## + thigh   1    23.995 3926.6 706.02
+    ## + hip     1     9.494 3941.1 706.95
+    ## + ankle   1     9.297 3941.3 706.96
+    ## + knee    1     6.780 3943.8 707.12
+    ## + height  1     5.684 3944.9 707.19
+    ## + id      1     3.023 3947.6 707.36
+    ## + chest   1     0.000 3950.6 707.55
+    ## 
+    ## Step:  AIC=705.17
+    ## outcome ~ abdomen + weight + wrist + forearm + neck + age
+    ## 
+    ##          Df Sum of Sq    RSS    AIC
+    ## + thigh   1    60.163 3853.2 703.26
+    ## + bicep   1    37.661 3875.7 704.73
+    ## <none>                3913.4 705.17
+    ## + ankle   1    12.670 3900.7 706.35
+    ## + id      1    12.129 3901.2 706.38
+    ## + height  1     7.835 3905.5 706.66
+    ## + knee    1     4.067 3909.3 706.91
+    ## + hip     1     3.050 3910.3 706.97
+    ## + chest   1     0.826 3912.6 707.11
+    ## 
+    ## Step:  AIC=703.26
+    ## outcome ~ abdomen + weight + wrist + forearm + neck + age + thigh
+    ## 
+    ##          Df Sum of Sq    RSS    AIC
+    ## + hip     1    33.229 3820.0 703.08
+    ## <none>                3853.2 703.26
+    ## + bicep   1    18.816 3834.4 704.03
+    ## + ankle   1    10.913 3842.3 704.55
+    ## + id      1     6.728 3846.5 704.82
+    ## + height  1     0.676 3852.5 705.22
+    ## + chest   1     0.607 3852.6 705.22
+    ## + knee    1     0.223 3853.0 705.25
+    ## 
+    ## Step:  AIC=703.08
+    ## outcome ~ abdomen + weight + wrist + forearm + neck + age + thigh + 
+    ##     hip
+    ## 
+    ##          Df Sum of Sq    RSS    AIC
+    ## <none>                3820.0 703.08
+    ## + bicep   1   14.9103 3805.1 704.09
+    ## + id      1   10.9040 3809.1 704.36
+    ## + ankle   1    9.9018 3810.1 704.43
+    ## + height  1    2.5369 3817.4 704.91
+    ## + knee    1    0.0583 3819.9 705.08
+    ## + chest   1    0.0036 3820.0 705.08
+
+    ## 
+    ## Call:
+    ## lm(formula = outcome ~ abdomen + weight + wrist + forearm + neck + 
+    ##     age + thigh + hip, data = body_density_df)
+    ## 
+    ## Coefficients:
+    ## (Intercept)      abdomen       weight        wrist      forearm         neck  
+    ##   -20.06213      0.87721     -0.08414     -1.40487      0.48255     -0.43189  
+    ##         age        thigh          hip  
+    ##     0.05922      0.28644     -0.18641

@@ -12,7 +12,6 @@ library(leaps)
 library(caret)
 library(readxl)
 library(patchwork)
-library(olsrr)
 ```
 
 ```{r}
@@ -99,6 +98,7 @@ hist13
 ```
 
 ## Fitting a full model and checking diagnostic plots
+
 ```{r}
 full_model = lm(outcome ~ ., data = body_density_df)
 summary(full_model)
@@ -107,24 +107,15 @@ par(mfrow = c(2,2))
 plot(full_model)
 ```
 
-### Checking VIF in full model
-
-```{r}
-## ols_coll_diag(full_model)
-```
-
 The diagnostics plots look good. No need for Box-Cox transformation
 
-## Stepwise Selection
+## Forward selection
 
 ```{r}
-##step(lm(outcome ~ .,data = body_density_df),direction = "both")
+intercept_only <- lm(outcome ~ 1, data = body_density_df)
+step(intercept_only, direction = "forward", scope = formula(full_model))
 ```
 
-```{r}
-## fit_stepwise = lm(outcome ~ ., data = body_density_df)
-## ols_step_both_p(fit_stepwise)
-```
 
 
 
