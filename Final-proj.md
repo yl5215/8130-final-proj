@@ -79,12 +79,12 @@ body_density_df %>%
   gtsummary::bold_labels()
 ```
 
-<div id="zaaomdtesz" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<div id="hljehbhqhk" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
 <style>html {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
 }
 
-#zaaomdtesz .gt_table {
+#hljehbhqhk .gt_table {
   display: table;
   border-collapse: collapse;
   margin-left: auto;
@@ -109,7 +109,7 @@ body_density_df %>%
   border-left-color: #D3D3D3;
 }
 
-#zaaomdtesz .gt_heading {
+#hljehbhqhk .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -121,7 +121,7 @@ body_density_df %>%
   border-right-color: #D3D3D3;
 }
 
-#zaaomdtesz .gt_title {
+#hljehbhqhk .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -133,7 +133,7 @@ body_density_df %>%
   border-bottom-width: 0;
 }
 
-#zaaomdtesz .gt_subtitle {
+#hljehbhqhk .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -145,13 +145,13 @@ body_density_df %>%
   border-top-width: 0;
 }
 
-#zaaomdtesz .gt_bottom_border {
+#hljehbhqhk .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#zaaomdtesz .gt_col_headings {
+#hljehbhqhk .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -166,7 +166,7 @@ body_density_df %>%
   border-right-color: #D3D3D3;
 }
 
-#zaaomdtesz .gt_col_heading {
+#hljehbhqhk .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -186,7 +186,7 @@ body_density_df %>%
   overflow-x: hidden;
 }
 
-#zaaomdtesz .gt_column_spanner_outer {
+#hljehbhqhk .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -198,15 +198,15 @@ body_density_df %>%
   padding-right: 4px;
 }
 
-#zaaomdtesz .gt_column_spanner_outer:first-child {
+#hljehbhqhk .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#zaaomdtesz .gt_column_spanner_outer:last-child {
+#hljehbhqhk .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#zaaomdtesz .gt_column_spanner {
+#hljehbhqhk .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -218,7 +218,7 @@ body_density_df %>%
   width: 100%;
 }
 
-#zaaomdtesz .gt_group_heading {
+#hljehbhqhk .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -243,7 +243,7 @@ body_density_df %>%
   vertical-align: middle;
 }
 
-#zaaomdtesz .gt_empty_group_heading {
+#hljehbhqhk .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -258,15 +258,15 @@ body_density_df %>%
   vertical-align: middle;
 }
 
-#zaaomdtesz .gt_from_md > :first-child {
+#hljehbhqhk .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#zaaomdtesz .gt_from_md > :last-child {
+#hljehbhqhk .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#zaaomdtesz .gt_row {
+#hljehbhqhk .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -285,7 +285,7 @@ body_density_df %>%
   overflow-x: hidden;
 }
 
-#zaaomdtesz .gt_stub {
+#hljehbhqhk .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -298,7 +298,7 @@ body_density_df %>%
   padding-right: 5px;
 }
 
-#zaaomdtesz .gt_stub_row_group {
+#hljehbhqhk .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -312,11 +312,11 @@ body_density_df %>%
   vertical-align: top;
 }
 
-#zaaomdtesz .gt_row_group_first td {
+#hljehbhqhk .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#zaaomdtesz .gt_summary_row {
+#hljehbhqhk .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -326,16 +326,16 @@ body_density_df %>%
   padding-right: 5px;
 }
 
-#zaaomdtesz .gt_first_summary_row {
+#hljehbhqhk .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#zaaomdtesz .gt_first_summary_row.thick {
+#hljehbhqhk .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#zaaomdtesz .gt_last_summary_row {
+#hljehbhqhk .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -345,7 +345,7 @@ body_density_df %>%
   border-bottom-color: #D3D3D3;
 }
 
-#zaaomdtesz .gt_grand_summary_row {
+#hljehbhqhk .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -355,7 +355,7 @@ body_density_df %>%
   padding-right: 5px;
 }
 
-#zaaomdtesz .gt_first_grand_summary_row {
+#hljehbhqhk .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -365,11 +365,11 @@ body_density_df %>%
   border-top-color: #D3D3D3;
 }
 
-#zaaomdtesz .gt_striped {
+#hljehbhqhk .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#zaaomdtesz .gt_table_body {
+#hljehbhqhk .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -378,7 +378,7 @@ body_density_df %>%
   border-bottom-color: #D3D3D3;
 }
 
-#zaaomdtesz .gt_footnotes {
+#hljehbhqhk .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -392,7 +392,7 @@ body_density_df %>%
   border-right-color: #D3D3D3;
 }
 
-#zaaomdtesz .gt_footnote {
+#hljehbhqhk .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-left: 4px;
@@ -401,7 +401,7 @@ body_density_df %>%
   padding-right: 5px;
 }
 
-#zaaomdtesz .gt_sourcenotes {
+#hljehbhqhk .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -415,7 +415,7 @@ body_density_df %>%
   border-right-color: #D3D3D3;
 }
 
-#zaaomdtesz .gt_sourcenote {
+#hljehbhqhk .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -423,64 +423,64 @@ body_density_df %>%
   padding-right: 5px;
 }
 
-#zaaomdtesz .gt_left {
+#hljehbhqhk .gt_left {
   text-align: left;
 }
 
-#zaaomdtesz .gt_center {
+#hljehbhqhk .gt_center {
   text-align: center;
 }
 
-#zaaomdtesz .gt_right {
+#hljehbhqhk .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#zaaomdtesz .gt_font_normal {
+#hljehbhqhk .gt_font_normal {
   font-weight: normal;
 }
 
-#zaaomdtesz .gt_font_bold {
+#hljehbhqhk .gt_font_bold {
   font-weight: bold;
 }
 
-#zaaomdtesz .gt_font_italic {
+#hljehbhqhk .gt_font_italic {
   font-style: italic;
 }
 
-#zaaomdtesz .gt_super {
+#hljehbhqhk .gt_super {
   font-size: 65%;
 }
 
-#zaaomdtesz .gt_footnote_marks {
+#hljehbhqhk .gt_footnote_marks {
   font-style: italic;
   font-weight: normal;
   font-size: 75%;
   vertical-align: 0.4em;
 }
 
-#zaaomdtesz .gt_asterisk {
+#hljehbhqhk .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#zaaomdtesz .gt_indent_1 {
+#hljehbhqhk .gt_indent_1 {
   text-indent: 5px;
 }
 
-#zaaomdtesz .gt_indent_2 {
+#hljehbhqhk .gt_indent_2 {
   text-indent: 10px;
 }
 
-#zaaomdtesz .gt_indent_3 {
+#hljehbhqhk .gt_indent_3 {
   text-indent: 15px;
 }
 
-#zaaomdtesz .gt_indent_4 {
+#hljehbhqhk .gt_indent_4 {
   text-indent: 20px;
 }
 
-#zaaomdtesz .gt_indent_5 {
+#hljehbhqhk .gt_indent_5 {
   text-indent: 25px;
 }
 </style>
@@ -1307,24 +1307,15 @@ coef(fit_bestcv)
 
 ``` r
 lambda_seq <- 10^seq(-3, 0, by = .1)
-
-predictors = 
-  body_density_df %>% 
-  select(-c(id, outcome)) %>% 
-  as.matrix()
-response = 
-  body_density_df %>% 
-  select(outcome) %>% 
-  as.matrix()
   
-cv_object = glmnet::cv.glmnet(x = predictors, y = response,
-                              lambda = lambda_seq, alpha = 0,
-                              nfolds = 10)
+cv_object <- glmnet::cv.glmnet(as.matrix(new_df[2:14]), new_df$outcome, 
+                               lambda = lambda_seq, alpha = 0,
+                               nfolds = 10)
 cv_object
 ```
 
     ## 
-    ## Call:  glmnet::cv.glmnet(x = predictors, y = response, lambda = lambda_seq,      nfolds = 10, alpha = 0) 
+    ## Call:  glmnet::cv.glmnet(x = as.matrix(new_df[2:14]), y = new_df$outcome,      lambda = lambda_seq, nfolds = 10, alpha = 0) 
     ## 
     ## Measure: Mean-Squared Error 
     ## 
@@ -1343,7 +1334,7 @@ tibble(lambda = cv_object$lambda,
 
 ``` r
 lambda_min = cv_object$lambda.min
-ridge_fit <- glmnet::glmnet(x = predictors,y = response,
+ridge_fit <- glmnet::glmnet(as.matrix(new_df[2:14]), new_df$outcome, 
                             lambda = lambda_min, alpha = 0)
 coef(ridge_fit)
 ```

@@ -190,19 +190,10 @@ coef(fit_bestcv)
 
 ```{r}
 lambda_seq <- 10^seq(-3, 0, by = .1)
-
-predictors = 
-  body_density_df %>% 
-  select(-c(id, outcome)) %>% 
-  as.matrix()
-response = 
-  body_density_df %>% 
-  select(outcome) %>% 
-  as.matrix()
   
-cv_object = glmnet::cv.glmnet(x = predictors, y = response,
-                              lambda = lambda_seq, alpha = 0,
-                              nfolds = 10)
+cv_object <- glmnet::cv.glmnet(as.matrix(new_df[2:14]), new_df$outcome, 
+                               lambda = lambda_seq, alpha = 0,
+                               nfolds = 10)
 cv_object
 
 tibble(lambda = cv_object$lambda,
@@ -211,7 +202,7 @@ tibble(lambda = cv_object$lambda,
   geom_point()
 
 lambda_min = cv_object$lambda.min
-ridge_fit <- glmnet::glmnet(x = predictors,y = response,
+ridge_fit <- glmnet::glmnet(as.matrix(new_df[2:14]), new_df$outcome, 
                             lambda = lambda_min, alpha = 0)
 coef(ridge_fit)
 ```
