@@ -2,7 +2,7 @@
 title: 'Final proj'
 author: "Yucheng Li"
 date: "2022-12-11"
-output: html_document
+output: github_document
 ---
 
 ```{r}
@@ -16,23 +16,25 @@ library(readxl)
 ```
 
 ```{r}
-df = read_excel("data/body_density_data.xlsx") %>%
-  rename(output = bodyfat_brozek)
+body_density_df = read_excel("data/body_density_data.xlsx") %>%
+  rename(outcome = bodyfat_brozek)
 ```
 
 Descriptive statistics:
 
 ```{r}
-df %>%
+body_density_df %>%
   gtsummary::tbl_summary() %>%
   gtsummary::bold_labels()
+
+summary(body_density_df)
 ```
 
 Exploratory plots
 
 ```{r}
-df %>%
-  relocate(output) %>%
+body_density_df %>%
+  relocate(outcome) %>%
   ggpairs()
 ```
 
