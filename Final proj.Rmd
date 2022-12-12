@@ -39,7 +39,7 @@ body_density_df %>%
   ggpairs()
 ```
 
-Boxplot
+Histogram plots
 
 ```{r}
 hist1 = body_density_df %>% 
@@ -123,6 +123,18 @@ summary(fit_forward)
 fit_backward = step(lm(full_model, data = body_density_df), direction = "backward")
 summary(fit_backward) 
 ```
+
+## Stepwise selection
+
+```{r}
+step(
+lm(outcome ~ age + weight + height + neck + chest + abdomen + hip + knee + ankle + bicep + forearm + wrist,
+data = body_density_df),
+direction = "both"
+) %>% 
+summary()
+```
+
 
 
 
