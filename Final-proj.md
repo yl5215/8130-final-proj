@@ -40,7 +40,18 @@ library(caret)
 ``` r
 library(readxl)
 library(patchwork)
+library(glmnet)
 ```
+
+    ## Loading required package: Matrix
+    ## 
+    ## Attaching package: 'Matrix'
+    ## 
+    ## The following objects are masked from 'package:tidyr':
+    ## 
+    ##     expand, pack, unpack
+    ## 
+    ## Loaded glmnet 4.1-4
 
 ``` r
 body_density_df = read_excel("data/body_density_data.xlsx") %>%
@@ -68,12 +79,12 @@ body_density_df %>%
   gtsummary::bold_labels()
 ```
 
-<div id="bkdawrdrrl" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<div id="ugszfzvxrt" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
 <style>html {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
 }
 
-#bkdawrdrrl .gt_table {
+#ugszfzvxrt .gt_table {
   display: table;
   border-collapse: collapse;
   margin-left: auto;
@@ -98,7 +109,7 @@ body_density_df %>%
   border-left-color: #D3D3D3;
 }
 
-#bkdawrdrrl .gt_heading {
+#ugszfzvxrt .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -110,7 +121,7 @@ body_density_df %>%
   border-right-color: #D3D3D3;
 }
 
-#bkdawrdrrl .gt_title {
+#ugszfzvxrt .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -122,7 +133,7 @@ body_density_df %>%
   border-bottom-width: 0;
 }
 
-#bkdawrdrrl .gt_subtitle {
+#ugszfzvxrt .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -134,13 +145,13 @@ body_density_df %>%
   border-top-width: 0;
 }
 
-#bkdawrdrrl .gt_bottom_border {
+#ugszfzvxrt .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#bkdawrdrrl .gt_col_headings {
+#ugszfzvxrt .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -155,7 +166,7 @@ body_density_df %>%
   border-right-color: #D3D3D3;
 }
 
-#bkdawrdrrl .gt_col_heading {
+#ugszfzvxrt .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -175,7 +186,7 @@ body_density_df %>%
   overflow-x: hidden;
 }
 
-#bkdawrdrrl .gt_column_spanner_outer {
+#ugszfzvxrt .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -187,15 +198,15 @@ body_density_df %>%
   padding-right: 4px;
 }
 
-#bkdawrdrrl .gt_column_spanner_outer:first-child {
+#ugszfzvxrt .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#bkdawrdrrl .gt_column_spanner_outer:last-child {
+#ugszfzvxrt .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#bkdawrdrrl .gt_column_spanner {
+#ugszfzvxrt .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -207,7 +218,7 @@ body_density_df %>%
   width: 100%;
 }
 
-#bkdawrdrrl .gt_group_heading {
+#ugszfzvxrt .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -232,7 +243,7 @@ body_density_df %>%
   vertical-align: middle;
 }
 
-#bkdawrdrrl .gt_empty_group_heading {
+#ugszfzvxrt .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -247,15 +258,15 @@ body_density_df %>%
   vertical-align: middle;
 }
 
-#bkdawrdrrl .gt_from_md > :first-child {
+#ugszfzvxrt .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#bkdawrdrrl .gt_from_md > :last-child {
+#ugszfzvxrt .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#bkdawrdrrl .gt_row {
+#ugszfzvxrt .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -274,7 +285,7 @@ body_density_df %>%
   overflow-x: hidden;
 }
 
-#bkdawrdrrl .gt_stub {
+#ugszfzvxrt .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -287,7 +298,7 @@ body_density_df %>%
   padding-right: 5px;
 }
 
-#bkdawrdrrl .gt_stub_row_group {
+#ugszfzvxrt .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -301,11 +312,11 @@ body_density_df %>%
   vertical-align: top;
 }
 
-#bkdawrdrrl .gt_row_group_first td {
+#ugszfzvxrt .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#bkdawrdrrl .gt_summary_row {
+#ugszfzvxrt .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -315,16 +326,16 @@ body_density_df %>%
   padding-right: 5px;
 }
 
-#bkdawrdrrl .gt_first_summary_row {
+#ugszfzvxrt .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#bkdawrdrrl .gt_first_summary_row.thick {
+#ugszfzvxrt .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#bkdawrdrrl .gt_last_summary_row {
+#ugszfzvxrt .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -334,7 +345,7 @@ body_density_df %>%
   border-bottom-color: #D3D3D3;
 }
 
-#bkdawrdrrl .gt_grand_summary_row {
+#ugszfzvxrt .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -344,7 +355,7 @@ body_density_df %>%
   padding-right: 5px;
 }
 
-#bkdawrdrrl .gt_first_grand_summary_row {
+#ugszfzvxrt .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -354,11 +365,11 @@ body_density_df %>%
   border-top-color: #D3D3D3;
 }
 
-#bkdawrdrrl .gt_striped {
+#ugszfzvxrt .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#bkdawrdrrl .gt_table_body {
+#ugszfzvxrt .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -367,7 +378,7 @@ body_density_df %>%
   border-bottom-color: #D3D3D3;
 }
 
-#bkdawrdrrl .gt_footnotes {
+#ugszfzvxrt .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -381,7 +392,7 @@ body_density_df %>%
   border-right-color: #D3D3D3;
 }
 
-#bkdawrdrrl .gt_footnote {
+#ugszfzvxrt .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-left: 4px;
@@ -390,7 +401,7 @@ body_density_df %>%
   padding-right: 5px;
 }
 
-#bkdawrdrrl .gt_sourcenotes {
+#ugszfzvxrt .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -404,7 +415,7 @@ body_density_df %>%
   border-right-color: #D3D3D3;
 }
 
-#bkdawrdrrl .gt_sourcenote {
+#ugszfzvxrt .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -412,64 +423,64 @@ body_density_df %>%
   padding-right: 5px;
 }
 
-#bkdawrdrrl .gt_left {
+#ugszfzvxrt .gt_left {
   text-align: left;
 }
 
-#bkdawrdrrl .gt_center {
+#ugszfzvxrt .gt_center {
   text-align: center;
 }
 
-#bkdawrdrrl .gt_right {
+#ugszfzvxrt .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#bkdawrdrrl .gt_font_normal {
+#ugszfzvxrt .gt_font_normal {
   font-weight: normal;
 }
 
-#bkdawrdrrl .gt_font_bold {
+#ugszfzvxrt .gt_font_bold {
   font-weight: bold;
 }
 
-#bkdawrdrrl .gt_font_italic {
+#ugszfzvxrt .gt_font_italic {
   font-style: italic;
 }
 
-#bkdawrdrrl .gt_super {
+#ugszfzvxrt .gt_super {
   font-size: 65%;
 }
 
-#bkdawrdrrl .gt_footnote_marks {
+#ugszfzvxrt .gt_footnote_marks {
   font-style: italic;
   font-weight: normal;
   font-size: 75%;
   vertical-align: 0.4em;
 }
 
-#bkdawrdrrl .gt_asterisk {
+#ugszfzvxrt .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#bkdawrdrrl .gt_indent_1 {
+#ugszfzvxrt .gt_indent_1 {
   text-indent: 5px;
 }
 
-#bkdawrdrrl .gt_indent_2 {
+#ugszfzvxrt .gt_indent_2 {
   text-indent: 10px;
 }
 
-#bkdawrdrrl .gt_indent_3 {
+#ugszfzvxrt .gt_indent_3 {
   text-indent: 15px;
 }
 
-#bkdawrdrrl .gt_indent_4 {
+#ugszfzvxrt .gt_indent_4 {
   text-indent: 20px;
 }
 
-#bkdawrdrrl .gt_indent_5 {
+#ugszfzvxrt .gt_indent_5 {
   text-indent: 25px;
 }
 </style>
@@ -1225,9 +1236,69 @@ par(mfrow = c(1,1))
 ```
 
 ``` r
-cp_model <- leaps(x = as.matrix(body_density_df)[,c(3:15)], y = as.matrix(body_density_df)[,2], nbest = 1, method = "Cp")
-colnames(as.matrix(body_density_df)[,c(3:15)])[which(cp_model$which[9,])]
+## cp_model <- leaps(x = as.matrix(body_density_df)[,c(3:15)], y = as.matrix(body_density_df)[,2], nbest = 1, method = "Cp")
+## colnames(as.matrix(body_density_df)[,c(3:15)])[which(cp_model$which[9,])]
 ```
 
-    ## [1] "age"     "weight"  "neck"    "abdomen" "hip"     "thigh"   "bicep"  
-    ## [8] "forearm" "wrist"
+## Lasso
+
+``` r
+new_df = body_density_df %>% 
+  select(-id)
+# using cross validation to choose lambda
+lambda_seq <- 10^seq(-3, 0, by = .1)
+set.seed(2022)
+cv_object <- cv.glmnet(as.matrix(new_df[2:14]), new_df$outcome, 
+                       lambda = lambda_seq, 
+                       nfolds = 10)
+cv_object 
+```
+
+    ## 
+    ## Call:  cv.glmnet(x = as.matrix(new_df[2:14]), y = new_df$outcome, lambda = lambda_seq,      nfolds = 10) 
+    ## 
+    ## Measure: Mean-Squared Error 
+    ## 
+    ##     Lambda Index Measure    SE Nonzero
+    ## min 0.0316    16   17.25 1.570      11
+    ## 1se 0.3981     5   18.35 1.915       4
+
+``` r
+# plot the CV results
+tibble(lambda = cv_object$lambda,
+       mean_cv_error = cv_object$cvm) %>%
+  ggplot(aes(x = lambda, y = mean_cv_error)) +
+  geom_point()
+```
+
+![](Final-proj_files/figure-gfm/unnamed-chunk-12-1.png)<!-- -->
+
+``` r
+# extracting the exact minimum lambda from the CV object
+cv_object$lambda.min
+```
+
+    ## [1] 0.03162278
+
+``` r
+# refit the lasso model with the "best" lambda
+fit_bestcv <- glmnet(as.matrix(new_df[2:14]), new_df$outcome, lambda = cv_object$lambda.min)
+coef(fit_bestcv)
+```
+
+    ## 14 x 1 sparse Matrix of class "dgCMatrix"
+    ##                       s0
+    ## (Intercept) -12.15578143
+    ## age           0.05722442
+    ## weight       -0.06198363
+    ## height       -0.10109460
+    ## neck         -0.42043724
+    ## chest         .         
+    ## abdomen       0.82181585
+    ## hip          -0.13606461
+    ## thigh         0.17690550
+    ## knee          .         
+    ## ankle         0.08382603
+    ## bicep         0.10395483
+    ## forearm       0.39200291
+    ## wrist        -1.47069598

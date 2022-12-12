@@ -12,6 +12,7 @@ library(leaps)
 library(caret)
 library(readxl)
 library(patchwork)
+library(glmnet)
 ```
 
 ```{r}
@@ -152,11 +153,37 @@ par(mfrow = c(1,1))
 ```
 
 ```{r}
-cp_model <- leaps(x = as.matrix(body_density_df)[,c(3:15)], y = as.matrix(body_density_df)[,2], nbest = 1, method = "Cp")
-colnames(as.matrix(body_density_df)[,c(3:15)])[which(cp_model$which[9,])]
+## cp_model <- leaps(x = as.matrix(body_density_df)[,c(3:15)], y = as.matrix(body_density_df)[,2], nbest = 1, method = "Cp")
+## colnames(as.matrix(body_density_df)[,c(3:15)])[which(cp_model$which[9,])]
 ```
 
+## Lasso
 
+```{r}
+new_df = body_density_df %>% 
+  select(-id)
+# using cross validation to choose lambda
+lambda_seq <- 10^seq(-3, 0, by = .1)
+set.seed(2022)
+cv_object <- cv.glmnet(as.matrix(new_df[2:14]), new_df$outcome, 
+                       lambda = lambda_seq, 
+                       nfolds = 10)
+cv_object 
+
+# plot the CV results
+tibble(lambda = cv_object$lambda,
+       mean_cv_error = cv_object$cvm) %>%
+  ggplot(aes(x = lambda, y = mean_cv_error)) +
+  geom_point()
+
+# extracting the exact minimum lambda from the CV object
+cv_object$lambda.min
+
+
+# refit the lasso model with the "best" lambda
+fit_bestcv <- glmnet(as.matrix(new_df[2:14]), new_df$outcome, lambda = cv_object$lambda.min)
+coef(fit_bestcv)
+```
 
 
 
