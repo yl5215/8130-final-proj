@@ -165,7 +165,7 @@ new_df = body_density_df %>%
 # using cross validation to choose lambda
 lambda_seq <- 10^seq(-3, 0, by = .1)
 set.seed(2022)
-cv_object <- cv.glmnet(as.matrix(new_df[2:14]), new_df$outcome, 
+cv_object <- glmnet::cv.glmnet(as.matrix(new_df[2:14]), new_df$outcome, 
                        lambda = lambda_seq, 
                        nfolds = 10)
 cv_object 
@@ -181,8 +181,39 @@ cv_object$lambda.min
 
 
 # refit the lasso model with the "best" lambda
-fit_bestcv <- glmnet(as.matrix(new_df[2:14]), new_df$outcome, lambda = cv_object$lambda.min)
+fit_bestcv <- glmnet::glmnet(as.matrix(new_df[2:14]), new_df$outcome, lambda = cv_object$lambda.min)
 coef(fit_bestcv)
+```
+
+
+## RIDGE
+
+```{r}
+lambda_seq <- 10^seq(-3, 0, by = .1)
+
+predictors = 
+  body_density_df %>% 
+  select(-c(id, outcome)) %>% 
+  as.matrix()
+response = 
+  body_density_df %>% 
+  select(outcome) %>% 
+  as.matrix()
+  
+cv_object = glmnet::cv.glmnet(x = predictors, y = response,
+                              lambda = lambda_seq, alpha = 0,
+                              nfolds = 10)
+cv_object
+
+tibble(lambda = cv_object$lambda,
+       mean_cv_error = cv_object$cvm) %>%
+  ggplot(aes(x = lambda, y = mean_cv_error)) +
+  geom_point()
+
+lambda_min = cv_object$lambda.min
+ridge_fit <- glmnet::glmnet(x = predictors,y = response,
+                            lambda = lambda_min, alpha = 0)
+coef(ridge_fit)
 ```
 
 
