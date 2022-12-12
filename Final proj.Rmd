@@ -1,5 +1,5 @@
 ---
-title: 'Final proj'
+title: 'Final project'
 output: github_document
 ---
 
@@ -12,11 +12,13 @@ library(leaps)
 library(caret)
 library(readxl)
 library(patchwork)
+library(olsrr)
 ```
 
 ```{r}
 body_density_df = read_excel("data/body_density_data.xlsx") %>%
-  rename(outcome = bodyfat_brozek)
+  rename(outcome = bodyfat_brozek) %>% 
+  select(-bodyfat_siri & -body_density)
 head(body_density_df)
 ```
 
@@ -95,5 +97,37 @@ hist13 = body_density_df %>%
 
 hist13
 ```
+
+## Fitting a full model and checking diagnostic plots
+```{r}
+full_model = lm(outcome ~ ., data = body_density_df)
+summary(full_model)
+
+par(mfrow = c(2,2))
+plot(full_model)
+```
+
+### Checking VIF in full model
+
+```{r}
+## ols_coll_diag(full_model)
+```
+
+The diagnostics plots look good. No need for Box-Cox transformation
+
+## Stepwise Selection
+
+```{r}
+##step(lm(outcome ~ .,data = body_density_df),direction = "both")
+```
+
+```{r}
+## fit_stepwise = lm(outcome ~ ., data = body_density_df)
+## ols_step_both_p(fit_stepwise)
+```
+
+
+
+
 
 

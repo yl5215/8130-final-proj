@@ -1,4 +1,4 @@
-Final proj
+Final project
 ================
 
 ``` r
@@ -40,26 +40,33 @@ library(caret)
 ``` r
 library(readxl)
 library(patchwork)
+library(olsrr)
 ```
+
+    ## 
+    ## Attaching package: 'olsrr'
+    ## 
+    ## The following object is masked from 'package:datasets':
+    ## 
+    ##     rivers
 
 ``` r
 body_density_df = read_excel("data/body_density_data.xlsx") %>%
-  rename(outcome = bodyfat_brozek)
+  rename(outcome = bodyfat_brozek) %>% 
+  select(-bodyfat_siri & -body_density)
 head(body_density_df)
 ```
 
-    ## # A tibble: 6 × 17
-    ##      id outcome bodyfat_…¹ body_…²   age weight height  neck chest abdomen   hip
-    ##   <dbl>   <dbl>      <dbl>   <dbl> <dbl>  <dbl>  <dbl> <dbl> <dbl>   <dbl> <dbl>
-    ## 1     1    12.6       12.3    1.07    23   154.   67.8  36.2  93.1    85.2  94.5
-    ## 2     2     6.9        6.1    1.09    22   173.   72.2  38.5  93.6    83    98.7
-    ## 3     3    24.6       25.3    1.04    22   154    66.2  34    95.8    87.9  99.2
-    ## 4     4    10.9       10.4    1.08    26   185.   72.2  37.4 102.     86.4 101. 
-    ## 5     5    27.8       28.7    1.03    24   184.   71.2  34.4  97.3   100   102. 
-    ## 6     6    20.6       20.9    1.05    24   210.   74.8  39   104.     94.4 108. 
-    ## # … with 6 more variables: thigh <dbl>, knee <dbl>, ankle <dbl>, bicep <dbl>,
-    ## #   forearm <dbl>, wrist <dbl>, and abbreviated variable names ¹​bodyfat_siri,
-    ## #   ²​body_density
+    ## # A tibble: 6 × 15
+    ##      id outcome   age weight height  neck chest abdomen   hip thigh  knee ankle
+    ##   <dbl>   <dbl> <dbl>  <dbl>  <dbl> <dbl> <dbl>   <dbl> <dbl> <dbl> <dbl> <dbl>
+    ## 1     1    12.6    23   154.   67.8  36.2  93.1    85.2  94.5  59    37.3  21.9
+    ## 2     2     6.9    22   173.   72.2  38.5  93.6    83    98.7  58.7  37.3  23.4
+    ## 3     3    24.6    22   154    66.2  34    95.8    87.9  99.2  59.6  38.9  24  
+    ## 4     4    10.9    26   185.   72.2  37.4 102.     86.4 101.   60.1  37.3  22.8
+    ## 5     5    27.8    24   184.   71.2  34.4  97.3   100   102.   63.2  42.2  24  
+    ## 6     6    20.6    24   210.   74.8  39   104.     94.4 108.   66    42    25.6
+    ## # … with 3 more variables: bicep <dbl>, forearm <dbl>, wrist <dbl>
 
 Descriptive statistics:
 
@@ -69,12 +76,12 @@ body_density_df %>%
   gtsummary::bold_labels()
 ```
 
-<div id="iprbwszsiy" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<div id="fgefxguvqv" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
 <style>html {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
 }
 
-#iprbwszsiy .gt_table {
+#fgefxguvqv .gt_table {
   display: table;
   border-collapse: collapse;
   margin-left: auto;
@@ -99,7 +106,7 @@ body_density_df %>%
   border-left-color: #D3D3D3;
 }
 
-#iprbwszsiy .gt_heading {
+#fgefxguvqv .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -111,7 +118,7 @@ body_density_df %>%
   border-right-color: #D3D3D3;
 }
 
-#iprbwszsiy .gt_title {
+#fgefxguvqv .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -123,7 +130,7 @@ body_density_df %>%
   border-bottom-width: 0;
 }
 
-#iprbwszsiy .gt_subtitle {
+#fgefxguvqv .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -135,13 +142,13 @@ body_density_df %>%
   border-top-width: 0;
 }
 
-#iprbwszsiy .gt_bottom_border {
+#fgefxguvqv .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#iprbwszsiy .gt_col_headings {
+#fgefxguvqv .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -156,7 +163,7 @@ body_density_df %>%
   border-right-color: #D3D3D3;
 }
 
-#iprbwszsiy .gt_col_heading {
+#fgefxguvqv .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -176,7 +183,7 @@ body_density_df %>%
   overflow-x: hidden;
 }
 
-#iprbwszsiy .gt_column_spanner_outer {
+#fgefxguvqv .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -188,15 +195,15 @@ body_density_df %>%
   padding-right: 4px;
 }
 
-#iprbwszsiy .gt_column_spanner_outer:first-child {
+#fgefxguvqv .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#iprbwszsiy .gt_column_spanner_outer:last-child {
+#fgefxguvqv .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#iprbwszsiy .gt_column_spanner {
+#fgefxguvqv .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -208,7 +215,7 @@ body_density_df %>%
   width: 100%;
 }
 
-#iprbwszsiy .gt_group_heading {
+#fgefxguvqv .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -233,7 +240,7 @@ body_density_df %>%
   vertical-align: middle;
 }
 
-#iprbwszsiy .gt_empty_group_heading {
+#fgefxguvqv .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -248,15 +255,15 @@ body_density_df %>%
   vertical-align: middle;
 }
 
-#iprbwszsiy .gt_from_md > :first-child {
+#fgefxguvqv .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#iprbwszsiy .gt_from_md > :last-child {
+#fgefxguvqv .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#iprbwszsiy .gt_row {
+#fgefxguvqv .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -275,7 +282,7 @@ body_density_df %>%
   overflow-x: hidden;
 }
 
-#iprbwszsiy .gt_stub {
+#fgefxguvqv .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -288,7 +295,7 @@ body_density_df %>%
   padding-right: 5px;
 }
 
-#iprbwszsiy .gt_stub_row_group {
+#fgefxguvqv .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -302,11 +309,11 @@ body_density_df %>%
   vertical-align: top;
 }
 
-#iprbwszsiy .gt_row_group_first td {
+#fgefxguvqv .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#iprbwszsiy .gt_summary_row {
+#fgefxguvqv .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -316,16 +323,16 @@ body_density_df %>%
   padding-right: 5px;
 }
 
-#iprbwszsiy .gt_first_summary_row {
+#fgefxguvqv .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#iprbwszsiy .gt_first_summary_row.thick {
+#fgefxguvqv .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#iprbwszsiy .gt_last_summary_row {
+#fgefxguvqv .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -335,7 +342,7 @@ body_density_df %>%
   border-bottom-color: #D3D3D3;
 }
 
-#iprbwszsiy .gt_grand_summary_row {
+#fgefxguvqv .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -345,7 +352,7 @@ body_density_df %>%
   padding-right: 5px;
 }
 
-#iprbwszsiy .gt_first_grand_summary_row {
+#fgefxguvqv .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -355,11 +362,11 @@ body_density_df %>%
   border-top-color: #D3D3D3;
 }
 
-#iprbwszsiy .gt_striped {
+#fgefxguvqv .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#iprbwszsiy .gt_table_body {
+#fgefxguvqv .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -368,7 +375,7 @@ body_density_df %>%
   border-bottom-color: #D3D3D3;
 }
 
-#iprbwszsiy .gt_footnotes {
+#fgefxguvqv .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -382,7 +389,7 @@ body_density_df %>%
   border-right-color: #D3D3D3;
 }
 
-#iprbwszsiy .gt_footnote {
+#fgefxguvqv .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-left: 4px;
@@ -391,7 +398,7 @@ body_density_df %>%
   padding-right: 5px;
 }
 
-#iprbwszsiy .gt_sourcenotes {
+#fgefxguvqv .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -405,7 +412,7 @@ body_density_df %>%
   border-right-color: #D3D3D3;
 }
 
-#iprbwszsiy .gt_sourcenote {
+#fgefxguvqv .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -413,64 +420,64 @@ body_density_df %>%
   padding-right: 5px;
 }
 
-#iprbwszsiy .gt_left {
+#fgefxguvqv .gt_left {
   text-align: left;
 }
 
-#iprbwszsiy .gt_center {
+#fgefxguvqv .gt_center {
   text-align: center;
 }
 
-#iprbwszsiy .gt_right {
+#fgefxguvqv .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#iprbwszsiy .gt_font_normal {
+#fgefxguvqv .gt_font_normal {
   font-weight: normal;
 }
 
-#iprbwszsiy .gt_font_bold {
+#fgefxguvqv .gt_font_bold {
   font-weight: bold;
 }
 
-#iprbwszsiy .gt_font_italic {
+#fgefxguvqv .gt_font_italic {
   font-style: italic;
 }
 
-#iprbwszsiy .gt_super {
+#fgefxguvqv .gt_super {
   font-size: 65%;
 }
 
-#iprbwszsiy .gt_footnote_marks {
+#fgefxguvqv .gt_footnote_marks {
   font-style: italic;
   font-weight: normal;
   font-size: 75%;
   vertical-align: 0.4em;
 }
 
-#iprbwszsiy .gt_asterisk {
+#fgefxguvqv .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#iprbwszsiy .gt_indent_1 {
+#fgefxguvqv .gt_indent_1 {
   text-indent: 5px;
 }
 
-#iprbwszsiy .gt_indent_2 {
+#fgefxguvqv .gt_indent_2 {
   text-indent: 10px;
 }
 
-#iprbwszsiy .gt_indent_3 {
+#fgefxguvqv .gt_indent_3 {
   text-indent: 15px;
 }
 
-#iprbwszsiy .gt_indent_4 {
+#fgefxguvqv .gt_indent_4 {
   text-indent: 20px;
 }
 
-#iprbwszsiy .gt_indent_5 {
+#fgefxguvqv .gt_indent_5 {
   text-indent: 25px;
 }
 </style>
@@ -487,10 +494,6 @@ body_density_df %>%
 <td class="gt_row gt_center">126 (64, 189)</td></tr>
     <tr><td class="gt_row gt_left" style="font-weight: bold;">outcome</td>
 <td class="gt_row gt_center">19 (13, 25)</td></tr>
-    <tr><td class="gt_row gt_left" style="font-weight: bold;">bodyfat_siri</td>
-<td class="gt_row gt_center">19 (12, 25)</td></tr>
-    <tr><td class="gt_row gt_left" style="font-weight: bold;">body_density</td>
-<td class="gt_row gt_center">1.055 (1.041, 1.070)</td></tr>
     <tr><td class="gt_row gt_left" style="font-weight: bold;">age</td>
 <td class="gt_row gt_center">43 (36, 54)</td></tr>
     <tr><td class="gt_row gt_left" style="font-weight: bold;">weight</td>
@@ -531,34 +534,34 @@ body_density_df %>%
 summary(body_density_df)
 ```
 
-    ##        id            outcome       bodyfat_siri    body_density  
-    ##  Min.   :  1.00   Min.   : 0.00   Min.   : 0.00   Min.   :0.995  
-    ##  1st Qu.: 63.75   1st Qu.:12.80   1st Qu.:12.47   1st Qu.:1.041  
-    ##  Median :126.50   Median :19.00   Median :19.20   Median :1.055  
-    ##  Mean   :126.50   Mean   :18.94   Mean   :19.15   Mean   :1.056  
-    ##  3rd Qu.:189.25   3rd Qu.:24.60   3rd Qu.:25.30   3rd Qu.:1.070  
-    ##  Max.   :252.00   Max.   :45.10   Max.   :47.50   Max.   :1.109  
-    ##       age            weight          height           neck      
-    ##  Min.   :22.00   Min.   :118.5   Min.   :64.00   Min.   :31.10  
-    ##  1st Qu.:35.75   1st Qu.:159.0   1st Qu.:68.25   1st Qu.:36.40  
-    ##  Median :43.00   Median :176.5   Median :70.00   Median :38.00  
-    ##  Mean   :44.88   Mean   :178.9   Mean   :70.31   Mean   :37.99  
-    ##  3rd Qu.:54.00   3rd Qu.:197.0   3rd Qu.:72.25   3rd Qu.:39.42  
-    ##  Max.   :81.00   Max.   :363.1   Max.   :77.75   Max.   :51.20  
-    ##      chest           abdomen            hip            thigh      
-    ##  Min.   : 79.30   Min.   : 69.40   Min.   : 85.0   Min.   :47.20  
-    ##  1st Qu.: 94.35   1st Qu.: 84.58   1st Qu.: 95.5   1st Qu.:56.00  
-    ##  Median : 99.65   Median : 90.95   Median : 99.3   Median :59.00  
-    ##  Mean   :100.82   Mean   : 92.56   Mean   : 99.9   Mean   :59.41  
-    ##  3rd Qu.:105.38   3rd Qu.: 99.33   3rd Qu.:103.5   3rd Qu.:62.35  
-    ##  Max.   :136.20   Max.   :148.10   Max.   :147.7   Max.   :87.30  
-    ##       knee           ankle          bicep          forearm          wrist      
-    ##  Min.   :33.00   Min.   :19.1   Min.   :24.80   Min.   :21.00   Min.   :15.80  
-    ##  1st Qu.:36.98   1st Qu.:22.0   1st Qu.:30.20   1st Qu.:27.30   1st Qu.:17.60  
-    ##  Median :38.50   Median :22.8   Median :32.05   Median :28.70   Median :18.30  
-    ##  Mean   :38.59   Mean   :23.1   Mean   :32.27   Mean   :28.66   Mean   :18.23  
-    ##  3rd Qu.:39.92   3rd Qu.:24.0   3rd Qu.:34.33   3rd Qu.:30.00   3rd Qu.:18.80  
-    ##  Max.   :49.10   Max.   :33.9   Max.   :45.00   Max.   :34.90   Max.   :21.40
+    ##        id            outcome           age            weight     
+    ##  Min.   :  1.00   Min.   : 0.00   Min.   :22.00   Min.   :118.5  
+    ##  1st Qu.: 63.75   1st Qu.:12.80   1st Qu.:35.75   1st Qu.:159.0  
+    ##  Median :126.50   Median :19.00   Median :43.00   Median :176.5  
+    ##  Mean   :126.50   Mean   :18.94   Mean   :44.88   Mean   :178.9  
+    ##  3rd Qu.:189.25   3rd Qu.:24.60   3rd Qu.:54.00   3rd Qu.:197.0  
+    ##  Max.   :252.00   Max.   :45.10   Max.   :81.00   Max.   :363.1  
+    ##      height           neck           chest           abdomen      
+    ##  Min.   :64.00   Min.   :31.10   Min.   : 79.30   Min.   : 69.40  
+    ##  1st Qu.:68.25   1st Qu.:36.40   1st Qu.: 94.35   1st Qu.: 84.58  
+    ##  Median :70.00   Median :38.00   Median : 99.65   Median : 90.95  
+    ##  Mean   :70.31   Mean   :37.99   Mean   :100.82   Mean   : 92.56  
+    ##  3rd Qu.:72.25   3rd Qu.:39.42   3rd Qu.:105.38   3rd Qu.: 99.33  
+    ##  Max.   :77.75   Max.   :51.20   Max.   :136.20   Max.   :148.10  
+    ##       hip            thigh            knee           ankle          bicep      
+    ##  Min.   : 85.0   Min.   :47.20   Min.   :33.00   Min.   :19.1   Min.   :24.80  
+    ##  1st Qu.: 95.5   1st Qu.:56.00   1st Qu.:36.98   1st Qu.:22.0   1st Qu.:30.20  
+    ##  Median : 99.3   Median :59.00   Median :38.50   Median :22.8   Median :32.05  
+    ##  Mean   : 99.9   Mean   :59.41   Mean   :38.59   Mean   :23.1   Mean   :32.27  
+    ##  3rd Qu.:103.5   3rd Qu.:62.35   3rd Qu.:39.92   3rd Qu.:24.0   3rd Qu.:34.33  
+    ##  Max.   :147.7   Max.   :87.30   Max.   :49.10   Max.   :33.9   Max.   :45.00  
+    ##     forearm          wrist      
+    ##  Min.   :21.00   Min.   :15.80  
+    ##  1st Qu.:27.30   1st Qu.:17.60  
+    ##  Median :28.70   Median :18.30  
+    ##  Mean   :28.66   Mean   :18.23  
+    ##  3rd Qu.:30.00   3rd Qu.:18.80  
+    ##  Max.   :34.90   Max.   :21.40
 
 Exploratory plots
 
@@ -663,3 +666,68 @@ hist13
     ## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
 
 ![](Final-proj_files/figure-gfm/unnamed-chunk-5-5.png)<!-- -->
+
+## Fitting a full model and checking diagnostic plots
+
+``` r
+full_model = lm(outcome ~ ., data = body_density_df)
+summary(full_model)
+```
+
+    ## 
+    ## Call:
+    ## lm(formula = outcome ~ ., data = body_density_df)
+    ## 
+    ## Residuals:
+    ##      Min       1Q   Median       3Q      Max 
+    ## -10.0409  -2.7156  -0.1523   2.7601   9.5656 
+    ## 
+    ## Coefficients:
+    ##               Estimate Std. Error t value Pr(>|t|)    
+    ## (Intercept) -18.291346  20.578647  -0.889  0.37498    
+    ## id           -0.002652   0.003772  -0.703  0.48275    
+    ## age           0.062977   0.030343   2.076  0.03902 *  
+    ## weight       -0.087260   0.057382  -1.521  0.12967    
+    ## height       -0.031670   0.165869  -0.191  0.84874    
+    ## neck         -0.441342   0.218444  -2.020  0.04447 *  
+    ## chest        -0.013458   0.095824  -0.140  0.88843    
+    ## abdomen       0.889422   0.083732  10.622  < 2e-16 ***
+    ## hip          -0.190632   0.135097  -1.411  0.15953    
+    ## thigh         0.240269   0.135653   1.771  0.07781 .  
+    ## knee         -0.002369   0.230352  -0.010  0.99180    
+    ## ankle         0.155961   0.207110   0.753  0.45218    
+    ## bicep         0.149300   0.160096   0.933  0.35199    
+    ## forearm       0.435202   0.184820   2.355  0.01935 *  
+    ## wrist        -1.516844   0.494546  -3.067  0.00241 ** 
+    ## ---
+    ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+    ## 
+    ## Residual standard error: 3.996 on 237 degrees of freedom
+    ## Multiple R-squared:  0.749,  Adjusted R-squared:  0.7342 
+    ## F-statistic: 50.52 on 14 and 237 DF,  p-value: < 2.2e-16
+
+``` r
+par(mfrow = c(2,2))
+plot(full_model)
+```
+
+![](Final-proj_files/figure-gfm/unnamed-chunk-6-1.png)<!-- -->
+
+### Checking VIF in full model
+
+``` r
+## ols_coll_diag(full_model)
+```
+
+The diagnostics plots look good. No need for Box-Cox transformation
+
+## Stepwise Selection
+
+``` r
+##step(lm(outcome ~ .,data = body_density_df),direction = "both")
+```
+
+``` r
+## fit_stepwise = lm(outcome ~ ., data = body_density_df)
+## ols_step_both_p(fit_stepwise)
+```
