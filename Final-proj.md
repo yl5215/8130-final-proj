@@ -83,12 +83,12 @@ body_density_df %>%
   gtsummary::bold_labels()
 ```
 
-<div id="ejllserfvd" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<div id="yipisnkjww" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
 <style>html {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
 }
 
-#ejllserfvd .gt_table {
+#yipisnkjww .gt_table {
   display: table;
   border-collapse: collapse;
   margin-left: auto;
@@ -113,7 +113,7 @@ body_density_df %>%
   border-left-color: #D3D3D3;
 }
 
-#ejllserfvd .gt_heading {
+#yipisnkjww .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -125,7 +125,7 @@ body_density_df %>%
   border-right-color: #D3D3D3;
 }
 
-#ejllserfvd .gt_title {
+#yipisnkjww .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -137,7 +137,7 @@ body_density_df %>%
   border-bottom-width: 0;
 }
 
-#ejllserfvd .gt_subtitle {
+#yipisnkjww .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -149,13 +149,13 @@ body_density_df %>%
   border-top-width: 0;
 }
 
-#ejllserfvd .gt_bottom_border {
+#yipisnkjww .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#ejllserfvd .gt_col_headings {
+#yipisnkjww .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -170,7 +170,7 @@ body_density_df %>%
   border-right-color: #D3D3D3;
 }
 
-#ejllserfvd .gt_col_heading {
+#yipisnkjww .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -190,7 +190,7 @@ body_density_df %>%
   overflow-x: hidden;
 }
 
-#ejllserfvd .gt_column_spanner_outer {
+#yipisnkjww .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -202,15 +202,15 @@ body_density_df %>%
   padding-right: 4px;
 }
 
-#ejllserfvd .gt_column_spanner_outer:first-child {
+#yipisnkjww .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#ejllserfvd .gt_column_spanner_outer:last-child {
+#yipisnkjww .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#ejllserfvd .gt_column_spanner {
+#yipisnkjww .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -222,7 +222,7 @@ body_density_df %>%
   width: 100%;
 }
 
-#ejllserfvd .gt_group_heading {
+#yipisnkjww .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -247,7 +247,7 @@ body_density_df %>%
   vertical-align: middle;
 }
 
-#ejllserfvd .gt_empty_group_heading {
+#yipisnkjww .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -262,15 +262,15 @@ body_density_df %>%
   vertical-align: middle;
 }
 
-#ejllserfvd .gt_from_md > :first-child {
+#yipisnkjww .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#ejllserfvd .gt_from_md > :last-child {
+#yipisnkjww .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#ejllserfvd .gt_row {
+#yipisnkjww .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -289,7 +289,7 @@ body_density_df %>%
   overflow-x: hidden;
 }
 
-#ejllserfvd .gt_stub {
+#yipisnkjww .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -302,7 +302,7 @@ body_density_df %>%
   padding-right: 5px;
 }
 
-#ejllserfvd .gt_stub_row_group {
+#yipisnkjww .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -316,11 +316,11 @@ body_density_df %>%
   vertical-align: top;
 }
 
-#ejllserfvd .gt_row_group_first td {
+#yipisnkjww .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#ejllserfvd .gt_summary_row {
+#yipisnkjww .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -330,16 +330,16 @@ body_density_df %>%
   padding-right: 5px;
 }
 
-#ejllserfvd .gt_first_summary_row {
+#yipisnkjww .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#ejllserfvd .gt_first_summary_row.thick {
+#yipisnkjww .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#ejllserfvd .gt_last_summary_row {
+#yipisnkjww .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -349,7 +349,7 @@ body_density_df %>%
   border-bottom-color: #D3D3D3;
 }
 
-#ejllserfvd .gt_grand_summary_row {
+#yipisnkjww .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -359,7 +359,7 @@ body_density_df %>%
   padding-right: 5px;
 }
 
-#ejllserfvd .gt_first_grand_summary_row {
+#yipisnkjww .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -369,11 +369,11 @@ body_density_df %>%
   border-top-color: #D3D3D3;
 }
 
-#ejllserfvd .gt_striped {
+#yipisnkjww .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#ejllserfvd .gt_table_body {
+#yipisnkjww .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -382,7 +382,7 @@ body_density_df %>%
   border-bottom-color: #D3D3D3;
 }
 
-#ejllserfvd .gt_footnotes {
+#yipisnkjww .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -396,7 +396,7 @@ body_density_df %>%
   border-right-color: #D3D3D3;
 }
 
-#ejllserfvd .gt_footnote {
+#yipisnkjww .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-left: 4px;
@@ -405,7 +405,7 @@ body_density_df %>%
   padding-right: 5px;
 }
 
-#ejllserfvd .gt_sourcenotes {
+#yipisnkjww .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -419,7 +419,7 @@ body_density_df %>%
   border-right-color: #D3D3D3;
 }
 
-#ejllserfvd .gt_sourcenote {
+#yipisnkjww .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -427,64 +427,64 @@ body_density_df %>%
   padding-right: 5px;
 }
 
-#ejllserfvd .gt_left {
+#yipisnkjww .gt_left {
   text-align: left;
 }
 
-#ejllserfvd .gt_center {
+#yipisnkjww .gt_center {
   text-align: center;
 }
 
-#ejllserfvd .gt_right {
+#yipisnkjww .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#ejllserfvd .gt_font_normal {
+#yipisnkjww .gt_font_normal {
   font-weight: normal;
 }
 
-#ejllserfvd .gt_font_bold {
+#yipisnkjww .gt_font_bold {
   font-weight: bold;
 }
 
-#ejllserfvd .gt_font_italic {
+#yipisnkjww .gt_font_italic {
   font-style: italic;
 }
 
-#ejllserfvd .gt_super {
+#yipisnkjww .gt_super {
   font-size: 65%;
 }
 
-#ejllserfvd .gt_footnote_marks {
+#yipisnkjww .gt_footnote_marks {
   font-style: italic;
   font-weight: normal;
   font-size: 75%;
   vertical-align: 0.4em;
 }
 
-#ejllserfvd .gt_asterisk {
+#yipisnkjww .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#ejllserfvd .gt_indent_1 {
+#yipisnkjww .gt_indent_1 {
   text-indent: 5px;
 }
 
-#ejllserfvd .gt_indent_2 {
+#yipisnkjww .gt_indent_2 {
   text-indent: 10px;
 }
 
-#ejllserfvd .gt_indent_3 {
+#yipisnkjww .gt_indent_3 {
   text-indent: 15px;
 }
 
-#ejllserfvd .gt_indent_4 {
+#yipisnkjww .gt_indent_4 {
   text-indent: 20px;
 }
 
-#ejllserfvd .gt_indent_5 {
+#yipisnkjww .gt_indent_5 {
   text-indent: 25px;
 }
 </style>
@@ -874,37 +874,6 @@ fit_forward = step(intercept_only, direction = "forward", scope = formula(full_m
     ## + knee    1    0.0583 3819.9 705.08
     ## + chest   1    0.0036 3820.0 705.08
 
-``` r
-summary(fit_forward)
-```
-
-    ## 
-    ## Call:
-    ## lm(formula = outcome ~ abdomen + weight + wrist + forearm + neck + 
-    ##     age + thigh + hip, data = body_density_df)
-    ## 
-    ## Residuals:
-    ##      Min       1Q   Median       3Q      Max 
-    ## -10.0574  -2.7411  -0.1912   2.6929   9.4977 
-    ## 
-    ## Coefficients:
-    ##              Estimate Std. Error t value Pr(>|t|)    
-    ## (Intercept) -20.06213   10.84654  -1.850  0.06558 .  
-    ## abdomen       0.87721    0.06661  13.170  < 2e-16 ***
-    ## weight       -0.08414    0.03695  -2.277  0.02366 *  
-    ## wrist        -1.40487    0.47167  -2.978  0.00319 ** 
-    ## forearm       0.48255    0.17251   2.797  0.00557 ** 
-    ## neck         -0.43189    0.20799  -2.077  0.03889 *  
-    ## age           0.05922    0.02850   2.078  0.03876 *  
-    ## thigh         0.28644    0.11949   2.397  0.01727 *  
-    ## hip          -0.18641    0.12821  -1.454  0.14727    
-    ## ---
-    ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
-    ## 
-    ## Residual standard error: 3.965 on 243 degrees of freedom
-    ## Multiple R-squared:  0.7467, Adjusted R-squared:  0.7383 
-    ## F-statistic: 89.53 on 8 and 243 DF,  p-value: < 2.2e-16
-
 ## Backward Elimination
 
 ``` r
@@ -1037,37 +1006,6 @@ fit_backward = step(lm(full_model, data = body_density_df), direction = "backwar
     ## - wrist    1    139.46 3959.4 710.12
     ## - abdomen  1   2726.49 6546.5 836.83
 
-``` r
-summary(fit_backward) 
-```
-
-    ## 
-    ## Call:
-    ## lm(formula = outcome ~ age + weight + neck + abdomen + hip + 
-    ##     thigh + forearm + wrist, data = body_density_df)
-    ## 
-    ## Residuals:
-    ##      Min       1Q   Median       3Q      Max 
-    ## -10.0574  -2.7411  -0.1912   2.6929   9.4977 
-    ## 
-    ## Coefficients:
-    ##              Estimate Std. Error t value Pr(>|t|)    
-    ## (Intercept) -20.06213   10.84654  -1.850  0.06558 .  
-    ## age           0.05922    0.02850   2.078  0.03876 *  
-    ## weight       -0.08414    0.03695  -2.277  0.02366 *  
-    ## neck         -0.43189    0.20799  -2.077  0.03889 *  
-    ## abdomen       0.87721    0.06661  13.170  < 2e-16 ***
-    ## hip          -0.18641    0.12821  -1.454  0.14727    
-    ## thigh         0.28644    0.11949   2.397  0.01727 *  
-    ## forearm       0.48255    0.17251   2.797  0.00557 ** 
-    ## wrist        -1.40487    0.47167  -2.978  0.00319 ** 
-    ## ---
-    ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
-    ## 
-    ## Residual standard error: 3.965 on 243 degrees of freedom
-    ## Multiple R-squared:  0.7467, Adjusted R-squared:  0.7383 
-    ## F-statistic: 89.53 on 8 and 243 DF,  p-value: < 2.2e-16
-
 ## Stepwise selection
 
 ``` r
@@ -1075,8 +1013,7 @@ step(
 lm(outcome ~ age + weight + height + neck + chest + abdomen + hip + knee + ankle + bicep + forearm + wrist,
 data = body_density_df),
 direction = "both"
-) %>% 
-summary()
+) 
 ```
 
     ## Start:  AIC=712.69
@@ -1197,26 +1134,11 @@ summary()
     ## lm(formula = outcome ~ age + weight + neck + abdomen + bicep + 
     ##     forearm + wrist, data = body_density_df)
     ## 
-    ## Residuals:
-    ##     Min      1Q  Median      3Q     Max 
-    ## -9.8227 -2.8254 -0.1292  2.9915  8.8431 
-    ## 
     ## Coefficients:
-    ##              Estimate Std. Error t value Pr(>|t|)    
-    ## (Intercept) -24.54674    7.61292  -3.224 0.001435 ** 
-    ## age           0.04154    0.02652   1.566 0.118544    
-    ## weight       -0.10164    0.03035  -3.349 0.000939 ***
-    ## neck         -0.40949    0.20662  -1.982 0.048621 *  
-    ## abdomen       0.88031    0.06320  13.929  < 2e-16 ***
-    ## bicep         0.23274    0.15115   1.540 0.124904    
-    ## forearm       0.44593    0.18114   2.462 0.014518 *  
-    ## wrist        -1.44863    0.47342  -3.060 0.002461 ** 
-    ## ---
-    ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
-    ## 
-    ## Residual standard error: 3.985 on 244 degrees of freedom
-    ## Multiple R-squared:  0.743,  Adjusted R-squared:  0.7356 
-    ## F-statistic: 100.8 on 7 and 244 DF,  p-value: < 2.2e-16
+    ## (Intercept)          age       weight         neck      abdomen        bicep  
+    ##   -24.54674      0.04154     -0.10164     -0.40949      0.88031      0.23274  
+    ##     forearm        wrist  
+    ##     0.44593     -1.44863
 
 ## Criteria-based Selection
 
@@ -1243,11 +1165,86 @@ par(mfrow = c(1,1))
 
 ### cp and adjr2 values
 
+age + weight + height + neck + chest + abdomen + hip + thigh + knee +
+ankle + bicep + forearm + wrist
+
 ``` r
 cp_model =  leaps(x = as.matrix(body_density_df)[,c(3:15)], y = as.matrix(body_density_df)[,2], nbest = 2, method = "Cp")
 
 adjr2_model =  leaps(x = as.matrix(body_density_df)[,c(3:15)], y = as.matrix(body_density_df)[,2], nbest = 2, method = "adjr2")
+adjr2_model$which
 ```
+
+    ##        1     2     3     4     5     6     7     8     9     A     B     C
+    ## 1  FALSE FALSE FALSE FALSE FALSE  TRUE FALSE FALSE FALSE FALSE FALSE FALSE
+    ## 1  FALSE FALSE FALSE FALSE  TRUE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+    ## 2  FALSE  TRUE FALSE FALSE FALSE  TRUE FALSE FALSE FALSE FALSE FALSE FALSE
+    ## 2  FALSE FALSE FALSE FALSE FALSE  TRUE FALSE FALSE FALSE FALSE FALSE FALSE
+    ## 3  FALSE  TRUE FALSE FALSE FALSE  TRUE FALSE FALSE FALSE FALSE FALSE FALSE
+    ## 3  FALSE  TRUE FALSE FALSE FALSE  TRUE FALSE  TRUE FALSE FALSE FALSE FALSE
+    ## 4  FALSE  TRUE FALSE FALSE FALSE  TRUE FALSE FALSE FALSE FALSE FALSE  TRUE
+    ## 4  FALSE  TRUE FALSE FALSE FALSE  TRUE FALSE FALSE FALSE FALSE  TRUE FALSE
+    ## 5  FALSE  TRUE FALSE  TRUE FALSE  TRUE FALSE FALSE FALSE FALSE FALSE  TRUE
+    ## 5   TRUE  TRUE FALSE FALSE FALSE  TRUE FALSE FALSE FALSE FALSE FALSE  TRUE
+    ## 6   TRUE  TRUE FALSE FALSE FALSE  TRUE FALSE  TRUE FALSE FALSE FALSE  TRUE
+    ## 6   TRUE  TRUE FALSE  TRUE FALSE  TRUE FALSE FALSE FALSE FALSE FALSE  TRUE
+    ## 7   TRUE  TRUE FALSE  TRUE FALSE  TRUE FALSE  TRUE FALSE FALSE FALSE  TRUE
+    ## 7   TRUE  TRUE FALSE  TRUE FALSE  TRUE FALSE FALSE FALSE FALSE  TRUE  TRUE
+    ## 8   TRUE  TRUE FALSE  TRUE FALSE  TRUE  TRUE  TRUE FALSE FALSE FALSE  TRUE
+    ## 8   TRUE  TRUE FALSE  TRUE FALSE  TRUE FALSE  TRUE FALSE FALSE  TRUE  TRUE
+    ## 9   TRUE  TRUE FALSE  TRUE FALSE  TRUE  TRUE  TRUE FALSE FALSE  TRUE  TRUE
+    ## 9   TRUE  TRUE FALSE  TRUE FALSE  TRUE  TRUE  TRUE FALSE  TRUE FALSE  TRUE
+    ## 10  TRUE  TRUE FALSE  TRUE FALSE  TRUE  TRUE  TRUE FALSE  TRUE  TRUE  TRUE
+    ## 10  TRUE  TRUE  TRUE  TRUE FALSE  TRUE  TRUE  TRUE FALSE FALSE  TRUE  TRUE
+    ## 11  TRUE  TRUE  TRUE  TRUE FALSE  TRUE  TRUE  TRUE FALSE  TRUE  TRUE  TRUE
+    ## 11  TRUE  TRUE FALSE  TRUE FALSE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE
+    ## 12  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE FALSE  TRUE  TRUE  TRUE
+    ## 12  TRUE  TRUE  TRUE  TRUE FALSE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE
+    ## 13  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE
+    ##        D
+    ## 1  FALSE
+    ## 1  FALSE
+    ## 2  FALSE
+    ## 2   TRUE
+    ## 3   TRUE
+    ## 3  FALSE
+    ## 4   TRUE
+    ## 4   TRUE
+    ## 5   TRUE
+    ## 5   TRUE
+    ## 6   TRUE
+    ## 6   TRUE
+    ## 7   TRUE
+    ## 7   TRUE
+    ## 8   TRUE
+    ## 8   TRUE
+    ## 9   TRUE
+    ## 9   TRUE
+    ## 10  TRUE
+    ## 10  TRUE
+    ## 11  TRUE
+    ## 11  TRUE
+    ## 12  TRUE
+    ## 12  TRUE
+    ## 13  TRUE
+
+Best model by AdjR2
+
+``` r
+fit_adjr2 = lm(outcome ~ age + weight + neck + abdomen + hip + bicep + forearm + wrist, data = body_density_df)
+fit_adjr2
+```
+
+    ## 
+    ## Call:
+    ## lm(formula = outcome ~ age + weight + neck + abdomen + hip + 
+    ##     bicep + forearm + wrist, data = body_density_df)
+    ## 
+    ## Coefficients:
+    ## (Intercept)          age       weight         neck      abdomen          hip  
+    ##   -20.67672      0.03850     -0.09042     -0.42797      0.89114     -0.05722  
+    ##       bicep      forearm        wrist  
+    ##     0.23546      0.43593     -1.45550
 
 ## Lasso
 
@@ -1280,7 +1277,7 @@ tibble(lambda = cv_object$lambda,
   geom_point()
 ```
 
-![](Final-proj_files/figure-gfm/unnamed-chunk-12-1.png)<!-- -->
+![](Final-proj_files/figure-gfm/unnamed-chunk-13-1.png)<!-- -->
 
 ``` r
 # extracting the exact minimum lambda from the CV object

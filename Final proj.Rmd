@@ -116,14 +116,12 @@ The diagnostics plots look good. No need for Box-Cox transformation
 ```{r}
 intercept_only <- lm(outcome ~ 1, data = body_density_df)
 fit_forward = step(intercept_only, direction = "forward", scope = formula(full_model))
-summary(fit_forward)
 ```
 
 ## Backward Elimination
 
 ```{r}
 fit_backward = step(lm(full_model, data = body_density_df), direction = "backward")
-summary(fit_backward) 
 ```
 
 ## Stepwise selection
@@ -133,8 +131,7 @@ step(
 lm(outcome ~ age + weight + height + neck + chest + abdomen + hip + knee + ankle + bicep + forearm + wrist,
 data = body_density_df),
 direction = "both"
-) %>% 
-summary()
+) 
 ```
 
 ## Criteria-based Selection
@@ -157,13 +154,24 @@ par(mfrow = c(1,1))
 
 ### cp and adjr2 values
 
+ age + weight + height + neck + chest + abdomen + hip + thigh +
+                 knee + ankle + bicep + forearm + wrist
 ```{r}
 
 cp_model =  leaps(x = as.matrix(body_density_df)[,c(3:15)], y = as.matrix(body_density_df)[,2], nbest = 2, method = "Cp")
 
 adjr2_model =  leaps(x = as.matrix(body_density_df)[,c(3:15)], y = as.matrix(body_density_df)[,2], nbest = 2, method = "adjr2")
-
+adjr2_model$which
 ```
+
+
+Best model by AdjR2
+
+```{r}
+fit_adjr2 = lm(outcome ~ age + weight + neck + abdomen + hip + bicep + forearm + wrist, data = body_density_df)
+fit_adjr2
+```
+
 
 ## Lasso
 
