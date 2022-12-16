@@ -13,6 +13,7 @@ library(caret)
 library(readxl)
 library(patchwork)
 library(glmnet)
+library(performance)
 ```
 
 ```{r}
@@ -138,6 +139,8 @@ summary()
 
 ## Criteria-based Selection
 
+### Plot
+
 ```{r}
 b = regsubsets(outcome ~ 
                  age + weight + height + neck + chest + abdomen + hip + thigh +
@@ -152,9 +155,14 @@ plot(2:9, rs$adjr2, xlab = "No of parameters", ylab = "Adj R2")
 par(mfrow = c(1,1))
 ```
 
+### cp and adjr2 values
+
 ```{r}
-## cp_model <- leaps(x = as.matrix(body_density_df)[,c(3:15)], y = as.matrix(body_density_df)[,2], nbest = 1, method = "Cp")
-## colnames(as.matrix(body_density_df)[,c(3:15)])[which(cp_model$which[9,])]
+
+cp_model =  leaps(x = as.matrix(body_density_df)[,c(3:15)], y = as.matrix(body_density_df)[,2], nbest = 2, method = "Cp")
+
+adjr2_model =  leaps(x = as.matrix(body_density_df)[,c(3:15)], y = as.matrix(body_density_df)[,2], nbest = 2, method = "adjr2")
+
 ```
 
 ## Lasso
@@ -186,26 +194,7 @@ coef(fit_bestcv)
 ```
 
 
-## RIDGE
 
-```{r}
-lambda_seq <- 10^seq(-3, 0, by = .1)
-  
-cv_object <- glmnet::cv.glmnet(as.matrix(new_df[2:14]), new_df$outcome, 
-                               lambda = lambda_seq, alpha = 0,
-                               nfolds = 10)
-cv_object
-
-tibble(lambda = cv_object$lambda,
-       mean_cv_error = cv_object$cvm) %>%
-  ggplot(aes(x = lambda, y = mean_cv_error)) +
-  geom_point()
-
-lambda_min = cv_object$lambda.min
-ridge_fit <- glmnet::glmnet(as.matrix(new_df[2:14]), new_df$outcome, 
-                            lambda = lambda_min, alpha = 0)
-coef(ridge_fit)
-```
 
 
 
