@@ -83,12 +83,12 @@ body_density_df %>%
   gtsummary::bold_labels()
 ```
 
-<div id="mfukdsyzck" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<div id="hgoobbgpxs" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
 <style>html {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
 }
 
-#mfukdsyzck .gt_table {
+#hgoobbgpxs .gt_table {
   display: table;
   border-collapse: collapse;
   margin-left: auto;
@@ -113,7 +113,7 @@ body_density_df %>%
   border-left-color: #D3D3D3;
 }
 
-#mfukdsyzck .gt_heading {
+#hgoobbgpxs .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -125,7 +125,7 @@ body_density_df %>%
   border-right-color: #D3D3D3;
 }
 
-#mfukdsyzck .gt_title {
+#hgoobbgpxs .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -137,7 +137,7 @@ body_density_df %>%
   border-bottom-width: 0;
 }
 
-#mfukdsyzck .gt_subtitle {
+#hgoobbgpxs .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -149,13 +149,13 @@ body_density_df %>%
   border-top-width: 0;
 }
 
-#mfukdsyzck .gt_bottom_border {
+#hgoobbgpxs .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#mfukdsyzck .gt_col_headings {
+#hgoobbgpxs .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -170,7 +170,7 @@ body_density_df %>%
   border-right-color: #D3D3D3;
 }
 
-#mfukdsyzck .gt_col_heading {
+#hgoobbgpxs .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -190,7 +190,7 @@ body_density_df %>%
   overflow-x: hidden;
 }
 
-#mfukdsyzck .gt_column_spanner_outer {
+#hgoobbgpxs .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -202,15 +202,15 @@ body_density_df %>%
   padding-right: 4px;
 }
 
-#mfukdsyzck .gt_column_spanner_outer:first-child {
+#hgoobbgpxs .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#mfukdsyzck .gt_column_spanner_outer:last-child {
+#hgoobbgpxs .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#mfukdsyzck .gt_column_spanner {
+#hgoobbgpxs .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -222,7 +222,7 @@ body_density_df %>%
   width: 100%;
 }
 
-#mfukdsyzck .gt_group_heading {
+#hgoobbgpxs .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -247,7 +247,7 @@ body_density_df %>%
   vertical-align: middle;
 }
 
-#mfukdsyzck .gt_empty_group_heading {
+#hgoobbgpxs .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -262,15 +262,15 @@ body_density_df %>%
   vertical-align: middle;
 }
 
-#mfukdsyzck .gt_from_md > :first-child {
+#hgoobbgpxs .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#mfukdsyzck .gt_from_md > :last-child {
+#hgoobbgpxs .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#mfukdsyzck .gt_row {
+#hgoobbgpxs .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -289,7 +289,7 @@ body_density_df %>%
   overflow-x: hidden;
 }
 
-#mfukdsyzck .gt_stub {
+#hgoobbgpxs .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -302,7 +302,7 @@ body_density_df %>%
   padding-right: 5px;
 }
 
-#mfukdsyzck .gt_stub_row_group {
+#hgoobbgpxs .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -316,11 +316,11 @@ body_density_df %>%
   vertical-align: top;
 }
 
-#mfukdsyzck .gt_row_group_first td {
+#hgoobbgpxs .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#mfukdsyzck .gt_summary_row {
+#hgoobbgpxs .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -330,16 +330,16 @@ body_density_df %>%
   padding-right: 5px;
 }
 
-#mfukdsyzck .gt_first_summary_row {
+#hgoobbgpxs .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#mfukdsyzck .gt_first_summary_row.thick {
+#hgoobbgpxs .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#mfukdsyzck .gt_last_summary_row {
+#hgoobbgpxs .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -349,7 +349,7 @@ body_density_df %>%
   border-bottom-color: #D3D3D3;
 }
 
-#mfukdsyzck .gt_grand_summary_row {
+#hgoobbgpxs .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -359,7 +359,7 @@ body_density_df %>%
   padding-right: 5px;
 }
 
-#mfukdsyzck .gt_first_grand_summary_row {
+#hgoobbgpxs .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -369,11 +369,11 @@ body_density_df %>%
   border-top-color: #D3D3D3;
 }
 
-#mfukdsyzck .gt_striped {
+#hgoobbgpxs .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#mfukdsyzck .gt_table_body {
+#hgoobbgpxs .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -382,7 +382,7 @@ body_density_df %>%
   border-bottom-color: #D3D3D3;
 }
 
-#mfukdsyzck .gt_footnotes {
+#hgoobbgpxs .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -396,7 +396,7 @@ body_density_df %>%
   border-right-color: #D3D3D3;
 }
 
-#mfukdsyzck .gt_footnote {
+#hgoobbgpxs .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-left: 4px;
@@ -405,7 +405,7 @@ body_density_df %>%
   padding-right: 5px;
 }
 
-#mfukdsyzck .gt_sourcenotes {
+#hgoobbgpxs .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -419,7 +419,7 @@ body_density_df %>%
   border-right-color: #D3D3D3;
 }
 
-#mfukdsyzck .gt_sourcenote {
+#hgoobbgpxs .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -427,64 +427,64 @@ body_density_df %>%
   padding-right: 5px;
 }
 
-#mfukdsyzck .gt_left {
+#hgoobbgpxs .gt_left {
   text-align: left;
 }
 
-#mfukdsyzck .gt_center {
+#hgoobbgpxs .gt_center {
   text-align: center;
 }
 
-#mfukdsyzck .gt_right {
+#hgoobbgpxs .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#mfukdsyzck .gt_font_normal {
+#hgoobbgpxs .gt_font_normal {
   font-weight: normal;
 }
 
-#mfukdsyzck .gt_font_bold {
+#hgoobbgpxs .gt_font_bold {
   font-weight: bold;
 }
 
-#mfukdsyzck .gt_font_italic {
+#hgoobbgpxs .gt_font_italic {
   font-style: italic;
 }
 
-#mfukdsyzck .gt_super {
+#hgoobbgpxs .gt_super {
   font-size: 65%;
 }
 
-#mfukdsyzck .gt_footnote_marks {
+#hgoobbgpxs .gt_footnote_marks {
   font-style: italic;
   font-weight: normal;
   font-size: 75%;
   vertical-align: 0.4em;
 }
 
-#mfukdsyzck .gt_asterisk {
+#hgoobbgpxs .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#mfukdsyzck .gt_indent_1 {
+#hgoobbgpxs .gt_indent_1 {
   text-indent: 5px;
 }
 
-#mfukdsyzck .gt_indent_2 {
+#hgoobbgpxs .gt_indent_2 {
   text-indent: 10px;
 }
 
-#mfukdsyzck .gt_indent_3 {
+#hgoobbgpxs .gt_indent_3 {
   text-indent: 15px;
 }
 
-#mfukdsyzck .gt_indent_4 {
+#hgoobbgpxs .gt_indent_4 {
   text-indent: 20px;
 }
 
-#mfukdsyzck .gt_indent_5 {
+#hgoobbgpxs .gt_indent_5 {
   text-indent: 25px;
 }
 </style>
@@ -1227,10 +1227,10 @@ cp_model$which
     ## 13  TRUE
 
 ``` r
-35910
+3591011
 ```
 
-    ## [1] 35910
+    ## [1] 3591011
 
 ``` r
 adjr2_model =  leaps(x = as.matrix(body_density_df)[,c(3:15)], y = as.matrix(body_density_df)[,2], nbest = 2, method = "adjr2")
@@ -1291,45 +1291,45 @@ adjr2_model$which
     ## 13  TRUE
 
 ``` r
-59
+359
 ```
 
-    ## [1] 59
+    ## [1] 359
 
 Best model
 
 ``` r
 fit_cp = lm(outcome ~ age + weight + neck + abdomen + hip + thigh 
-                   + bicep + forearm + wrist, data = body_density_df)
+                    + forearm + wrist, data = body_density_df)
 fit_cp
 ```
 
     ## 
     ## Call:
     ## lm(formula = outcome ~ age + weight + neck + abdomen + hip + 
-    ##     thigh + bicep + forearm + wrist, data = body_density_df)
+    ##     thigh + forearm + wrist, data = body_density_df)
     ## 
     ## Coefficients:
     ## (Intercept)          age       weight         neck      abdomen          hip  
-    ##   1.1490232   -0.0001206    0.0002587    0.0011730   -0.0022186    0.0004887  
-    ##       thigh        bicep      forearm        wrist  
-    ##  -0.0007050   -0.0005451   -0.0009971    0.0036030
+    ##   1.1470468   -0.0001276    0.0002326    0.0010915   -0.0022050    0.0005270  
+    ##       thigh      forearm        wrist  
+    ##  -0.0008177   -0.0011929    0.0035864
 
 ``` r
-fit_adjr2 = lm(outcome ~ age + weight + height + neck + abdomen + hip + thigh + ankle + bicep + forearm + wrist, data = body_density_df)
+fit_adjr2 = lm(outcome ~ age + weight + neck + abdomen + hip + thigh + ankle + bicep + forearm + wrist, data = body_density_df)
 fit_adjr2
 ```
 
     ## 
     ## Call:
-    ## lm(formula = outcome ~ age + weight + height + neck + abdomen + 
-    ##     hip + thigh + ankle + bicep + forearm + wrist, data = body_density_df)
+    ## lm(formula = outcome ~ age + weight + neck + abdomen + hip + 
+    ##     thigh + ankle + bicep + forearm + wrist, data = body_density_df)
     ## 
     ## Coefficients:
-    ## (Intercept)          age       weight       height         neck      abdomen  
-    ##   1.154e+00   -1.261e-04    2.808e-04    4.865e-05    1.094e-03   -2.236e-03  
-    ##         hip        thigh        ankle        bicep      forearm        wrist  
-    ##   4.815e-04   -6.777e-04   -6.577e-04   -5.624e-04   -1.002e-03    4.003e-03
+    ## (Intercept)          age       weight         neck      abdomen          hip  
+    ##   1.1586812   -0.0001264    0.0002909    0.0010805   -0.0022489    0.0004752  
+    ##       thigh        ankle        bicep      forearm        wrist  
+    ##  -0.0006830   -0.0006614   -0.0005712   -0.0010026    0.0040137
 
 ## Lasso
 
@@ -1443,8 +1443,7 @@ print(forward_caret)
 train = trainControl(method = "cv", number = 10)
 
 # Fit the 4-variables model that we discussed in previous lectures
-backward_caret = train(outcome ~ age + weight + neck + abdomen + hip + thigh + bicep + 
-    forearm + wrist,
+backward_caret = train(outcome ~ age + weight + neck + abdomen + hip + thigh + bicep + forearm + wrist,
                   data = body_density_df,
                    trControl = train,
                    method = 'lm',
@@ -1531,8 +1530,7 @@ print(stepwise_caret)
 train = trainControl(method = "cv", number = 10)
 
 # Fit the 4-variables model that we discussed in previous lectures
-cp_caret = train(outcome ~ age + weight + neck + abdomen + hip + 
-    thigh + bicep + forearm + wrist,
+cp_caret = train(outcome ~ age + weight + neck + abdomen + hip + thigh + forearm + wrist,
                   data = body_density_df,
                    trControl = train,
                    method = 'lm',
@@ -1547,9 +1545,9 @@ cp_caret$finalModel
     ## 
     ## Coefficients:
     ## (Intercept)          age       weight         neck      abdomen          hip  
-    ##   1.1490232   -0.0001206    0.0002587    0.0011730   -0.0022186    0.0004887  
-    ##       thigh        bicep      forearm        wrist  
-    ##  -0.0007050   -0.0005451   -0.0009971    0.0036030
+    ##   1.1470468   -0.0001276    0.0002326    0.0010915   -0.0022050    0.0005270  
+    ##       thigh      forearm        wrist  
+    ##  -0.0008177   -0.0011929    0.0035864
 
 ``` r
 print(cp_caret)
@@ -1558,7 +1556,7 @@ print(cp_caret)
     ## Linear Regression 
     ## 
     ## 252 samples
-    ##   9 predictor
+    ##   8 predictor
     ## 
     ## No pre-processing
     ## Resampling: Cross-Validated (10 fold) 
@@ -1566,7 +1564,7 @@ print(cp_caret)
     ## Resampling results:
     ## 
     ##   RMSE        Rsquared   MAE        
-    ##   0.01008759  0.7286142  0.008244632
+    ##   0.01008735  0.7288986  0.008222555
     ## 
     ## Tuning parameter 'intercept' was held constant at a value of TRUE
 
@@ -1575,7 +1573,7 @@ print(cp_caret)
 train = trainControl(method = "cv", number = 10)
 
 # Fit the 4-variables model that we discussed in previous lectures
-adjr2_caret = train(outcome ~ age + weight + height + neck + abdomen + hip + thigh + ankle + bicep + forearm + wrist,
+adjr2_caret = train(outcome ~ age + weight + neck + abdomen + hip + thigh + ankle + bicep + forearm + wrist,
                   data = body_density_df,
                    trControl = train,
                    method = 'lm',
@@ -1589,10 +1587,10 @@ adjr2_caret$finalModel
     ## lm(formula = .outcome ~ ., data = dat)
     ## 
     ## Coefficients:
-    ## (Intercept)          age       weight       height         neck      abdomen  
-    ##   1.154e+00   -1.261e-04    2.808e-04    4.865e-05    1.094e-03   -2.236e-03  
-    ##         hip        thigh        ankle        bicep      forearm        wrist  
-    ##   4.815e-04   -6.777e-04   -6.577e-04   -5.624e-04   -1.002e-03    4.003e-03
+    ## (Intercept)          age       weight         neck      abdomen          hip  
+    ##   1.1586812   -0.0001264    0.0002909    0.0010805   -0.0022489    0.0004752  
+    ##       thigh        ankle        bicep      forearm        wrist  
+    ##  -0.0006830   -0.0006614   -0.0005712   -0.0010026    0.0040137
 
 ``` r
 print(adjr2_caret)
@@ -1601,7 +1599,7 @@ print(adjr2_caret)
     ## Linear Regression 
     ## 
     ## 252 samples
-    ##  11 predictor
+    ##  10 predictor
     ## 
     ## No pre-processing
     ## Resampling: Cross-Validated (10 fold) 
@@ -1609,7 +1607,7 @@ print(adjr2_caret)
     ## Resampling results:
     ## 
     ##   RMSE        Rsquared   MAE        
-    ##   0.01023168  0.7394511  0.008333901
+    ##   0.01018407  0.7415747  0.008310423
     ## 
     ## Tuning parameter 'intercept' was held constant at a value of TRUE
 
