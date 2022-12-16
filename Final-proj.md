@@ -57,6 +57,8 @@ library(glmnet)
 library(performance)
 ```
 
+## Import dataset
+
 ``` r
 body_density_df = read_excel("data/body_density_data.xlsx") %>%
   rename(outcome = body_density) %>% 
@@ -75,7 +77,7 @@ head(body_density_df)
     ## 6     6    1.05    24   210.   74.8  39   104.     94.4 108.   66    42    25.6
     ## # … with 3 more variables: bicep <dbl>, forearm <dbl>, wrist <dbl>
 
-Descriptive statistics:
+## Descriptive statistics
 
 ``` r
 body_density_df %>%
@@ -83,12 +85,12 @@ body_density_df %>%
   gtsummary::bold_labels()
 ```
 
-<div id="mekcsycrks" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<div id="pquuivztgl" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
 <style>html {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
 }
 
-#mekcsycrks .gt_table {
+#pquuivztgl .gt_table {
   display: table;
   border-collapse: collapse;
   margin-left: auto;
@@ -113,7 +115,7 @@ body_density_df %>%
   border-left-color: #D3D3D3;
 }
 
-#mekcsycrks .gt_heading {
+#pquuivztgl .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -125,7 +127,7 @@ body_density_df %>%
   border-right-color: #D3D3D3;
 }
 
-#mekcsycrks .gt_title {
+#pquuivztgl .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -137,7 +139,7 @@ body_density_df %>%
   border-bottom-width: 0;
 }
 
-#mekcsycrks .gt_subtitle {
+#pquuivztgl .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -149,13 +151,13 @@ body_density_df %>%
   border-top-width: 0;
 }
 
-#mekcsycrks .gt_bottom_border {
+#pquuivztgl .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#mekcsycrks .gt_col_headings {
+#pquuivztgl .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -170,7 +172,7 @@ body_density_df %>%
   border-right-color: #D3D3D3;
 }
 
-#mekcsycrks .gt_col_heading {
+#pquuivztgl .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -190,7 +192,7 @@ body_density_df %>%
   overflow-x: hidden;
 }
 
-#mekcsycrks .gt_column_spanner_outer {
+#pquuivztgl .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -202,15 +204,15 @@ body_density_df %>%
   padding-right: 4px;
 }
 
-#mekcsycrks .gt_column_spanner_outer:first-child {
+#pquuivztgl .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#mekcsycrks .gt_column_spanner_outer:last-child {
+#pquuivztgl .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#mekcsycrks .gt_column_spanner {
+#pquuivztgl .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -222,7 +224,7 @@ body_density_df %>%
   width: 100%;
 }
 
-#mekcsycrks .gt_group_heading {
+#pquuivztgl .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -247,7 +249,7 @@ body_density_df %>%
   vertical-align: middle;
 }
 
-#mekcsycrks .gt_empty_group_heading {
+#pquuivztgl .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -262,15 +264,15 @@ body_density_df %>%
   vertical-align: middle;
 }
 
-#mekcsycrks .gt_from_md > :first-child {
+#pquuivztgl .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#mekcsycrks .gt_from_md > :last-child {
+#pquuivztgl .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#mekcsycrks .gt_row {
+#pquuivztgl .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -289,7 +291,7 @@ body_density_df %>%
   overflow-x: hidden;
 }
 
-#mekcsycrks .gt_stub {
+#pquuivztgl .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -302,7 +304,7 @@ body_density_df %>%
   padding-right: 5px;
 }
 
-#mekcsycrks .gt_stub_row_group {
+#pquuivztgl .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -316,11 +318,11 @@ body_density_df %>%
   vertical-align: top;
 }
 
-#mekcsycrks .gt_row_group_first td {
+#pquuivztgl .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#mekcsycrks .gt_summary_row {
+#pquuivztgl .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -330,16 +332,16 @@ body_density_df %>%
   padding-right: 5px;
 }
 
-#mekcsycrks .gt_first_summary_row {
+#pquuivztgl .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#mekcsycrks .gt_first_summary_row.thick {
+#pquuivztgl .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#mekcsycrks .gt_last_summary_row {
+#pquuivztgl .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -349,7 +351,7 @@ body_density_df %>%
   border-bottom-color: #D3D3D3;
 }
 
-#mekcsycrks .gt_grand_summary_row {
+#pquuivztgl .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -359,7 +361,7 @@ body_density_df %>%
   padding-right: 5px;
 }
 
-#mekcsycrks .gt_first_grand_summary_row {
+#pquuivztgl .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -369,11 +371,11 @@ body_density_df %>%
   border-top-color: #D3D3D3;
 }
 
-#mekcsycrks .gt_striped {
+#pquuivztgl .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#mekcsycrks .gt_table_body {
+#pquuivztgl .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -382,7 +384,7 @@ body_density_df %>%
   border-bottom-color: #D3D3D3;
 }
 
-#mekcsycrks .gt_footnotes {
+#pquuivztgl .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -396,7 +398,7 @@ body_density_df %>%
   border-right-color: #D3D3D3;
 }
 
-#mekcsycrks .gt_footnote {
+#pquuivztgl .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-left: 4px;
@@ -405,7 +407,7 @@ body_density_df %>%
   padding-right: 5px;
 }
 
-#mekcsycrks .gt_sourcenotes {
+#pquuivztgl .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -419,7 +421,7 @@ body_density_df %>%
   border-right-color: #D3D3D3;
 }
 
-#mekcsycrks .gt_sourcenote {
+#pquuivztgl .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -427,64 +429,64 @@ body_density_df %>%
   padding-right: 5px;
 }
 
-#mekcsycrks .gt_left {
+#pquuivztgl .gt_left {
   text-align: left;
 }
 
-#mekcsycrks .gt_center {
+#pquuivztgl .gt_center {
   text-align: center;
 }
 
-#mekcsycrks .gt_right {
+#pquuivztgl .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#mekcsycrks .gt_font_normal {
+#pquuivztgl .gt_font_normal {
   font-weight: normal;
 }
 
-#mekcsycrks .gt_font_bold {
+#pquuivztgl .gt_font_bold {
   font-weight: bold;
 }
 
-#mekcsycrks .gt_font_italic {
+#pquuivztgl .gt_font_italic {
   font-style: italic;
 }
 
-#mekcsycrks .gt_super {
+#pquuivztgl .gt_super {
   font-size: 65%;
 }
 
-#mekcsycrks .gt_footnote_marks {
+#pquuivztgl .gt_footnote_marks {
   font-style: italic;
   font-weight: normal;
   font-size: 75%;
   vertical-align: 0.4em;
 }
 
-#mekcsycrks .gt_asterisk {
+#pquuivztgl .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#mekcsycrks .gt_indent_1 {
+#pquuivztgl .gt_indent_1 {
   text-indent: 5px;
 }
 
-#mekcsycrks .gt_indent_2 {
+#pquuivztgl .gt_indent_2 {
   text-indent: 10px;
 }
 
-#mekcsycrks .gt_indent_3 {
+#pquuivztgl .gt_indent_3 {
   text-indent: 15px;
 }
 
-#mekcsycrks .gt_indent_4 {
+#pquuivztgl .gt_indent_4 {
   text-indent: 20px;
 }
 
-#mekcsycrks .gt_indent_5 {
+#pquuivztgl .gt_indent_5 {
   text-indent: 25px;
 }
 </style>
@@ -570,7 +572,9 @@ summary(body_density_df)
     ##  3rd Qu.:30.00   3rd Qu.:18.80  
     ##  Max.   :34.90   Max.   :21.40
 
-Exploratory plots
+## Exploratory plots
+
+### correlation plot
 
 ``` r
 correlation_plot = body_density_df %>%
@@ -579,7 +583,7 @@ correlation_plot = body_density_df %>%
   ggsave("./correlation.png",correlation_plot, width = 8, height = 5)
 ```
 
-Histogram plots
+### Histogram plot for outcome
 
 ``` r
 hist_outcome = body_density_df %>% 
@@ -592,99 +596,7 @@ hist_outcome
 
 ![](Final-proj_files/figure-gfm/unnamed-chunk-5-1.png)<!-- -->
 
-``` r
-hist1 = body_density_df %>% 
-  ggplot(aes(x = age)) +
-  geom_histogram()
-hist2 = body_density_df %>% 
-  ggplot(aes(x = weight)) +
-  geom_histogram()
-hist3 = body_density_df %>% 
-  ggplot(aes(x = height)) +
-  geom_histogram()
-
-hist1 + hist2 + hist3
-```
-
-    ## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
-    ## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
-    ## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
-
-![](Final-proj_files/figure-gfm/unnamed-chunk-6-1.png)<!-- -->
-
-``` r
-hist4 = body_density_df %>% 
-  ggplot(aes(x = neck)) +
-  geom_histogram()
-hist5 = body_density_df %>% 
-  ggplot(aes(x = chest)) +
-  geom_histogram()
-hist6 = body_density_df %>% 
-  ggplot(aes(x = abdomen)) +
-  geom_histogram()
-
-hist4 + hist5 + hist6
-```
-
-    ## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
-    ## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
-    ## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
-
-![](Final-proj_files/figure-gfm/unnamed-chunk-6-2.png)<!-- -->
-
-``` r
-hist7 = body_density_df %>% 
-  ggplot(aes(x = hip)) +
-  geom_histogram()
-hist8 = body_density_df %>% 
-  ggplot(aes(x = thigh)) +
-  geom_histogram()
-hist9 = body_density_df %>% 
-  ggplot(aes(x = knee)) +
-  geom_histogram()
-
-hist7 + hist8 + hist9
-```
-
-    ## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
-    ## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
-    ## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
-
-![](Final-proj_files/figure-gfm/unnamed-chunk-6-3.png)<!-- -->
-
-``` r
-hist10 = body_density_df %>% 
-  ggplot(aes(x = ankle)) +
-  geom_histogram()
-hist11 = body_density_df %>% 
-  ggplot(aes(x = bicep)) +
-  geom_histogram()
-hist12 = body_density_df %>% 
-  ggplot(aes(x = forearm)) +
-  geom_histogram()
-
-hist10 + hist11 + hist12
-```
-
-    ## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
-    ## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
-    ## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
-
-![](Final-proj_files/figure-gfm/unnamed-chunk-6-4.png)<!-- -->
-
-``` r
-hist13 = body_density_df %>% 
-  ggplot(aes(x = wrist)) +
-  geom_histogram()
-
-hist13
-```
-
-    ## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
-
-![](Final-proj_files/figure-gfm/unnamed-chunk-6-5.png)<!-- -->
-
-## Fitting a full model and checking diagnostic plots
+## Fitting a full model
 
 ``` r
 full_model = lm(outcome ~ ., data = body_density_df)
@@ -723,16 +635,9 @@ summary(full_model)
     ## Multiple R-squared:  0.738,  Adjusted R-squared:  0.7225 
     ## F-statistic: 47.69 on 14 and 237 DF,  p-value: < 2.2e-16
 
-``` r
-par(mfrow = c(2,2))
-plot(full_model)
-```
+## Model selection
 
-![](Final-proj_files/figure-gfm/unnamed-chunk-7-1.png)<!-- -->
-
-The diagnostics plots look good. No need for Box-Cox transformation
-
-## Forward selection
+### Forward selection
 
 ``` r
 intercept_only <- lm(outcome ~ 1, data = body_density_df)
@@ -858,7 +763,7 @@ fit_forward = step(intercept_only, direction = "forward", scope = formula(full_m
     ## + id      1 9.1190e-06 0.024709 -2310.0
     ## + height  1 8.5180e-06 0.024709 -2310.0
 
-## Backward Elimination
+### Backward Elimination
 
 ``` r
 fit_backward = step(lm(full_model, data = body_density_df), direction = "backward")
@@ -975,7 +880,7 @@ fit_backward = step(lm(full_model, data = body_density_df), direction = "backwar
     ## - wrist    1 0.0009172 0.024959 -2305.4
     ## - abdomen  1 0.0173814 0.041423 -2177.8
 
-## Stepwise selection
+### Stepwise selection
 
 ``` r
 step(
@@ -1128,9 +1033,13 @@ direction = "both"
     ##       wrist  
     ##   0.0031416
 
-## Criteria-based Selection
+``` r
+stepwise_model = lm(outcome ~ weight + neck + abdomen + bicep + forearm + wrist,data = body_density_df)
+```
 
-### Plot
+### Criteria-based Selection
+
+Plot
 
 ``` r
 b = regsubsets(outcome ~ 
@@ -1167,16 +1076,13 @@ abline(0,1)
 plot(2:9, rs$adjr2, xlab = "No of parameters", ylab = "Adj R2")
 ```
 
-![](Final-proj_files/figure-gfm/unnamed-chunk-11-1.png)<!-- -->
+![](Final-proj_files/figure-gfm/unnamed-chunk-10-1.png)<!-- -->
 
 ``` r
 par(mfrow = c(1,1))
 ```
 
-### cp and adjr2 values
-
-age + weight + height + neck + chest + abdomen + hip + thigh + knee +
-ankle + bicep + forearm + wrist
+cp and adjr2 values
 
 ``` r
 cp_model =  leaps(x = as.matrix(body_density_df)[,c(3:15)], y = as.matrix(body_density_df)[,2], nbest = 1, method = "Cp")
@@ -1199,16 +1105,10 @@ cp_model$which
     ## 13  TRUE  TRUE  TRUE  TRUE  TRUE TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE
 
 ``` r
-3591011
-```
-
-    ## [1] 3591011
-
-``` r
 ggplot(data.frame(cp_model$size, cp_model$Cp), aes(x = cp_model.size, y = cp_model.Cp)) +  labs(title = "Lowest Cp Value Corresponding to Each Number of Parameters", y = "Cp", x = "# parameters") + scale_x_continuous(breaks=seq(1,14)) + geom_point()
 ```
 
-![](Final-proj_files/figure-gfm/unnamed-chunk-12-1.png)<!-- -->
+![](Final-proj_files/figure-gfm/unnamed-chunk-11-1.png)<!-- -->
 
 ``` r
 adjr2_model =  leaps(x = as.matrix(body_density_df)[,c(3:15)], y = as.matrix(body_density_df)[,2], nbest = 1, method = "adjr2")
@@ -1231,18 +1131,12 @@ adjr2_model$which
     ## 13  TRUE  TRUE  TRUE  TRUE  TRUE TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE
 
 ``` r
-359
-```
-
-    ## [1] 359
-
-``` r
 ggplot(data.frame(adjr2_model$size, adjr2_model$adjr2), aes(x = adjr2_model.size, y = adjr2_model.adjr2)) +  labs(title = "Highest adjr2 Value Corresponding to Each Number of Parameters", y = "adjr2", x = "# parameters") + scale_x_continuous(breaks=seq(1,14)) + geom_point()
 ```
 
-![](Final-proj_files/figure-gfm/unnamed-chunk-12-2.png)<!-- -->
+![](Final-proj_files/figure-gfm/unnamed-chunk-11-2.png)<!-- -->
 
-Best model
+Best model by Cp
 
 ``` r
 fit_cp = lm(outcome ~ age + weight + neck + abdomen + hip + thigh 
@@ -1261,6 +1155,8 @@ fit_cp
     ##       thigh      forearm        wrist  
     ##  -0.0008177   -0.0011929    0.0035864
 
+Best model by adjr2
+
 ``` r
 fit_adjr2 = lm(outcome ~ age + weight + neck + abdomen + hip + thigh + ankle + bicep + forearm + wrist, data = body_density_df)
 fit_adjr2
@@ -1277,7 +1173,7 @@ fit_adjr2
     ##       thigh        ankle        bicep      forearm        wrist  
     ##  -0.0006830   -0.0006614   -0.0005712   -0.0010026    0.0040137
 
-## Lasso
+### Lasso
 
 ``` r
 new_df = body_density_df %>% 
@@ -1340,6 +1236,10 @@ coef(fit_bestcv)
     ## forearm      .           
     ## wrist        1.995518e-03
 
+## Model validation
+
+### 10-fold cross validation for model selected via forward selection
+
 ``` r
 set.seed(1)
 # Use 10-fold validation and create the training sets
@@ -1384,6 +1284,8 @@ print(forward_caret)
     ## 
     ## Tuning parameter 'intercept' was held constant at a value of TRUE
 
+### 10-fold cross validation for model selected via backward selection
+
 ``` r
 # Use 10-fold validation and create the training sets
 train = trainControl(method = "cv", number = 10)
@@ -1426,6 +1328,8 @@ print(backward_caret)
     ##   0.01017602  0.7222925  0.008254925
     ## 
     ## Tuning parameter 'intercept' was held constant at a value of TRUE
+
+### 10-fold cross validation for model selected via stepwise selection
 
 ``` r
 # Use 10-fold validation and create the training sets
@@ -1471,6 +1375,8 @@ print(stepwise_caret)
     ## 
     ## Tuning parameter 'intercept' was held constant at a value of TRUE
 
+### 10-fold cross validation for model selected via Cp
+
 ``` r
 # Use 10-fold validation and create the training sets
 train = trainControl(method = "cv", number = 10)
@@ -1513,6 +1419,8 @@ print(cp_caret)
     ##   0.01008735  0.7288986  0.008222555
     ## 
     ## Tuning parameter 'intercept' was held constant at a value of TRUE
+
+### 10-fold cross validation for model selected via adjr2
 
 ``` r
 # Use 10-fold validation and create the training sets
@@ -1557,6 +1465,8 @@ print(adjr2_caret)
     ## 
     ## Tuning parameter 'intercept' was held constant at a value of TRUE
 
+## 10-fold cross validation for model selected via lasso
+
 ``` r
 # Use 10-fold validation and create the training sets
 lasso = trainControl(method = "cv", number = 10)
@@ -1598,12 +1508,64 @@ print(lasso_caret)
     ## 
     ## Tuning parameter 'intercept' was held constant at a value of TRUE
 
+## Final best model
+
 ``` r
 best_model=lm(outcome ~ weight + neck + abdomen + bicep + forearm + wrist, data = body_density_df)
 ```
+
+## Assess multicollinearity
+
+``` r
+check_collinearity(fit_cp)
+```
+
+    ## # Check for Multicollinearity
+    ## 
+    ## Low Correlation
+    ## 
+    ##     Term   VIF     VIF 95% CI Increased SE Tolerance Tolerance 95% CI
+    ##      age  2.06   [1.75, 2.50]         1.43      0.49     [0.40, 0.57]
+    ##  forearm  1.94   [1.66, 2.35]         1.39      0.52     [0.43, 0.60]
+    ##   weight 18.83 [14.99, 23.72]         4.34      0.05     [0.04, 0.07]
+    ##      hip 13.47 [10.76, 16.94]         3.67      0.07     [0.06, 0.09]
+    ## 
+    ## Moderate Correlation
+    ## 
+    ##   Term  VIF    VIF 95% CI Increased SE Tolerance Tolerance 95% CI
+    ##  wrist 3.10  [2.57, 3.81]         1.76      0.32     [0.26, 0.39]
+    ##  thigh 6.28 [5.08,  7.84]         2.51      0.16     [0.13, 0.20]
+    ## 
+    ## High Correlation
+    ## 
+    ##     Term  VIF    VIF 95% CI Increased SE Tolerance Tolerance 95% CI
+    ##     neck 4.08  [3.34, 5.05]         2.02      0.25     [0.20, 0.30]
+    ##  abdomen 8.24 [6.62, 10.31]         2.87      0.12     [0.10, 0.15]
+
+``` r
+check_collinearity(stepwise_model)
+```
+
+    ## # Check for Multicollinearity
+    ## 
+    ## Low Correlation
+    ## 
+    ##     Term  VIF    VIF 95% CI Increased SE Tolerance Tolerance 95% CI
+    ##  abdomen 4.96  [4.03, 6.18]         2.23      0.20     [0.16, 0.25]
+    ##    bicep 3.29  [2.72, 4.06]         1.81      0.30     [0.25, 0.37]
+    ##  forearm 2.08  [1.76, 2.53]         1.44      0.48     [0.40, 0.57]
+    ##    wrist 2.56  [2.14, 3.14]         1.60      0.39     [0.32, 0.47]
+    ##   weight 8.87 [7.12, 11.14]         2.98      0.11     [0.09, 0.14]
+    ## 
+    ## Moderate Correlation
+    ## 
+    ##  Term  VIF   VIF 95% CI Increased SE Tolerance Tolerance 95% CI
+    ##  neck 3.95 [3.23, 4.89]         1.99      0.25     [0.20, 0.31]
+
+## Model dignostic
 
 ``` r
 plot(best_model, which = 4, id.n = 3)
 ```
 
-![](Final-proj_files/figure-gfm/unnamed-chunk-22-1.png)<!-- -->
+![](Final-proj_files/figure-gfm/unnamed-chunk-23-1.png)<!-- -->
