@@ -299,3 +299,13 @@ lasso_caret$finalModel
 print(lasso_caret)
 ```
 
+```{r}
+best_model=lm(outcome ~ weight + neck + abdomen + bicep + forearm + wrist, data = body_density_df)
+```
+
+
+```{r}
+plot(best_model, which = 4, id.n = 3)
+```
+
+
