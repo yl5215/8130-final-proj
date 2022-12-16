@@ -59,20 +59,20 @@ library(performance)
 
 ``` r
 body_density_df = read_excel("data/body_density_data.xlsx") %>%
-  rename(outcome = bodyfat_brozek) %>% 
-  select(-bodyfat_siri & -body_density)
+  rename(outcome = body_density) %>% 
+  select(-bodyfat_siri & -bodyfat_brozek)
 head(body_density_df)
 ```
 
     ## # A tibble: 6 × 15
     ##      id outcome   age weight height  neck chest abdomen   hip thigh  knee ankle
     ##   <dbl>   <dbl> <dbl>  <dbl>  <dbl> <dbl> <dbl>   <dbl> <dbl> <dbl> <dbl> <dbl>
-    ## 1     1    12.6    23   154.   67.8  36.2  93.1    85.2  94.5  59    37.3  21.9
-    ## 2     2     6.9    22   173.   72.2  38.5  93.6    83    98.7  58.7  37.3  23.4
-    ## 3     3    24.6    22   154    66.2  34    95.8    87.9  99.2  59.6  38.9  24  
-    ## 4     4    10.9    26   185.   72.2  37.4 102.     86.4 101.   60.1  37.3  22.8
-    ## 5     5    27.8    24   184.   71.2  34.4  97.3   100   102.   63.2  42.2  24  
-    ## 6     6    20.6    24   210.   74.8  39   104.     94.4 108.   66    42    25.6
+    ## 1     1    1.07    23   154.   67.8  36.2  93.1    85.2  94.5  59    37.3  21.9
+    ## 2     2    1.09    22   173.   72.2  38.5  93.6    83    98.7  58.7  37.3  23.4
+    ## 3     3    1.04    22   154    66.2  34    95.8    87.9  99.2  59.6  38.9  24  
+    ## 4     4    1.08    26   185.   72.2  37.4 102.     86.4 101.   60.1  37.3  22.8
+    ## 5     5    1.03    24   184.   71.2  34.4  97.3   100   102.   63.2  42.2  24  
+    ## 6     6    1.05    24   210.   74.8  39   104.     94.4 108.   66    42    25.6
     ## # … with 3 more variables: bicep <dbl>, forearm <dbl>, wrist <dbl>
 
 Descriptive statistics:
@@ -83,12 +83,12 @@ body_density_df %>%
   gtsummary::bold_labels()
 ```
 
-<div id="yipisnkjww" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<div id="mfukdsyzck" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
 <style>html {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
 }
 
-#yipisnkjww .gt_table {
+#mfukdsyzck .gt_table {
   display: table;
   border-collapse: collapse;
   margin-left: auto;
@@ -113,7 +113,7 @@ body_density_df %>%
   border-left-color: #D3D3D3;
 }
 
-#yipisnkjww .gt_heading {
+#mfukdsyzck .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -125,7 +125,7 @@ body_density_df %>%
   border-right-color: #D3D3D3;
 }
 
-#yipisnkjww .gt_title {
+#mfukdsyzck .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -137,7 +137,7 @@ body_density_df %>%
   border-bottom-width: 0;
 }
 
-#yipisnkjww .gt_subtitle {
+#mfukdsyzck .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -149,13 +149,13 @@ body_density_df %>%
   border-top-width: 0;
 }
 
-#yipisnkjww .gt_bottom_border {
+#mfukdsyzck .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#yipisnkjww .gt_col_headings {
+#mfukdsyzck .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -170,7 +170,7 @@ body_density_df %>%
   border-right-color: #D3D3D3;
 }
 
-#yipisnkjww .gt_col_heading {
+#mfukdsyzck .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -190,7 +190,7 @@ body_density_df %>%
   overflow-x: hidden;
 }
 
-#yipisnkjww .gt_column_spanner_outer {
+#mfukdsyzck .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -202,15 +202,15 @@ body_density_df %>%
   padding-right: 4px;
 }
 
-#yipisnkjww .gt_column_spanner_outer:first-child {
+#mfukdsyzck .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#yipisnkjww .gt_column_spanner_outer:last-child {
+#mfukdsyzck .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#yipisnkjww .gt_column_spanner {
+#mfukdsyzck .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -222,7 +222,7 @@ body_density_df %>%
   width: 100%;
 }
 
-#yipisnkjww .gt_group_heading {
+#mfukdsyzck .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -247,7 +247,7 @@ body_density_df %>%
   vertical-align: middle;
 }
 
-#yipisnkjww .gt_empty_group_heading {
+#mfukdsyzck .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -262,15 +262,15 @@ body_density_df %>%
   vertical-align: middle;
 }
 
-#yipisnkjww .gt_from_md > :first-child {
+#mfukdsyzck .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#yipisnkjww .gt_from_md > :last-child {
+#mfukdsyzck .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#yipisnkjww .gt_row {
+#mfukdsyzck .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -289,7 +289,7 @@ body_density_df %>%
   overflow-x: hidden;
 }
 
-#yipisnkjww .gt_stub {
+#mfukdsyzck .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -302,7 +302,7 @@ body_density_df %>%
   padding-right: 5px;
 }
 
-#yipisnkjww .gt_stub_row_group {
+#mfukdsyzck .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -316,11 +316,11 @@ body_density_df %>%
   vertical-align: top;
 }
 
-#yipisnkjww .gt_row_group_first td {
+#mfukdsyzck .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#yipisnkjww .gt_summary_row {
+#mfukdsyzck .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -330,16 +330,16 @@ body_density_df %>%
   padding-right: 5px;
 }
 
-#yipisnkjww .gt_first_summary_row {
+#mfukdsyzck .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#yipisnkjww .gt_first_summary_row.thick {
+#mfukdsyzck .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#yipisnkjww .gt_last_summary_row {
+#mfukdsyzck .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -349,7 +349,7 @@ body_density_df %>%
   border-bottom-color: #D3D3D3;
 }
 
-#yipisnkjww .gt_grand_summary_row {
+#mfukdsyzck .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -359,7 +359,7 @@ body_density_df %>%
   padding-right: 5px;
 }
 
-#yipisnkjww .gt_first_grand_summary_row {
+#mfukdsyzck .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -369,11 +369,11 @@ body_density_df %>%
   border-top-color: #D3D3D3;
 }
 
-#yipisnkjww .gt_striped {
+#mfukdsyzck .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#yipisnkjww .gt_table_body {
+#mfukdsyzck .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -382,7 +382,7 @@ body_density_df %>%
   border-bottom-color: #D3D3D3;
 }
 
-#yipisnkjww .gt_footnotes {
+#mfukdsyzck .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -396,7 +396,7 @@ body_density_df %>%
   border-right-color: #D3D3D3;
 }
 
-#yipisnkjww .gt_footnote {
+#mfukdsyzck .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-left: 4px;
@@ -405,7 +405,7 @@ body_density_df %>%
   padding-right: 5px;
 }
 
-#yipisnkjww .gt_sourcenotes {
+#mfukdsyzck .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -419,7 +419,7 @@ body_density_df %>%
   border-right-color: #D3D3D3;
 }
 
-#yipisnkjww .gt_sourcenote {
+#mfukdsyzck .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -427,64 +427,64 @@ body_density_df %>%
   padding-right: 5px;
 }
 
-#yipisnkjww .gt_left {
+#mfukdsyzck .gt_left {
   text-align: left;
 }
 
-#yipisnkjww .gt_center {
+#mfukdsyzck .gt_center {
   text-align: center;
 }
 
-#yipisnkjww .gt_right {
+#mfukdsyzck .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#yipisnkjww .gt_font_normal {
+#mfukdsyzck .gt_font_normal {
   font-weight: normal;
 }
 
-#yipisnkjww .gt_font_bold {
+#mfukdsyzck .gt_font_bold {
   font-weight: bold;
 }
 
-#yipisnkjww .gt_font_italic {
+#mfukdsyzck .gt_font_italic {
   font-style: italic;
 }
 
-#yipisnkjww .gt_super {
+#mfukdsyzck .gt_super {
   font-size: 65%;
 }
 
-#yipisnkjww .gt_footnote_marks {
+#mfukdsyzck .gt_footnote_marks {
   font-style: italic;
   font-weight: normal;
   font-size: 75%;
   vertical-align: 0.4em;
 }
 
-#yipisnkjww .gt_asterisk {
+#mfukdsyzck .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#yipisnkjww .gt_indent_1 {
+#mfukdsyzck .gt_indent_1 {
   text-indent: 5px;
 }
 
-#yipisnkjww .gt_indent_2 {
+#mfukdsyzck .gt_indent_2 {
   text-indent: 10px;
 }
 
-#yipisnkjww .gt_indent_3 {
+#mfukdsyzck .gt_indent_3 {
   text-indent: 15px;
 }
 
-#yipisnkjww .gt_indent_4 {
+#mfukdsyzck .gt_indent_4 {
   text-indent: 20px;
 }
 
-#yipisnkjww .gt_indent_5 {
+#mfukdsyzck .gt_indent_5 {
   text-indent: 25px;
 }
 </style>
@@ -500,7 +500,7 @@ body_density_df %>%
     <tr><td class="gt_row gt_left" style="font-weight: bold;">id</td>
 <td class="gt_row gt_center">126 (64, 189)</td></tr>
     <tr><td class="gt_row gt_left" style="font-weight: bold;">outcome</td>
-<td class="gt_row gt_center">19 (13, 25)</td></tr>
+<td class="gt_row gt_center">1.055 (1.041, 1.070)</td></tr>
     <tr><td class="gt_row gt_left" style="font-weight: bold;">age</td>
 <td class="gt_row gt_center">43 (36, 54)</td></tr>
     <tr><td class="gt_row gt_left" style="font-weight: bold;">weight</td>
@@ -542,12 +542,12 @@ summary(body_density_df)
 ```
 
     ##        id            outcome           age            weight     
-    ##  Min.   :  1.00   Min.   : 0.00   Min.   :22.00   Min.   :118.5  
-    ##  1st Qu.: 63.75   1st Qu.:12.80   1st Qu.:35.75   1st Qu.:159.0  
-    ##  Median :126.50   Median :19.00   Median :43.00   Median :176.5  
-    ##  Mean   :126.50   Mean   :18.94   Mean   :44.88   Mean   :178.9  
-    ##  3rd Qu.:189.25   3rd Qu.:24.60   3rd Qu.:54.00   3rd Qu.:197.0  
-    ##  Max.   :252.00   Max.   :45.10   Max.   :81.00   Max.   :363.1  
+    ##  Min.   :  1.00   Min.   :0.995   Min.   :22.00   Min.   :118.5  
+    ##  1st Qu.: 63.75   1st Qu.:1.041   1st Qu.:35.75   1st Qu.:159.0  
+    ##  Median :126.50   Median :1.055   Median :43.00   Median :176.5  
+    ##  Mean   :126.50   Mean   :1.056   Mean   :44.88   Mean   :178.9  
+    ##  3rd Qu.:189.25   3rd Qu.:1.070   3rd Qu.:54.00   3rd Qu.:197.0  
+    ##  Max.   :252.00   Max.   :1.109   Max.   :81.00   Max.   :363.1  
     ##      height           neck           chest           abdomen      
     ##  Min.   :64.00   Min.   :31.10   Min.   : 79.30   Min.   : 69.40  
     ##  1st Qu.:68.25   1st Qu.:36.40   1st Qu.: 94.35   1st Qu.: 84.58  
@@ -686,32 +686,32 @@ summary(full_model)
     ## lm(formula = outcome ~ ., data = body_density_df)
     ## 
     ## Residuals:
-    ##      Min       1Q   Median       3Q      Max 
-    ## -10.0409  -2.7156  -0.1523   2.7601   9.5656 
+    ##       Min        1Q    Median        3Q       Max 
+    ## -0.021914 -0.007465  0.000245  0.006617  0.034495 
     ## 
     ## Coefficients:
     ##               Estimate Std. Error t value Pr(>|t|)    
-    ## (Intercept) -18.291346  20.578647  -0.889  0.37498    
-    ## id           -0.002652   0.003772  -0.703  0.48275    
-    ## age           0.062977   0.030343   2.076  0.03902 *  
-    ## weight       -0.087260   0.057382  -1.521  0.12967    
-    ## height       -0.031670   0.165869  -0.191  0.84874    
-    ## neck         -0.441342   0.218444  -2.020  0.04447 *  
-    ## chest        -0.013458   0.095824  -0.140  0.88843    
-    ## abdomen       0.889422   0.083732  10.622  < 2e-16 ***
-    ## hip          -0.190632   0.135097  -1.411  0.15953    
-    ## thigh         0.240269   0.135653   1.771  0.07781 .  
-    ## knee         -0.002369   0.230352  -0.010  0.99180    
-    ## ankle         0.155961   0.207110   0.753  0.45218    
-    ## bicep         0.149300   0.160096   0.933  0.35199    
-    ## forearm       0.435202   0.184820   2.355  0.01935 *  
-    ## wrist        -1.516844   0.494546  -3.067  0.00241 ** 
+    ## (Intercept)  1.142e+00  5.162e-02  22.113  < 2e-16 ***
+    ## id           4.965e-06  9.463e-06   0.525  0.60033    
+    ## age         -1.324e-04  7.612e-05  -1.739  0.08327 .  
+    ## weight       2.469e-04  1.439e-04   1.715  0.08766 .  
+    ## height       1.183e-04  4.161e-04   0.284  0.77649    
+    ## neck         1.093e-03  5.480e-04   1.994  0.04728 *  
+    ## chest        1.095e-04  2.404e-04   0.455  0.64923    
+    ## abdomen     -2.278e-03  2.100e-04 -10.845  < 2e-16 ***
+    ## hip          5.360e-04  3.389e-04   1.582  0.11506    
+    ## thigh       -6.273e-04  3.403e-04  -1.843  0.06654 .  
+    ## knee        -7.810e-05  5.779e-04  -0.135  0.89260    
+    ## ankle       -6.133e-04  5.195e-04  -1.180  0.23903    
+    ## bicep       -5.642e-04  4.016e-04  -1.405  0.16139    
+    ## forearm     -1.028e-03  4.636e-04  -2.217  0.02758 *  
+    ## wrist        4.044e-03  1.241e-03   3.260  0.00128 ** 
     ## ---
     ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
     ## 
-    ## Residual standard error: 3.996 on 237 degrees of freedom
-    ## Multiple R-squared:  0.749,  Adjusted R-squared:  0.7342 
-    ## F-statistic: 50.52 on 14 and 237 DF,  p-value: < 2.2e-16
+    ## Residual standard error: 0.01002 on 237 degrees of freedom
+    ## Multiple R-squared:  0.738,  Adjusted R-squared:  0.7225 
+    ## F-statistic: 47.69 on 14 and 237 DF,  p-value: < 2.2e-16
 
 ``` r
 par(mfrow = c(2,2))
@@ -729,150 +729,124 @@ intercept_only <- lm(outcome ~ 1, data = body_density_df)
 fit_forward = step(intercept_only, direction = "forward", scope = formula(full_model))
 ```
 
-    ## Start:  AIC=1033.09
+    ## Start:  AIC=-1995.68
     ## outcome ~ 1
     ## 
-    ##           Df Sum of Sq     RSS     AIC
-    ## + abdomen  1    9984.1  5094.9  761.66
-    ## + chest    1    7449.8  7629.3  863.40
-    ## + hip      1    5903.4  9175.6  909.91
-    ## + weight   1    5669.1  9409.9  916.26
-    ## + thigh    1    4750.5 10328.5  939.74
-    ## + knee     1    3888.1 11190.9  959.94
-    ## + bicep    1    3665.4 11413.6  964.91
-    ## + neck     1    3642.5 11436.5  965.41
-    ## + forearm  1    1990.0 13089.0  999.43
-    ## + wrist    1    1821.6 13257.4 1002.65
-    ## + age      1    1260.9 13818.1 1013.08
-    ## + ankle    1    1073.2 14005.8 1016.49
-    ## + id       1     185.6 14893.4 1031.97
-    ## <none>                 15079.0 1033.09
-    ## + height   1       9.1 15069.9 1034.94
+    ##           Df Sum of Sq      RSS     AIC
+    ## + abdomen  1  0.058031 0.032880 -2250.0
+    ## + chest    1  0.042359 0.048552 -2151.8
+    ## + hip      1  0.033754 0.057157 -2110.6
+    ## + weight   1  0.032083 0.058828 -2103.4
+    ## + thigh    1  0.027811 0.063100 -2085.7
+    ## + knee     1  0.022279 0.068632 -2064.5
+    ## + bicep    1  0.021571 0.069340 -2061.9
+    ## + neck     1  0.020337 0.070575 -2057.5
+    ## + forearm  1  0.011242 0.079669 -2026.9
+    ## + wrist    1  0.009645 0.081266 -2021.9
+    ## + age      1  0.007008 0.083903 -2013.9
+    ## + ankle    1  0.006379 0.084532 -2012.0
+    ## + id       1  0.001092 0.089819 -1996.7
+    ## <none>                 0.090911 -1995.7
+    ## + height   1  0.000140 0.090771 -1994.1
     ## 
-    ## Step:  AIC=761.66
+    ## Step:  AIC=-2249.97
     ## outcome ~ abdomen
     ## 
-    ##           Df Sum of Sq    RSS    AIC
-    ## + weight   1    853.60 4241.3 717.45
-    ## + wrist    1    601.95 4493.0 731.97
-    ## + neck     1    521.22 4573.7 736.46
-    ## + height   1    500.85 4594.1 737.58
-    ## + hip      1    467.43 4627.5 739.41
-    ## + knee     1    279.91 4815.0 749.42
-    ## + ankle    1    197.47 4897.5 753.70
-    ## + chest    1    167.55 4927.4 755.23
-    ## + age      1    164.67 4930.3 755.38
-    ## + thigh    1    142.97 4952.0 756.48
-    ## + bicep    1    117.61 4977.3 757.77
-    ## + forearm  1     43.24 5051.7 761.51
-    ## <none>                 5094.9 761.66
-    ## + id       1      2.17 5092.8 763.55
+    ##           Df Sum of Sq      RSS     AIC
+    ## + weight   1 0.0057258 0.027154 -2296.2
+    ## + wrist    1 0.0042415 0.028638 -2282.8
+    ## + neck     1 0.0035347 0.029345 -2276.6
+    ## + height   1 0.0034367 0.029443 -2275.8
+    ## + hip      1 0.0030517 0.029828 -2272.5
+    ## + knee     1 0.0017569 0.031123 -2261.8
+    ## + chest    1 0.0013594 0.031520 -2258.6
+    ## + ankle    1 0.0010813 0.031799 -2256.4
+    ## + age      1 0.0008402 0.032040 -2254.5
+    ## + thigh    1 0.0007782 0.032102 -2254.0
+    ## + bicep    1 0.0006199 0.032260 -2252.8
+    ## + forearm  1 0.0003102 0.032570 -2250.4
+    ## <none>                 0.032880 -2250.0
+    ## + id       1 0.0000141 0.032866 -2248.1
     ## 
-    ## Step:  AIC=717.45
+    ## Step:  AIC=-2296.18
     ## outcome ~ abdomen + weight
     ## 
-    ##           Df Sum of Sq    RSS    AIC
-    ## + wrist    1   133.146 4108.2 711.41
-    ## + thigh    1    74.090 4167.2 715.01
-    ## + neck     1    73.386 4167.9 715.05
-    ## + forearm  1    60.592 4180.7 715.82
-    ## + bicep    1    52.085 4189.2 716.33
-    ## <none>                 4241.3 717.45
-    ## + id       1    11.097 4230.2 718.79
-    ## + knee     1     6.356 4235.0 719.07
-    ## + height   1     6.285 4235.0 719.07
-    ## + age      1     2.416 4238.9 719.30
-    ## + ankle    1     1.369 4240.0 719.37
-    ## + chest    1     0.024 4241.3 719.45
-    ## + hip      1     0.013 4241.3 719.45
+    ##           Df  Sum of Sq      RSS     AIC
+    ## + wrist    1 0.00100555 0.026149 -2303.7
+    ## + thigh    1 0.00069040 0.026464 -2300.7
+    ## + bicep    1 0.00051011 0.026644 -2299.0
+    ## + neck     1 0.00050946 0.026645 -2299.0
+    ## + forearm  1 0.00038040 0.026774 -2297.7
+    ## <none>                  0.027154 -2296.2
+    ## + age      1 0.00007895 0.027075 -2294.9
+    ## + id       1 0.00007551 0.027079 -2294.9
+    ## + knee     1 0.00007007 0.027084 -2294.8
+    ## + height   1 0.00005514 0.027099 -2294.7
+    ## + ankle    1 0.00005081 0.027103 -2294.7
+    ## + chest    1 0.00001698 0.027137 -2294.3
+    ## + hip      1 0.00000066 0.027154 -2294.2
     ## 
-    ## Step:  AIC=711.41
+    ## Step:  AIC=-2303.69
     ## outcome ~ abdomen + weight + wrist
     ## 
-    ##           Df Sum of Sq    RSS    AIC
-    ## + forearm  1   113.872 3994.3 706.33
-    ## + bicep    1    72.826 4035.4 708.90
-    ## + thigh    1    38.053 4070.1 711.06
-    ## <none>                 4108.2 711.41
-    ## + neck     1    21.188 4087.0 712.11
-    ## + age      1    15.435 4092.7 712.46
-    ## + knee     1    14.604 4093.6 712.51
-    ## + ankle    1    12.957 4095.2 712.61
-    ## + hip      1     8.100 4100.1 712.91
-    ## + height   1     5.114 4103.1 713.10
-    ## + id       1     4.583 4103.6 713.13
-    ## + chest    1     0.942 4107.2 713.35
+    ##           Df  Sum of Sq      RSS     AIC
+    ## + forearm  1 0.00075008 0.025399 -2309.0
+    ## + bicep    1 0.00068754 0.025461 -2308.4
+    ## + thigh    1 0.00038582 0.025763 -2305.4
+    ## <none>                  0.026149 -2303.7
+    ## + ankle    1 0.00019290 0.025956 -2303.6
+    ## + knee     1 0.00014287 0.026006 -2303.1
+    ## + neck     1 0.00013465 0.026014 -2303.0
+    ## + height   1 0.00004558 0.026103 -2302.1
+    ## + hip      1 0.00004433 0.026104 -2302.1
+    ## + age      1 0.00003201 0.026117 -2302.0
+    ## + id       1 0.00002933 0.026119 -2302.0
+    ## + chest    1 0.00000110 0.026148 -2301.7
     ## 
-    ## Step:  AIC=706.33
+    ## Step:  AIC=-2309.03
     ## outcome ~ abdomen + weight + wrist + forearm
     ## 
-    ##          Df Sum of Sq    RSS    AIC
-    ## + neck    1    43.683 3950.6 705.55
-    ## <none>                3994.3 706.33
-    ## + age     1    29.483 3964.8 706.46
-    ## + bicep   1    26.140 3968.2 706.67
-    ## + thigh   1    25.904 3968.4 706.69
-    ## + ankle   1    15.757 3978.6 707.33
-    ## + knee    1    14.034 3980.3 707.44
-    ## + id      1     3.831 3990.5 708.08
-    ## + hip     1     3.071 3991.2 708.13
-    ## + height  1     1.434 3992.9 708.24
-    ## + chest   1     0.560 3993.8 708.29
+    ##          Df  Sum of Sq      RSS     AIC
+    ## + bicep   1 3.1451e-04 0.025084 -2310.2
+    ## + thigh   1 2.8539e-04 0.025113 -2309.9
+    ## + neck    1 2.8054e-04 0.025118 -2309.8
+    ## + ankle   1 2.2026e-04 0.025178 -2309.2
+    ## <none>                 0.025399 -2309.0
+    ## + knee    1 1.3829e-04 0.025260 -2308.4
+    ## + age     1 8.9663e-05 0.025309 -2307.9
+    ## + chest   1 3.0326e-05 0.025368 -2307.3
+    ## + id      1 2.4452e-05 0.025374 -2307.3
+    ## + height  1 1.6199e-05 0.025382 -2307.2
+    ## + hip     1 1.4807e-05 0.025384 -2307.2
     ## 
-    ## Step:  AIC=705.55
-    ## outcome ~ abdomen + weight + wrist + forearm + neck
+    ## Step:  AIC=-2310.17
+    ## outcome ~ abdomen + weight + wrist + forearm + bicep
     ## 
-    ##          Df Sum of Sq    RSS    AIC
-    ## + age     1    37.251 3913.4 705.17
-    ## + bicep   1    35.937 3914.7 705.25
-    ## <none>                3950.6 705.55
-    ## + thigh   1    23.995 3926.6 706.02
-    ## + hip     1     9.494 3941.1 706.95
-    ## + ankle   1     9.297 3941.3 706.96
-    ## + knee    1     6.780 3943.8 707.12
-    ## + height  1     5.684 3944.9 707.19
-    ## + id      1     3.023 3947.6 707.36
-    ## + chest   1     0.000 3950.6 707.55
+    ##          Df  Sum of Sq      RSS     AIC
+    ## + neck    1 0.00036636 0.024718 -2311.9
+    ## + ankle   1 0.00025025 0.024834 -2310.7
+    ## <none>                 0.025084 -2310.2
+    ## + thigh   1 0.00017170 0.024912 -2309.9
+    ## + knee    1 0.00015528 0.024929 -2309.7
+    ## + age     1 0.00009321 0.024991 -2309.1
+    ## + chest   1 0.00004448 0.025040 -2308.6
+    ## + hip     1 0.00001697 0.025067 -2308.3
+    ## + id      1 0.00001456 0.025070 -2308.3
+    ## + height  1 0.00000000 0.025084 -2308.2
     ## 
-    ## Step:  AIC=705.17
-    ## outcome ~ abdomen + weight + wrist + forearm + neck + age
+    ## Step:  AIC=-2311.88
+    ## outcome ~ abdomen + weight + wrist + forearm + bicep + neck
     ## 
-    ##          Df Sum of Sq    RSS    AIC
-    ## + thigh   1    60.163 3853.2 703.26
-    ## + bicep   1    37.661 3875.7 704.73
-    ## <none>                3913.4 705.17
-    ## + ankle   1    12.670 3900.7 706.35
-    ## + id      1    12.129 3901.2 706.38
-    ## + height  1     7.835 3905.5 706.66
-    ## + knee    1     4.067 3909.3 706.91
-    ## + hip     1     3.050 3910.3 706.97
-    ## + chest   1     0.826 3912.6 707.11
-    ## 
-    ## Step:  AIC=703.26
-    ## outcome ~ abdomen + weight + wrist + forearm + neck + age + thigh
-    ## 
-    ##          Df Sum of Sq    RSS    AIC
-    ## + hip     1    33.229 3820.0 703.08
-    ## <none>                3853.2 703.26
-    ## + bicep   1    18.816 3834.4 704.03
-    ## + ankle   1    10.913 3842.3 704.55
-    ## + id      1     6.728 3846.5 704.82
-    ## + height  1     0.676 3852.5 705.22
-    ## + chest   1     0.607 3852.6 705.22
-    ## + knee    1     0.223 3853.0 705.25
-    ## 
-    ## Step:  AIC=703.08
-    ## outcome ~ abdomen + weight + wrist + forearm + neck + age + thigh + 
-    ##     hip
-    ## 
-    ##          Df Sum of Sq    RSS    AIC
-    ## <none>                3820.0 703.08
-    ## + bicep   1   14.9103 3805.1 704.09
-    ## + id      1   10.9040 3809.1 704.36
-    ## + ankle   1    9.9018 3810.1 704.43
-    ## + height  1    2.5369 3817.4 704.91
-    ## + knee    1    0.0583 3819.9 705.08
-    ## + chest   1    0.0036 3820.0 705.08
+    ##          Df  Sum of Sq      RSS     AIC
+    ## <none>                 0.024718 -2311.9
+    ## + ankle   1 1.7676e-04 0.024541 -2311.7
+    ## + thigh   1 1.4301e-04 0.024575 -2311.3
+    ## + age     1 1.3500e-04 0.024583 -2311.3
+    ## + knee    1 8.5366e-05 0.024632 -2310.8
+    ## + hip     1 6.4373e-05 0.024653 -2310.5
+    ## + chest   1 2.2083e-05 0.024696 -2310.1
+    ## + id      1 9.1190e-06 0.024709 -2310.0
+    ## + height  1 8.5180e-06 0.024709 -2310.0
 
 ## Backward Elimination
 
@@ -880,131 +854,116 @@ fit_forward = step(intercept_only, direction = "forward", scope = formula(full_m
 fit_backward = step(lm(full_model, data = body_density_df), direction = "backward")
 ```
 
-    ## Start:  AIC=712.75
+    ## Start:  AIC=-2305.22
     ## outcome ~ id + age + weight + height + neck + chest + abdomen + 
     ##     hip + thigh + knee + ankle + bicep + forearm + wrist
     ## 
-    ##           Df Sum of Sq    RSS    AIC
-    ## - knee     1      0.00 3784.9 710.75
-    ## - chest    1      0.32 3785.2 710.77
-    ## - height   1      0.58 3785.4 710.79
-    ## - id       1      7.89 3792.7 711.28
-    ## - ankle    1      9.06 3793.9 711.35
-    ## - bicep    1     13.89 3798.7 711.67
-    ## <none>                 3784.8 712.75
-    ## - hip      1     31.80 3816.6 712.86
-    ## - weight   1     36.93 3821.8 713.20
-    ## - thigh    1     50.10 3834.9 714.07
-    ## - neck     1     65.19 3850.0 715.06
-    ## - age      1     68.79 3853.6 715.29
-    ## - forearm  1     88.55 3873.4 716.58
-    ## - wrist    1    150.23 3935.1 720.56
-    ## - abdomen  1   1801.90 5586.7 808.88
+    ##           Df Sum of Sq      RSS     AIC
+    ## - knee     1 0.0000018 0.023819 -2307.2
+    ## - height   1 0.0000081 0.023826 -2307.1
+    ## - chest    1 0.0000208 0.023838 -2307.0
+    ## - id       1 0.0000277 0.023845 -2306.9
+    ## - ankle    1 0.0001400 0.023958 -2305.8
+    ## <none>                 0.023818 -2305.2
+    ## - bicep    1 0.0001983 0.024016 -2305.1
+    ## - hip      1 0.0002514 0.024069 -2304.6
+    ## - weight   1 0.0002956 0.024113 -2304.1
+    ## - age      1 0.0003040 0.024122 -2304.0
+    ## - thigh    1 0.0003415 0.024159 -2303.6
+    ## - neck     1 0.0003996 0.024217 -2303.0
+    ## - forearm  1 0.0004939 0.024311 -2302.1
+    ## - wrist    1 0.0010679 0.024885 -2296.2
+    ## - abdomen  1 0.0118197 0.035637 -2205.7
     ## 
-    ## Step:  AIC=710.75
+    ## Step:  AIC=-2307.2
     ## outcome ~ id + age + weight + height + neck + chest + abdomen + 
     ##     hip + thigh + ankle + bicep + forearm + wrist
     ## 
-    ##           Df Sum of Sq    RSS    AIC
-    ## - chest    1      0.31 3785.2 708.77
-    ## - height   1      0.63 3785.5 708.79
-    ## - id       1      7.95 3792.8 709.28
-    ## - ankle    1      9.34 3794.2 709.37
-    ## - bicep    1     13.93 3798.8 709.68
-    ## <none>                 3784.9 710.75
-    ## - hip      1     32.03 3816.9 710.88
-    ## - weight   1     37.37 3822.2 711.23
-    ## - thigh    1     55.23 3840.1 712.40
-    ## - neck     1     65.93 3850.8 713.10
-    ## - age      1     72.67 3857.5 713.54
-    ## - forearm  1     89.08 3873.9 714.61
-    ## - wrist    1    151.18 3936.0 718.62
-    ## - abdomen  1   1802.09 5586.9 806.89
+    ##           Df Sum of Sq      RSS     AIC
+    ## - height   1 0.0000068 0.023826 -2309.1
+    ## - chest    1 0.0000212 0.023841 -2309.0
+    ## - id       1 0.0000268 0.023846 -2308.9
+    ## - ankle    1 0.0001514 0.023971 -2307.6
+    ## <none>                 0.023819 -2307.2
+    ## - bicep    1 0.0001970 0.024016 -2307.1
+    ## - hip      1 0.0002496 0.024069 -2306.6
+    ## - weight   1 0.0002939 0.024113 -2306.1
+    ## - age      1 0.0003338 0.024153 -2305.7
+    ## - thigh    1 0.0003952 0.024215 -2305.1
+    ## - neck     1 0.0004108 0.024230 -2304.9
+    ## - forearm  1 0.0005022 0.024322 -2303.9
+    ## - wrist    1 0.0010673 0.024887 -2298.2
+    ## - abdomen  1 0.0118180 0.035637 -2207.7
     ## 
-    ## Step:  AIC=708.77
-    ## outcome ~ id + age + weight + height + neck + abdomen + hip + 
+    ## Step:  AIC=-2309.13
+    ## outcome ~ id + age + weight + neck + chest + abdomen + hip + 
     ##     thigh + ankle + bicep + forearm + wrist
     ## 
-    ##           Df Sum of Sq    RSS    AIC
-    ## - height   1      0.40 3785.6 706.80
-    ## - id       1      8.11 3793.3 707.31
-    ## - ankle    1      9.54 3794.7 707.41
-    ## - bicep    1     13.77 3798.9 707.69
-    ## <none>                 3785.2 708.77
-    ## - hip      1     32.01 3817.2 708.90
-    ## - weight   1     52.58 3837.7 710.25
-    ## - thigh    1     59.65 3844.8 710.71
-    ## - neck     1     65.80 3851.0 711.12
-    ## - age      1     72.51 3857.7 711.55
-    ## - forearm  1     89.11 3874.3 712.64
-    ## - wrist    1    150.92 3936.1 716.63
-    ## - abdomen  1   2031.97 5817.1 815.06
+    ##           Df Sum of Sq      RSS     AIC
+    ## - chest    1 0.0000154 0.023842 -2311.0
+    ## - id       1 0.0000286 0.023855 -2310.8
+    ## - ankle    1 0.0001565 0.023983 -2309.5
+    ## <none>                 0.023826 -2309.1
+    ## - bicep    1 0.0002115 0.024038 -2308.9
+    ## - hip      1 0.0002431 0.024069 -2308.6
+    ## - age      1 0.0003376 0.024164 -2307.6
+    ## - neck     1 0.0004054 0.024232 -2306.9
+    ## - thigh    1 0.0004319 0.024258 -2306.6
+    ## - forearm  1 0.0004989 0.024325 -2305.9
+    ## - weight   1 0.0006595 0.024486 -2304.2
+    ## - wrist    1 0.0010796 0.024906 -2300.0
+    ## - abdomen  1 0.0132853 0.037112 -2199.5
     ## 
-    ## Step:  AIC=706.8
+    ## Step:  AIC=-2310.97
     ## outcome ~ id + age + weight + neck + abdomen + hip + thigh + 
     ##     ankle + bicep + forearm + wrist
     ## 
-    ##           Df Sum of Sq    RSS    AIC
-    ## - id       1      8.31 3793.9 705.35
-    ## - ankle    1      9.77 3795.3 705.45
-    ## - bicep    1     14.99 3800.6 705.80
-    ## <none>                 3785.6 706.80
-    ## - hip      1     31.64 3817.2 706.90
-    ## - thigh    1     61.97 3847.5 708.89
-    ## - neck     1     66.35 3851.9 709.18
-    ## - age      1     73.14 3858.7 709.62
-    ## - forearm  1     89.26 3874.8 710.67
-    ## - weight   1     94.04 3879.6 710.98
-    ## - wrist    1    152.68 3938.2 714.76
-    ## - abdomen  1   2745.49 6531.1 842.23
+    ##           Df Sum of Sq      RSS     AIC
+    ## - id       1 0.0000296 0.023871 -2312.7
+    ## - ankle    1 0.0001594 0.024001 -2311.3
+    ## <none>                 0.023842 -2311.0
+    ## - bicep    1 0.0002020 0.024044 -2310.8
+    ## - hip      1 0.0002311 0.024073 -2310.5
+    ## - age      1 0.0003330 0.024175 -2309.5
+    ## - neck     1 0.0004158 0.024257 -2308.6
+    ## - thigh    1 0.0004685 0.024310 -2308.1
+    ## - forearm  1 0.0004853 0.024327 -2307.9
+    ## - weight   1 0.0008229 0.024665 -2304.4
+    ## - wrist    1 0.0010696 0.024911 -2301.9
+    ## - abdomen  1 0.0175514 0.041393 -2173.9
     ## 
-    ## Step:  AIC=705.35
+    ## Step:  AIC=-2312.66
     ## outcome ~ age + weight + neck + abdomen + hip + thigh + ankle + 
     ##     bicep + forearm + wrist
     ## 
-    ##           Df Sum of Sq    RSS    AIC
-    ## - ankle    1     11.20 3805.1 704.09
-    ## - bicep    1     16.21 3810.1 704.43
-    ## - hip      1     28.16 3822.0 705.22
-    ## <none>                 3793.9 705.35
-    ## - thigh    1     63.66 3857.5 707.55
-    ## - neck     1     65.45 3859.3 707.66
-    ## - age      1     66.23 3860.1 707.71
-    ## - forearm  1     88.14 3882.0 709.14
-    ## - weight   1    102.94 3896.8 710.10
-    ## - wrist    1    151.52 3945.4 713.22
-    ## - abdomen  1   2737.19 6531.1 840.23
+    ##           Df Sum of Sq      RSS     AIC
+    ## - ankle    1 0.0001706 0.024042 -2312.9
+    ## <none>                 0.023871 -2312.7
+    ## - bicep    1 0.0002106 0.024082 -2312.4
+    ## - hip      1 0.0002142 0.024085 -2312.4
+    ## - age      1 0.0003066 0.024178 -2311.4
+    ## - neck     1 0.0004116 0.024283 -2310.3
+    ## - thigh    1 0.0004774 0.024349 -2309.7
+    ## - forearm  1 0.0004804 0.024352 -2309.6
+    ## - weight   1 0.0008772 0.024748 -2305.6
+    ## - wrist    1 0.0010639 0.024935 -2303.7
+    ## - abdomen  1 0.0175263 0.041397 -2175.9
     ## 
-    ## Step:  AIC=704.09
+    ## Step:  AIC=-2312.86
     ## outcome ~ age + weight + neck + abdomen + hip + thigh + bicep + 
     ##     forearm + wrist
     ## 
-    ##           Df Sum of Sq    RSS    AIC
-    ## - bicep    1     14.91 3820.0 703.08
-    ## - hip      1     29.32 3834.4 704.03
-    ## <none>                 3805.1 704.09
-    ## - age      1     63.17 3868.2 706.24
-    ## - thigh    1     66.76 3871.8 706.48
-    ## - neck     1     74.16 3879.2 706.96
-    ## - forearm  1     87.57 3892.6 707.83
-    ## - weight   1     92.42 3897.5 708.14
-    ## - wrist    1    140.36 3945.4 711.22
-    ## - abdomen  1   2740.72 6545.8 838.80
-    ## 
-    ## Step:  AIC=703.08
-    ## outcome ~ age + weight + neck + abdomen + hip + thigh + forearm + 
-    ##     wrist
-    ## 
-    ##           Df Sum of Sq    RSS    AIC
-    ## <none>                 3820.0 703.08
-    ## - hip      1     33.23 3853.2 703.26
-    ## - neck     1     67.79 3887.8 705.51
-    ## - age      1     67.88 3887.9 705.52
-    ## - weight   1     81.50 3901.5 706.40
-    ## - thigh    1     90.34 3910.3 706.97
-    ## - forearm  1    122.99 3943.0 709.07
-    ## - wrist    1    139.46 3959.4 710.12
-    ## - abdomen  1   2726.49 6546.5 836.83
+    ##           Df Sum of Sq      RSS     AIC
+    ## <none>                 0.024042 -2312.9
+    ## - bicep    1 0.0001923 0.024234 -2312.8
+    ## - hip      1 0.0002267 0.024269 -2312.5
+    ## - age      1 0.0002803 0.024322 -2311.9
+    ## - forearm  1 0.0004752 0.024517 -2309.9
+    ## - neck     1 0.0004938 0.024536 -2309.7
+    ## - thigh    1 0.0005100 0.024552 -2309.6
+    ## - weight   1 0.0007406 0.024782 -2307.2
+    ## - wrist    1 0.0009172 0.024959 -2305.4
+    ## - abdomen  1 0.0173814 0.041423 -2177.8
 
 ## Stepwise selection
 
@@ -1016,129 +975,148 @@ direction = "both"
 ) 
 ```
 
-    ## Start:  AIC=712.69
+    ## Start:  AIC=-2305.26
     ## outcome ~ age + weight + height + neck + chest + abdomen + hip + 
     ##     knee + ankle + bicep + forearm + wrist
     ## 
-    ##           Df Sum of Sq    RSS    AIC
-    ## - knee     1      4.30 3848.8 710.98
-    ## - chest    1      4.55 3849.1 710.99
-    ## - height   1      7.75 3852.3 711.20
-    ## - ankle    1      9.40 3853.9 711.31
-    ## - hip      1     10.45 3855.0 711.38
-    ## - weight   1     27.95 3872.5 712.52
-    ## <none>                 3844.5 712.69
-    ## - age      1     32.83 3877.4 712.84
-    ## - bicep    1     33.09 3877.6 712.85
-    ## - neck     1     57.71 3902.2 714.45
-    ## - forearm  1     90.38 3934.9 716.55
-    ## - wrist    1    162.96 4007.5 721.16
-    ## - abdomen  1   1851.32 5695.8 809.75
+    ##           Df Sum of Sq      RSS     AIC
+    ## - knee     1 0.0000502 0.024245 -2306.7
+    ## - height   1 0.0000646 0.024260 -2306.6
+    ## - chest    1 0.0000743 0.024269 -2306.5
+    ## - hip      1 0.0000983 0.024293 -2306.2
+    ## - age      1 0.0001168 0.024312 -2306.1
+    ## - ankle    1 0.0001399 0.024335 -2305.8
+    ## <none>                 0.024195 -2305.3
+    ## - weight   1 0.0002275 0.024423 -2304.9
+    ## - neck     1 0.0003515 0.024547 -2303.6
+    ## - bicep    1 0.0003763 0.024571 -2303.4
+    ## - forearm  1 0.0005060 0.024701 -2302.0
+    ## - wrist    1 0.0011596 0.025355 -2295.5
+    ## - abdomen  1 0.0121716 0.036367 -2204.6
     ## 
-    ## Step:  AIC=710.98
+    ## Step:  AIC=-2306.74
     ## outcome ~ age + weight + height + neck + chest + abdomen + hip + 
     ##     ankle + bicep + forearm + wrist
     ## 
-    ##           Df Sum of Sq    RSS    AIC
-    ## - chest    1      5.41 3854.2 709.33
-    ## - height   1      6.16 3855.0 709.38
-    ## - hip      1      8.39 3857.2 709.52
-    ## - ankle    1     12.30 3861.1 709.78
-    ## - weight   1     25.28 3874.1 710.63
-    ## <none>                 3848.8 710.98
-    ## - bicep    1     33.76 3882.6 711.18
-    ## - age      1     37.76 3886.6 711.44
-    ## + knee     1      4.30 3844.5 712.69
-    ## - neck     1     61.30 3910.1 712.96
-    ## - forearm  1     94.88 3943.7 715.11
-    ## - wrist    1    160.58 4009.4 719.28
-    ## - abdomen  1   1855.36 5704.2 808.12
+    ##           Df Sum of Sq      RSS     AIC
+    ## - height   1 0.0000488 0.024294 -2308.2
+    ## - hip      1 0.0000765 0.024322 -2307.9
+    ## - chest    1 0.0000861 0.024331 -2307.8
+    ## - age      1 0.0001466 0.024392 -2307.2
+    ## - ankle    1 0.0001785 0.024424 -2306.9
+    ## <none>                 0.024245 -2306.7
+    ## - weight   1 0.0002006 0.024446 -2306.7
+    ## + knee     1 0.0000502 0.024195 -2305.3
+    ## - neck     1 0.0003807 0.024626 -2304.8
+    ## - bicep    1 0.0003840 0.024629 -2304.8
+    ## - forearm  1 0.0005407 0.024786 -2303.2
+    ## - wrist    1 0.0011370 0.025382 -2297.2
+    ## - abdomen  1 0.0122056 0.036451 -2206.0
     ## 
-    ## Step:  AIC=709.33
-    ## outcome ~ age + weight + height + neck + abdomen + hip + ankle + 
+    ## Step:  AIC=-2308.23
+    ## outcome ~ age + weight + neck + chest + abdomen + hip + ankle + 
     ##     bicep + forearm + wrist
     ## 
-    ##           Df Sum of Sq    RSS    AIC
-    ## - height   1      3.29 3857.5 707.55
-    ## - hip      1      5.29 3859.5 707.68
-    ## - ankle    1     13.39 3867.6 708.20
-    ## <none>                 3854.2 709.33
-    ## - bicep    1     33.95 3888.2 709.54
-    ## - age      1     35.30 3889.5 709.63
-    ## - weight   1     47.06 3901.3 710.39
-    ## + chest    1      5.41 3848.8 710.98
-    ## + knee     1      5.15 3849.1 710.99
-    ## - neck     1     60.45 3914.7 711.25
-    ## - forearm  1     90.95 3945.2 713.21
-    ## - wrist    1    159.68 4013.9 717.56
-    ## - abdomen  1   2026.70 5880.9 813.81
+    ##           Df Sum of Sq      RSS     AIC
+    ## - hip      1 0.0000483 0.024342 -2309.7
+    ## - chest    1 0.0000546 0.024349 -2309.7
+    ## - age      1 0.0001403 0.024434 -2308.8
+    ## <none>                 0.024294 -2308.2
+    ## - ankle    1 0.0001950 0.024489 -2308.2
+    ## + height   1 0.0000488 0.024245 -2306.7
+    ## - neck     1 0.0003418 0.024636 -2306.7
+    ## + knee     1 0.0000344 0.024260 -2306.6
+    ## - bicep    1 0.0004586 0.024753 -2305.5
+    ## - forearm  1 0.0005328 0.024827 -2304.8
+    ## - weight   1 0.0006444 0.024938 -2303.6
+    ## - wrist    1 0.0011726 0.025467 -2298.3
+    ## - abdomen  1 0.0142989 0.038593 -2193.6
     ## 
-    ## Step:  AIC=707.55
-    ## outcome ~ age + weight + neck + abdomen + hip + ankle + bicep + 
+    ## Step:  AIC=-2309.73
+    ## outcome ~ age + weight + neck + chest + abdomen + ankle + bicep + 
     ##     forearm + wrist
     ## 
-    ##           Df Sum of Sq    RSS    AIC
-    ## - hip      1      3.76 3861.3 705.79
-    ## - ankle    1     14.30 3871.8 706.48
-    ## <none>                 3857.5 707.55
-    ## - age      1     35.17 3892.7 707.83
-    ## - bicep    1     40.24 3897.8 708.16
-    ## - neck     1     57.21 3914.7 709.26
-    ## + knee     1      3.47 3854.1 709.32
-    ## + height   1      3.29 3854.2 709.33
-    ## + chest    1      2.55 3855.0 709.38
-    ## - forearm  1     91.44 3949.0 711.45
-    ## - weight   1    103.12 3960.7 712.19
-    ## - wrist    1    164.00 4021.5 716.04
-    ## - abdomen  1   2823.01 6680.5 843.94
+    ##           Df Sum of Sq      RSS     AIC
+    ## - chest    1 0.0000357 0.024378 -2311.4
+    ## - age      1 0.0001819 0.024524 -2309.9
+    ## <none>                 0.024342 -2309.7
+    ## - ankle    1 0.0001984 0.024541 -2309.7
+    ## - neck     1 0.0003095 0.024652 -2308.6
+    ## + hip      1 0.0000483 0.024294 -2308.2
+    ## + knee     1 0.0000230 0.024319 -2308.0
+    ## + height   1 0.0000206 0.024322 -2307.9
+    ## - bicep    1 0.0004451 0.024787 -2307.2
+    ## - forearm  1 0.0005633 0.024906 -2306.0
+    ## - wrist    1 0.0011576 0.025500 -2300.0
+    ## - weight   1 0.0013965 0.025739 -2297.7
+    ## - abdomen  1 0.0160540 0.040396 -2184.1
     ## 
-    ## Step:  AIC=705.79
+    ## Step:  AIC=-2311.36
     ## outcome ~ age + weight + neck + abdomen + ankle + bicep + forearm + 
     ##     wrist
     ## 
-    ##           Df Sum of Sq    RSS    AIC
-    ## - ankle    1     14.42 3875.7 704.73
-    ## <none>                 3861.3 705.79
-    ## - bicep    1     39.41 3900.7 706.35
-    ## - age      1     42.71 3904.0 706.56
-    ## - neck     1     53.82 3915.1 707.28
-    ## + hip      1      3.76 3857.5 707.55
-    ## + knee     1      2.20 3859.1 707.65
-    ## + height   1      1.77 3859.5 707.68
-    ## + chest    1      1.25 3860.0 707.71
-    ## - forearm  1     96.79 3958.1 710.03
-    ## - wrist    1    162.81 4024.1 714.20
-    ## - weight   1    192.41 4053.7 716.05
-    ## - abdomen  1   3078.35 6939.6 851.53
+    ##           Df Sum of Sq      RSS     AIC
+    ## - age      1 0.0001628 0.024541 -2311.7
+    ## <none>                 0.024378 -2311.4
+    ## - ankle    1 0.0002046 0.024583 -2311.3
+    ## - neck     1 0.0003300 0.024708 -2310.0
+    ## + chest    1 0.0000357 0.024342 -2309.7
+    ## + knee     1 0.0000337 0.024344 -2309.7
+    ## + hip      1 0.0000294 0.024349 -2309.7
+    ## + height   1 0.0000079 0.024370 -2309.4
+    ## - bicep    1 0.0004328 0.024811 -2308.9
+    ## - forearm  1 0.0005354 0.024914 -2307.9
+    ## - wrist    1 0.0011455 0.025524 -2301.8
+    ## - weight   1 0.0016261 0.026004 -2297.1
+    ## - abdomen  1 0.0197005 0.044079 -2164.1
     ## 
-    ## Step:  AIC=704.73
-    ## outcome ~ age + weight + neck + abdomen + bicep + forearm + wrist
+    ## Step:  AIC=-2311.68
+    ## outcome ~ weight + neck + abdomen + ankle + bicep + forearm + 
+    ##     wrist
     ## 
-    ##           Df Sum of Sq    RSS    AIC
-    ## <none>                 3875.7 704.73
-    ## - bicep    1     37.66 3913.4 705.17
-    ## - age      1     38.97 3914.7 705.25
-    ## + ankle    1     14.42 3861.3 705.79
-    ## + knee     1      4.44 3871.3 706.44
-    ## + hip      1      3.88 3871.8 706.48
-    ## + height   1      2.41 3873.3 706.57
-    ## + chest    1      1.56 3874.2 706.63
-    ## - neck     1     62.39 3938.1 706.75
-    ## - forearm  1     96.26 3972.0 708.91
-    ## - wrist    1    148.73 4024.4 712.22
-    ## - weight   1    178.16 4053.9 714.06
-    ## - abdomen  1   3081.58 6957.3 850.17
+    ##           Df Sum of Sq      RSS     AIC
+    ## - ankle    1 0.0001768 0.024718 -2311.9
+    ## <none>                 0.024541 -2311.7
+    ## + age      1 0.0001628 0.024378 -2311.4
+    ## - neck     1 0.0002929 0.024834 -2310.7
+    ## + hip      1 0.0000666 0.024474 -2310.4
+    ## + knee     1 0.0000519 0.024489 -2310.2
+    ## + chest    1 0.0000167 0.024524 -2309.9
+    ## + height   1 0.0000043 0.024537 -2309.7
+    ## - bicep    1 0.0004194 0.024960 -2309.4
+    ## - forearm  1 0.0004668 0.025008 -2308.9
+    ## - wrist    1 0.0009851 0.025526 -2303.8
+    ## - weight   1 0.0028554 0.027396 -2285.9
+    ## - abdomen  1 0.0311143 0.055655 -2107.3
+    ## 
+    ## Step:  AIC=-2311.88
+    ## outcome ~ weight + neck + abdomen + bicep + forearm + wrist
+    ## 
+    ##           Df Sum of Sq      RSS     AIC
+    ## <none>                 0.024718 -2311.9
+    ## + ankle    1  0.000177 0.024541 -2311.7
+    ## + age      1  0.000135 0.024583 -2311.3
+    ## + knee     1  0.000085 0.024632 -2310.8
+    ## + hip      1  0.000064 0.024653 -2310.5
+    ## - neck     1  0.000366 0.025084 -2310.2
+    ## + chest    1  0.000022 0.024696 -2310.1
+    ## + height   1  0.000009 0.024709 -2310.0
+    ## - bicep    1  0.000400 0.025118 -2309.8
+    ## - forearm  1  0.000469 0.025187 -2309.1
+    ## - wrist    1  0.000843 0.025561 -2305.4
+    ## - weight   1  0.002751 0.027468 -2287.3
+    ## - abdomen  1  0.031689 0.056407 -2106.0
 
     ## 
     ## Call:
-    ## lm(formula = outcome ~ age + weight + neck + abdomen + bicep + 
-    ##     forearm + wrist, data = body_density_df)
+    ## lm(formula = outcome ~ weight + neck + abdomen + bicep + forearm + 
+    ##     wrist, data = body_density_df)
     ## 
     ## Coefficients:
-    ## (Intercept)          age       weight         neck      abdomen        bicep  
-    ##   -24.54674      0.04154     -0.10164     -0.40949      0.88031      0.23274  
-    ##     forearm        wrist  
-    ##     0.44593     -1.44863
+    ## (Intercept)       weight         neck      abdomen        bicep      forearm  
+    ##   1.1680224    0.0003356    0.0009874   -0.0023211   -0.0007586   -0.0009754  
+    ##       wrist  
+    ##   0.0031416
 
 ## Criteria-based Selection
 
@@ -1149,7 +1127,29 @@ b = regsubsets(outcome ~
                  age + weight + height + neck + chest + abdomen + hip + thigh +
                  knee + ankle + bicep + forearm + wrist, data = body_density_df)
 rs = summary(b)
+rs$which
+```
 
+    ##   (Intercept)   age weight height  neck chest abdomen   hip thigh  knee ankle
+    ## 1        TRUE FALSE  FALSE  FALSE FALSE FALSE    TRUE FALSE FALSE FALSE FALSE
+    ## 2        TRUE FALSE   TRUE  FALSE FALSE FALSE    TRUE FALSE FALSE FALSE FALSE
+    ## 3        TRUE FALSE   TRUE  FALSE FALSE FALSE    TRUE FALSE FALSE FALSE FALSE
+    ## 4        TRUE FALSE   TRUE  FALSE FALSE FALSE    TRUE FALSE FALSE FALSE FALSE
+    ## 5        TRUE FALSE   TRUE  FALSE FALSE FALSE    TRUE FALSE FALSE FALSE FALSE
+    ## 6        TRUE FALSE   TRUE  FALSE  TRUE FALSE    TRUE FALSE FALSE FALSE FALSE
+    ## 7        TRUE  TRUE   TRUE  FALSE  TRUE FALSE    TRUE FALSE  TRUE FALSE FALSE
+    ## 8        TRUE  TRUE   TRUE  FALSE  TRUE FALSE    TRUE  TRUE  TRUE FALSE FALSE
+    ##   bicep forearm wrist
+    ## 1 FALSE   FALSE FALSE
+    ## 2 FALSE   FALSE FALSE
+    ## 3 FALSE   FALSE  TRUE
+    ## 4 FALSE    TRUE  TRUE
+    ## 5  TRUE    TRUE  TRUE
+    ## 6  TRUE    TRUE  TRUE
+    ## 7 FALSE    TRUE  TRUE
+    ## 8 FALSE    TRUE  TRUE
+
+``` r
 par(mfrow=c(1,2))
 plot(2:9, rs$cp, xlab = "No of parameters", ylab = "Cp Statistic")
 abline(0,1)
@@ -1170,9 +1170,7 @@ ankle + bicep + forearm + wrist
 
 ``` r
 cp_model =  leaps(x = as.matrix(body_density_df)[,c(3:15)], y = as.matrix(body_density_df)[,2], nbest = 2, method = "Cp")
-
-adjr2_model =  leaps(x = as.matrix(body_density_df)[,c(3:15)], y = as.matrix(body_density_df)[,2], nbest = 2, method = "adjr2")
-adjr2_model$which
+cp_model$which
 ```
 
     ##        1     2     3     4     5     6     7     8     9     A     B     C
@@ -1184,22 +1182,22 @@ adjr2_model$which
     ## 3  FALSE  TRUE FALSE FALSE FALSE  TRUE FALSE  TRUE FALSE FALSE FALSE FALSE
     ## 4  FALSE  TRUE FALSE FALSE FALSE  TRUE FALSE FALSE FALSE FALSE FALSE  TRUE
     ## 4  FALSE  TRUE FALSE FALSE FALSE  TRUE FALSE FALSE FALSE FALSE  TRUE FALSE
-    ## 5  FALSE  TRUE FALSE  TRUE FALSE  TRUE FALSE FALSE FALSE FALSE FALSE  TRUE
-    ## 5   TRUE  TRUE FALSE FALSE FALSE  TRUE FALSE FALSE FALSE FALSE FALSE  TRUE
+    ## 5  FALSE  TRUE FALSE FALSE FALSE  TRUE FALSE FALSE FALSE FALSE  TRUE  TRUE
+    ## 5  FALSE  TRUE FALSE FALSE FALSE  TRUE FALSE  TRUE FALSE FALSE FALSE  TRUE
+    ## 6  FALSE  TRUE FALSE  TRUE FALSE  TRUE FALSE FALSE FALSE FALSE  TRUE  TRUE
     ## 6   TRUE  TRUE FALSE FALSE FALSE  TRUE FALSE  TRUE FALSE FALSE FALSE  TRUE
-    ## 6   TRUE  TRUE FALSE  TRUE FALSE  TRUE FALSE FALSE FALSE FALSE FALSE  TRUE
     ## 7   TRUE  TRUE FALSE  TRUE FALSE  TRUE FALSE  TRUE FALSE FALSE FALSE  TRUE
-    ## 7   TRUE  TRUE FALSE  TRUE FALSE  TRUE FALSE FALSE FALSE FALSE  TRUE  TRUE
+    ## 7  FALSE  TRUE FALSE  TRUE FALSE  TRUE FALSE FALSE FALSE  TRUE  TRUE  TRUE
     ## 8   TRUE  TRUE FALSE  TRUE FALSE  TRUE  TRUE  TRUE FALSE FALSE FALSE  TRUE
     ## 8   TRUE  TRUE FALSE  TRUE FALSE  TRUE FALSE  TRUE FALSE FALSE  TRUE  TRUE
     ## 9   TRUE  TRUE FALSE  TRUE FALSE  TRUE  TRUE  TRUE FALSE FALSE  TRUE  TRUE
     ## 9   TRUE  TRUE FALSE  TRUE FALSE  TRUE  TRUE  TRUE FALSE  TRUE FALSE  TRUE
     ## 10  TRUE  TRUE FALSE  TRUE FALSE  TRUE  TRUE  TRUE FALSE  TRUE  TRUE  TRUE
-    ## 10  TRUE  TRUE  TRUE  TRUE FALSE  TRUE  TRUE  TRUE FALSE FALSE  TRUE  TRUE
+    ## 10  TRUE  TRUE FALSE  TRUE  TRUE  TRUE  TRUE  TRUE FALSE FALSE  TRUE  TRUE
+    ## 11  TRUE  TRUE FALSE  TRUE  TRUE  TRUE  TRUE  TRUE FALSE  TRUE  TRUE  TRUE
     ## 11  TRUE  TRUE  TRUE  TRUE FALSE  TRUE  TRUE  TRUE FALSE  TRUE  TRUE  TRUE
-    ## 11  TRUE  TRUE FALSE  TRUE FALSE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE
     ## 12  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE FALSE  TRUE  TRUE  TRUE
-    ## 12  TRUE  TRUE  TRUE  TRUE FALSE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE
+    ## 12  TRUE  TRUE FALSE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE
     ## 13  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE
     ##        D
     ## 1  FALSE
@@ -1228,23 +1226,110 @@ adjr2_model$which
     ## 12  TRUE
     ## 13  TRUE
 
-Best model by AdjR2
+``` r
+35910
+```
+
+    ## [1] 35910
 
 ``` r
-fit_adjr2 = lm(outcome ~ age + weight + neck + abdomen + hip + bicep + forearm + wrist, data = body_density_df)
-fit_adjr2
+adjr2_model =  leaps(x = as.matrix(body_density_df)[,c(3:15)], y = as.matrix(body_density_df)[,2], nbest = 2, method = "adjr2")
+adjr2_model$which
+```
+
+    ##        1     2     3     4     5     6     7     8     9     A     B     C
+    ## 1  FALSE FALSE FALSE FALSE FALSE  TRUE FALSE FALSE FALSE FALSE FALSE FALSE
+    ## 1  FALSE FALSE FALSE FALSE  TRUE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+    ## 2  FALSE  TRUE FALSE FALSE FALSE  TRUE FALSE FALSE FALSE FALSE FALSE FALSE
+    ## 2  FALSE FALSE FALSE FALSE FALSE  TRUE FALSE FALSE FALSE FALSE FALSE FALSE
+    ## 3  FALSE  TRUE FALSE FALSE FALSE  TRUE FALSE FALSE FALSE FALSE FALSE FALSE
+    ## 3  FALSE  TRUE FALSE FALSE FALSE  TRUE FALSE  TRUE FALSE FALSE FALSE FALSE
+    ## 4  FALSE  TRUE FALSE FALSE FALSE  TRUE FALSE FALSE FALSE FALSE FALSE  TRUE
+    ## 4  FALSE  TRUE FALSE FALSE FALSE  TRUE FALSE FALSE FALSE FALSE  TRUE FALSE
+    ## 5  FALSE  TRUE FALSE FALSE FALSE  TRUE FALSE FALSE FALSE FALSE  TRUE  TRUE
+    ## 5  FALSE  TRUE FALSE FALSE FALSE  TRUE FALSE  TRUE FALSE FALSE FALSE  TRUE
+    ## 6  FALSE  TRUE FALSE  TRUE FALSE  TRUE FALSE FALSE FALSE FALSE  TRUE  TRUE
+    ## 6   TRUE  TRUE FALSE FALSE FALSE  TRUE FALSE  TRUE FALSE FALSE FALSE  TRUE
+    ## 7   TRUE  TRUE FALSE  TRUE FALSE  TRUE FALSE  TRUE FALSE FALSE FALSE  TRUE
+    ## 7  FALSE  TRUE FALSE  TRUE FALSE  TRUE FALSE FALSE FALSE  TRUE  TRUE  TRUE
+    ## 8   TRUE  TRUE FALSE  TRUE FALSE  TRUE  TRUE  TRUE FALSE FALSE FALSE  TRUE
+    ## 8   TRUE  TRUE FALSE  TRUE FALSE  TRUE FALSE  TRUE FALSE FALSE  TRUE  TRUE
+    ## 9   TRUE  TRUE FALSE  TRUE FALSE  TRUE  TRUE  TRUE FALSE FALSE  TRUE  TRUE
+    ## 9   TRUE  TRUE FALSE  TRUE FALSE  TRUE  TRUE  TRUE FALSE  TRUE FALSE  TRUE
+    ## 10  TRUE  TRUE FALSE  TRUE FALSE  TRUE  TRUE  TRUE FALSE  TRUE  TRUE  TRUE
+    ## 10  TRUE  TRUE FALSE  TRUE  TRUE  TRUE  TRUE  TRUE FALSE FALSE  TRUE  TRUE
+    ## 11  TRUE  TRUE FALSE  TRUE  TRUE  TRUE  TRUE  TRUE FALSE  TRUE  TRUE  TRUE
+    ## 11  TRUE  TRUE  TRUE  TRUE FALSE  TRUE  TRUE  TRUE FALSE  TRUE  TRUE  TRUE
+    ## 12  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE FALSE  TRUE  TRUE  TRUE
+    ## 12  TRUE  TRUE FALSE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE
+    ## 13  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE
+    ##        D
+    ## 1  FALSE
+    ## 1  FALSE
+    ## 2  FALSE
+    ## 2   TRUE
+    ## 3   TRUE
+    ## 3  FALSE
+    ## 4   TRUE
+    ## 4   TRUE
+    ## 5   TRUE
+    ## 5   TRUE
+    ## 6   TRUE
+    ## 6   TRUE
+    ## 7   TRUE
+    ## 7   TRUE
+    ## 8   TRUE
+    ## 8   TRUE
+    ## 9   TRUE
+    ## 9   TRUE
+    ## 10  TRUE
+    ## 10  TRUE
+    ## 11  TRUE
+    ## 11  TRUE
+    ## 12  TRUE
+    ## 12  TRUE
+    ## 13  TRUE
+
+``` r
+59
+```
+
+    ## [1] 59
+
+Best model
+
+``` r
+fit_cp = lm(outcome ~ age + weight + neck + abdomen + hip + thigh 
+                   + bicep + forearm + wrist, data = body_density_df)
+fit_cp
 ```
 
     ## 
     ## Call:
     ## lm(formula = outcome ~ age + weight + neck + abdomen + hip + 
-    ##     bicep + forearm + wrist, data = body_density_df)
+    ##     thigh + bicep + forearm + wrist, data = body_density_df)
     ## 
     ## Coefficients:
     ## (Intercept)          age       weight         neck      abdomen          hip  
-    ##   -20.67672      0.03850     -0.09042     -0.42797      0.89114     -0.05722  
-    ##       bicep      forearm        wrist  
-    ##     0.23546      0.43593     -1.45550
+    ##   1.1490232   -0.0001206    0.0002587    0.0011730   -0.0022186    0.0004887  
+    ##       thigh        bicep      forearm        wrist  
+    ##  -0.0007050   -0.0005451   -0.0009971    0.0036030
+
+``` r
+fit_adjr2 = lm(outcome ~ age + weight + height + neck + abdomen + hip + thigh + ankle + bicep + forearm + wrist, data = body_density_df)
+fit_adjr2
+```
+
+    ## 
+    ## Call:
+    ## lm(formula = outcome ~ age + weight + height + neck + abdomen + 
+    ##     hip + thigh + ankle + bicep + forearm + wrist, data = body_density_df)
+    ## 
+    ## Coefficients:
+    ## (Intercept)          age       weight       height         neck      abdomen  
+    ##   1.154e+00   -1.261e-04    2.808e-04    4.865e-05    1.094e-03   -2.236e-03  
+    ##         hip        thigh        ankle        bicep      forearm        wrist  
+    ##   4.815e-04   -6.777e-04   -6.577e-04   -5.624e-04   -1.002e-03    4.003e-03
 
 ## Lasso
 
@@ -1256,18 +1341,18 @@ lambda_seq <- 10^seq(-3, 0, by = .1)
 set.seed(2022)
 cv_object <- glmnet::cv.glmnet(as.matrix(new_df[2:14]), new_df$outcome, 
                        lambda = lambda_seq, 
-                       nfolds = 10)
+                       nfolds = 5)
 cv_object 
 ```
 
     ## 
-    ## Call:  glmnet::cv.glmnet(x = as.matrix(new_df[2:14]), y = new_df$outcome,      lambda = lambda_seq, nfolds = 10) 
+    ## Call:  glmnet::cv.glmnet(x = as.matrix(new_df[2:14]), y = new_df$outcome,      lambda = lambda_seq, nfolds = 5) 
     ## 
     ## Measure: Mean-Squared Error 
     ## 
-    ##     Lambda Index Measure    SE Nonzero
-    ## min 0.0316    16   17.25 1.570      11
-    ## 1se 0.3981     5   18.35 1.915       4
+    ##       Lambda Index   Measure        SE Nonzero
+    ## min 0.001000    31 0.0001194 9.123e-06       4
+    ## 1se 0.001585    29 0.0001276 1.042e-05       4
 
 ``` r
 # plot the CV results
@@ -1284,7 +1369,7 @@ tibble(lambda = cv_object$lambda,
 cv_object$lambda.min
 ```
 
-    ## [1] 0.03162278
+    ## [1] 0.001
 
 ``` r
 # refit the lasso model with the "best" lambda
@@ -1293,18 +1378,278 @@ coef(fit_bestcv)
 ```
 
     ## 14 x 1 sparse Matrix of class "dgCMatrix"
-    ##                       s0
-    ## (Intercept) -12.15578143
-    ## age           0.05722442
-    ## weight       -0.06198363
-    ## height       -0.10109460
-    ## neck         -0.42043724
-    ## chest         .         
-    ## abdomen       0.82181585
-    ## hip          -0.13606461
-    ## thigh         0.17690550
-    ## knee          .         
-    ## ankle         0.08382603
-    ## bicep         0.10395483
-    ## forearm       0.39200291
-    ## wrist        -1.47069598
+    ##                        s0
+    ## (Intercept)  1.106666e+00
+    ## age         -5.216849e-05
+    ## weight       .           
+    ## height       6.873219e-04
+    ## neck         .           
+    ## chest        .           
+    ## abdomen     -1.441851e-03
+    ## hip          .           
+    ## thigh        .           
+    ## knee         .           
+    ## ankle        .           
+    ## bicep        .           
+    ## forearm      .           
+    ## wrist        1.995518e-03
+
+``` r
+set.seed(1)
+# Use 10-fold validation and create the training sets
+train = trainControl(method = "cv", number = 10)
+
+# Fit the 4-variables model that we discussed in previous lectures
+forward_caret = train(outcome ~ abdomen + weight + wrist + forearm + bicep + neck,
+                  data = body_density_df,
+                   trControl = train,
+                   method = 'lm',
+                   na.action = na.pass)
+
+forward_caret$finalModel
+```
+
+    ## 
+    ## Call:
+    ## lm(formula = .outcome ~ ., data = dat)
+    ## 
+    ## Coefficients:
+    ## (Intercept)      abdomen       weight        wrist      forearm        bicep  
+    ##   1.1680224   -0.0023211    0.0003356    0.0031416   -0.0009754   -0.0007586  
+    ##        neck  
+    ##   0.0009874
+
+``` r
+print(forward_caret)
+```
+
+    ## Linear Regression 
+    ## 
+    ## 252 samples
+    ##   6 predictor
+    ## 
+    ## No pre-processing
+    ## Resampling: Cross-Validated (10 fold) 
+    ## Summary of sample sizes: 227, 227, 228, 224, 227, 228, ... 
+    ## Resampling results:
+    ## 
+    ##   RMSE       Rsquared   MAE        
+    ##   0.0101807  0.7100553  0.008347109
+    ## 
+    ## Tuning parameter 'intercept' was held constant at a value of TRUE
+
+``` r
+# Use 10-fold validation and create the training sets
+train = trainControl(method = "cv", number = 10)
+
+# Fit the 4-variables model that we discussed in previous lectures
+backward_caret = train(outcome ~ age + weight + neck + abdomen + hip + thigh + bicep + 
+    forearm + wrist,
+                  data = body_density_df,
+                   trControl = train,
+                   method = 'lm',
+                   na.action = na.pass)
+
+backward_caret$finalModel
+```
+
+    ## 
+    ## Call:
+    ## lm(formula = .outcome ~ ., data = dat)
+    ## 
+    ## Coefficients:
+    ## (Intercept)          age       weight         neck      abdomen          hip  
+    ##   1.1490232   -0.0001206    0.0002587    0.0011730   -0.0022186    0.0004887  
+    ##       thigh        bicep      forearm        wrist  
+    ##  -0.0007050   -0.0005451   -0.0009971    0.0036030
+
+``` r
+print(backward_caret)
+```
+
+    ## Linear Regression 
+    ## 
+    ## 252 samples
+    ##   9 predictor
+    ## 
+    ## No pre-processing
+    ## Resampling: Cross-Validated (10 fold) 
+    ## Summary of sample sizes: 227, 226, 227, 226, 227, 226, ... 
+    ## Resampling results:
+    ## 
+    ##   RMSE        Rsquared   MAE        
+    ##   0.01017602  0.7222925  0.008254925
+    ## 
+    ## Tuning parameter 'intercept' was held constant at a value of TRUE
+
+``` r
+# Use 10-fold validation and create the training sets
+train = trainControl(method = "cv", number = 10)
+
+# Fit the 4-variables model that we discussed in previous lectures
+stepwise_caret = train(outcome ~ weight + neck + abdomen + bicep + forearm + 
+    wrist,
+                  data = body_density_df,
+                   trControl = train,
+                   method = 'lm',
+                   na.action = na.pass)
+
+stepwise_caret$finalModel
+```
+
+    ## 
+    ## Call:
+    ## lm(formula = .outcome ~ ., data = dat)
+    ## 
+    ## Coefficients:
+    ## (Intercept)       weight         neck      abdomen        bicep      forearm  
+    ##   1.1680224    0.0003356    0.0009874   -0.0023211   -0.0007586   -0.0009754  
+    ##       wrist  
+    ##   0.0031416
+
+``` r
+print(stepwise_caret)
+```
+
+    ## Linear Regression 
+    ## 
+    ## 252 samples
+    ##   6 predictor
+    ## 
+    ## No pre-processing
+    ## Resampling: Cross-Validated (10 fold) 
+    ## Summary of sample sizes: 228, 228, 227, 226, 227, 227, ... 
+    ## Resampling results:
+    ## 
+    ##   RMSE        Rsquared   MAE        
+    ##   0.01021253  0.7307386  0.008371013
+    ## 
+    ## Tuning parameter 'intercept' was held constant at a value of TRUE
+
+``` r
+# Use 10-fold validation and create the training sets
+train = trainControl(method = "cv", number = 10)
+
+# Fit the 4-variables model that we discussed in previous lectures
+cp_caret = train(outcome ~ age + weight + neck + abdomen + hip + 
+    thigh + bicep + forearm + wrist,
+                  data = body_density_df,
+                   trControl = train,
+                   method = 'lm',
+                   na.action = na.pass)
+
+cp_caret$finalModel
+```
+
+    ## 
+    ## Call:
+    ## lm(formula = .outcome ~ ., data = dat)
+    ## 
+    ## Coefficients:
+    ## (Intercept)          age       weight         neck      abdomen          hip  
+    ##   1.1490232   -0.0001206    0.0002587    0.0011730   -0.0022186    0.0004887  
+    ##       thigh        bicep      forearm        wrist  
+    ##  -0.0007050   -0.0005451   -0.0009971    0.0036030
+
+``` r
+print(cp_caret)
+```
+
+    ## Linear Regression 
+    ## 
+    ## 252 samples
+    ##   9 predictor
+    ## 
+    ## No pre-processing
+    ## Resampling: Cross-Validated (10 fold) 
+    ## Summary of sample sizes: 226, 226, 228, 227, 228, 226, ... 
+    ## Resampling results:
+    ## 
+    ##   RMSE        Rsquared   MAE        
+    ##   0.01008759  0.7286142  0.008244632
+    ## 
+    ## Tuning parameter 'intercept' was held constant at a value of TRUE
+
+``` r
+# Use 10-fold validation and create the training sets
+train = trainControl(method = "cv", number = 10)
+
+# Fit the 4-variables model that we discussed in previous lectures
+adjr2_caret = train(outcome ~ age + weight + height + neck + abdomen + hip + thigh + ankle + bicep + forearm + wrist,
+                  data = body_density_df,
+                   trControl = train,
+                   method = 'lm',
+                   na.action = na.pass)
+
+adjr2_caret$finalModel
+```
+
+    ## 
+    ## Call:
+    ## lm(formula = .outcome ~ ., data = dat)
+    ## 
+    ## Coefficients:
+    ## (Intercept)          age       weight       height         neck      abdomen  
+    ##   1.154e+00   -1.261e-04    2.808e-04    4.865e-05    1.094e-03   -2.236e-03  
+    ##         hip        thigh        ankle        bicep      forearm        wrist  
+    ##   4.815e-04   -6.777e-04   -6.577e-04   -5.624e-04   -1.002e-03    4.003e-03
+
+``` r
+print(adjr2_caret)
+```
+
+    ## Linear Regression 
+    ## 
+    ## 252 samples
+    ##  11 predictor
+    ## 
+    ## No pre-processing
+    ## Resampling: Cross-Validated (10 fold) 
+    ## Summary of sample sizes: 227, 228, 227, 225, 227, 228, ... 
+    ## Resampling results:
+    ## 
+    ##   RMSE        Rsquared   MAE        
+    ##   0.01023168  0.7394511  0.008333901
+    ## 
+    ## Tuning parameter 'intercept' was held constant at a value of TRUE
+
+``` r
+# Use 10-fold validation and create the training sets
+lasso = trainControl(method = "cv", number = 10)
+
+# Fit the 4-variables model that we discussed in previous lectures
+lasso_caret = train(outcome ~ age + height + abdomen + wrist,
+                  data = body_density_df,
+                   trControl = train,
+                   method = 'lm',
+                   na.action = na.pass)
+
+lasso_caret$finalModel
+```
+
+    ## 
+    ## Call:
+    ## lm(formula = .outcome ~ ., data = dat)
+    ## 
+    ## Coefficients:
+    ## (Intercept)          age       height      abdomen        wrist  
+    ##   1.0745042   -0.0001284    0.0007539   -0.0016705    0.0048514
+
+``` r
+print(lasso_caret)
+```
+
+    ## Linear Regression 
+    ## 
+    ## 252 samples
+    ##   4 predictor
+    ## 
+    ## No pre-processing
+    ## Resampling: Cross-Validated (10 fold) 
+    ## Summary of sample sizes: 225, 228, 226, 227, 227, 226, ... 
+    ## Resampling results:
+    ## 
+    ##   RMSE        Rsquared   MAE        
+    ##   0.01044341  0.7224333  0.008363197
+    ## 
+    ## Tuning parameter 'intercept' was held constant at a value of TRUE

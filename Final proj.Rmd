@@ -18,8 +18,8 @@ library(performance)
 
 ```{r}
 body_density_df = read_excel("data/body_density_data.xlsx") %>%
-  rename(outcome = bodyfat_brozek) %>% 
-  select(-bodyfat_siri & -body_density)
+  rename(outcome = body_density) %>% 
+  select(-bodyfat_siri & -bodyfat_brozek)
 head(body_density_df)
 ```
 
@@ -143,6 +143,7 @@ b = regsubsets(outcome ~
                  age + weight + height + neck + chest + abdomen + hip + thigh +
                  knee + ankle + bicep + forearm + wrist, data = body_density_df)
 rs = summary(b)
+rs$which
 
 par(mfrow=c(1,2))
 plot(2:9, rs$cp, xlab = "No of parameters", ylab = "Cp Statistic")
@@ -157,18 +158,22 @@ par(mfrow = c(1,1))
  age + weight + height + neck + chest + abdomen + hip + thigh +
                  knee + ankle + bicep + forearm + wrist
 ```{r}
-
 cp_model =  leaps(x = as.matrix(body_density_df)[,c(3:15)], y = as.matrix(body_density_df)[,2], nbest = 2, method = "Cp")
+cp_model$which
+35910
 
 adjr2_model =  leaps(x = as.matrix(body_density_df)[,c(3:15)], y = as.matrix(body_density_df)[,2], nbest = 2, method = "adjr2")
 adjr2_model$which
+59
 ```
 
-
-Best model by AdjR2
-
+Best model
 ```{r}
-fit_adjr2 = lm(outcome ~ age + weight + neck + abdomen + hip + bicep + forearm + wrist, data = body_density_df)
+fit_cp = lm(outcome ~ age + weight + neck + abdomen + hip + thigh 
+                   + bicep + forearm + wrist, data = body_density_df)
+fit_cp
+
+fit_adjr2 = lm(outcome ~ age + weight + height + neck + abdomen + hip + thigh + ankle + bicep + forearm + wrist, data = body_density_df)
 fit_adjr2
 ```
 
@@ -183,7 +188,7 @@ lambda_seq <- 10^seq(-3, 0, by = .1)
 set.seed(2022)
 cv_object <- glmnet::cv.glmnet(as.matrix(new_df[2:14]), new_df$outcome, 
                        lambda = lambda_seq, 
-                       nfolds = 10)
+                       nfolds = 5)
 cv_object 
 
 # plot the CV results
@@ -201,11 +206,98 @@ fit_bestcv <- glmnet::glmnet(as.matrix(new_df[2:14]), new_df$outcome, lambda = c
 coef(fit_bestcv)
 ```
 
+```{r}
+set.seed(1)
+# Use 10-fold validation and create the training sets
+train = trainControl(method = "cv", number = 10)
+
+# Fit the 4-variables model that we discussed in previous lectures
+forward_caret = train(outcome ~ abdomen + weight + wrist + forearm + bicep + neck,
+                  data = body_density_df,
+                   trControl = train,
+                   method = 'lm',
+                   na.action = na.pass)
+
+forward_caret$finalModel
+print(forward_caret)
+```
+
+```{r}
+# Use 10-fold validation and create the training sets
+train = trainControl(method = "cv", number = 10)
+
+# Fit the 4-variables model that we discussed in previous lectures
+backward_caret = train(outcome ~ age + weight + neck + abdomen + hip + thigh + bicep + 
+    forearm + wrist,
+                  data = body_density_df,
+                   trControl = train,
+                   method = 'lm',
+                   na.action = na.pass)
+
+backward_caret$finalModel
+print(backward_caret)
+```
+
+```{r}
+# Use 10-fold validation and create the training sets
+train = trainControl(method = "cv", number = 10)
+
+# Fit the 4-variables model that we discussed in previous lectures
+stepwise_caret = train(outcome ~ weight + neck + abdomen + bicep + forearm + 
+    wrist,
+                  data = body_density_df,
+                   trControl = train,
+                   method = 'lm',
+                   na.action = na.pass)
+
+stepwise_caret$finalModel
+print(stepwise_caret)
+```
+
+```{r}
+# Use 10-fold validation and create the training sets
+train = trainControl(method = "cv", number = 10)
+
+# Fit the 4-variables model that we discussed in previous lectures
+cp_caret = train(outcome ~ age + weight + neck + abdomen + hip + 
+    thigh + bicep + forearm + wrist,
+                  data = body_density_df,
+                   trControl = train,
+                   method = 'lm',
+                   na.action = na.pass)
+
+cp_caret$finalModel
+print(cp_caret)
+```
 
 
+```{r}
+# Use 10-fold validation and create the training sets
+train = trainControl(method = "cv", number = 10)
 
+# Fit the 4-variables model that we discussed in previous lectures
+adjr2_caret = train(outcome ~ age + weight + height + neck + abdomen + hip + thigh + ankle + bicep + forearm + wrist,
+                  data = body_density_df,
+                   trControl = train,
+                   method = 'lm',
+                   na.action = na.pass)
 
+adjr2_caret$finalModel
+print(adjr2_caret)
+```
 
+```{r}
+# Use 10-fold validation and create the training sets
+lasso = trainControl(method = "cv", number = 10)
 
+# Fit the 4-variables model that we discussed in previous lectures
+lasso_caret = train(outcome ~ age + height + abdomen + wrist,
+                  data = body_density_df,
+                   trControl = train,
+                   method = 'lm',
+                   na.action = na.pass)
 
+lasso_caret$finalModel
+print(lasso_caret)
+```
 
