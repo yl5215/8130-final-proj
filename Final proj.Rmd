@@ -16,6 +16,8 @@ library(glmnet)
 library(performance)
 ```
 
+
+
 ```{r}
 body_density_df = read_excel("data/body_density_data.xlsx") %>%
   rename(outcome = body_density) %>% 
@@ -43,6 +45,13 @@ correlation_plot = body_density_df %>%
 ```
 
 Histogram plots
+
+```{r}
+hist_outcome = body_density_df %>% 
+  ggplot(aes(x = outcome)) +
+  geom_histogram()
+hist_outcome
+```
 
 ```{r}
 hist1 = body_density_df %>% 
@@ -99,6 +108,8 @@ hist13 = body_density_df %>%
 
 hist13
 ```
+
+
 
 ## Fitting a full model and checking diagnostic plots
 
