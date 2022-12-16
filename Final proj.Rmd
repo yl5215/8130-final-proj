@@ -36,9 +36,10 @@ summary(body_density_df)
 Exploratory plots
 
 ```{r}
-body_density_df %>%
+correlation_plot = body_density_df %>%
   relocate(outcome) %>%
   ggpairs()
+  ggsave("./correlation.png",correlation_plot, width = 8, height = 5)
 ```
 
 Histogram plots
@@ -158,13 +159,13 @@ par(mfrow = c(1,1))
  age + weight + height + neck + chest + abdomen + hip + thigh +
                  knee + ankle + bicep + forearm + wrist
 ```{r}
-cp_model =  leaps(x = as.matrix(body_density_df)[,c(3:15)], y = as.matrix(body_density_df)[,2], nbest = 2, method = "Cp")
+cp_model =  leaps(x = as.matrix(body_density_df)[,c(3:15)], y = as.matrix(body_density_df)[,2], nbest = 1, method = "Cp")
 cp_model$which
 3591011
 
 ggplot(data.frame(cp_model$size, cp_model$Cp), aes(x = cp_model.size, y = cp_model.Cp)) +  labs(y = "Cp", x = "# parameters") + scale_x_continuous(breaks=seq(1,14)) + geom_point()
 
-adjr2_model =  leaps(x = as.matrix(body_density_df)[,c(3:15)], y = as.matrix(body_density_df)[,2], nbest = 2, method = "adjr2")
+adjr2_model =  leaps(x = as.matrix(body_density_df)[,c(3:15)], y = as.matrix(body_density_df)[,2], nbest = 1, method = "adjr2")
 adjr2_model$which
 359
 ```
